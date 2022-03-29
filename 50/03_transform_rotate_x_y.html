@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>transform_rotate_x_y</title>
+  <meta charset="utf-8"/>
+  <style>
+    *{margin:0; padding:0;}
+    li{list-style-type:none;}
+    
+    #wrap{min-width:1025px; width:100%;}
+    #section{width:100%;}
+    #section h2{padding:50px 0 20px; text-align:center; text-transform:uppercase;}
+
+    #rotateGrid{width:780px; margin:0 auto;}
+    
+    #rotateGrid li{width:250px; height:150px; margin-left:10px; margin-bottom:20px; float:left;}
+    #rotateGrid a{display:block; width:100%; height:100%;}
+    #rotateGrid a img{width:100%; height:100%;}
+
+    #rotateGrid .x a{transform:rotatex(0deg); transition:transform 1s linear;}
+    #rotateGrid .x:hover a{transform:rotatex(180deg);}
+
+    
+    #rotateGrid .y a{transform:rotatey(0); transition:transform 1s linear;}
+    #rotateGrid .y:hover a{transform:rotatey(180deg);}
+
+    #rotateGrid ul:after{content:""; display:block; clear:both;}
+    
+
+  </style>
+ </head>
+
+ <body>
+    <div id="wrap">
+      <section id="section">
+        <h2>rotate x and y</h2>
+        <div id="rotateGrid">
+          <ul>
+            <li class="x">
+              <a href="#" title="이미지1">
+                <img src="img/01.jpg" alt="이미지1"/>
+              </a>
+            </li>
+            <li class="x">
+              <a href="#" title="이미지2">
+                <img src="img/02.jpg" alt="이미지2"/>
+              </a>
+            </li>
+            <li class="x">
+              <a href="#" title="이미지3">
+                <img src="img/03.jpg" alt="이미지3"/>
+              </a>
+            </li>
+            <li class="y">
+              <a href="#" title="이미지4">
+                <img src="img/04.jpg" alt="이미지4"/>
+              </a>
+            </li>
+            <li class="y">
+              <a href="#" title="이미지5">
+                <img src="img/05.jpg" alt="이미지5"/>
+              </a>
+            </li>
+            <li class="y">
+              <a href="#" title="이미지6">
+                <img src="img/06.jpg" alt="이미지6"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+ </body>
+</html>

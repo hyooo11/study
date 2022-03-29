@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>test</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		*{margin:0; padding:0;}
+		li{list-style-type:none;}
+		
+
+		/*############# flaotArea #########*/
+		#floatArea{width:100%; background-color:gold;}
+		#floatArea h3{font-size:30px; text-align:center;}
+
+		/*실제로 사용할 div*/
+		#floatArea div{width:603px; height:100px; border:1px solid red; margin:0 auto;}
+		#floatArea ul{width:100%; height:100%;}
+		#floatArea li{width:200px; margin-right:1px; height:100%; line-height:100px; background-color:#00f; color:#fff; text-align:center; float:left;}
+
+		/*
+			[작업순서]
+
+			1) 부모와 실제 사용되는 div를 알 수 없음!
+			2) li의 한칸 크기는 알 수 있음
+				:200px * 100px
+				: margin: right 1px
+
+			3) li의 갯수는 3개,
+
+			4) 매우중요) 자녀요소 하나를 통해서 부모의 크기를 알 아 낼수있음!
+				width: 201px * 3ro == 603px
+				height: 100px
+
+			5) li를 통해서 ul을 만들 수 있고, 현재 예제에서 실제 사용 div가 ul보다
+			더 큰 부모이기 때문에 ul에 적용된 값을 div에 넘겨줌!
+
+			6) ul은 실제 사용하는 크기와 동일하기 때문에 width:100%; height:100% 설정함!
+		*/
+
+		/*########### borderArea ############*/
+		#borderArea{width:100%; background-color:aqua;}
+		#borderArea div{width:800px; height:300px; margin:50px auto 0; background-color:#ccc;}
+		#borderArea ul{width:100%; height:100%;}
+		#borderArea li{width:400px; height:100%; line-height:300px; background-color:pink; text-align:center; float:left}
+
+		/*########## 개별작업 #########*/
+		/*
+			li의 크기 : 400 * 300
+				border: 4방향 적용 (5px :: 위아래 10px, 좌우 10px)
+		*/
+		#borderArea .li0{width:390px; height:290px; border:5px solid red;}
+
+		/*
+			li의 크기 : 400 * 300
+				border: 4방향 적용 (10px :: 위아래 20px, 좌우 20px)
+		*/
+		#borderArea .li1{width:380px; height:280px; border:10px solid #ff0;}
+	</style>
+ </head>
+
+ <body>
+	<h2>문제1) 인라인 요소중에 가장 강하게 읽어주는 태그는?</h2>
+	<p>strong (가장 강하게 읽어주는 태그, 스트린리더기)</p>
+
+	<h2>문제2) 블릿기호의 위치를 변경할때 사용하는 효과는?</h2>
+	<p>list-style-position</p>
+
+	<h2>문제3) % 사용시 반드시 먼저 사용되어야 하는 단위는? 이유는?</h2>
+	<p>
+		고정값인 px을 만들고 , %로 따라가도록 만듬!</br>
+		px이 없다면 고정값이 없기 때문에 %는 누구를 따라갈지 알 수 없음!
+	</p>
+
+	<h2>문제4) section 영역을 만들었다면 반드시 작성해야 하는 태그는? 이유는?</h2>
+	<p>
+		headline (h2~h6) , 비슷한 정보의 값들을 모아두었기 때문에 반드시 제목이 필요함
+	</p>
+	<p>
+		html5는 에러가 잘 발생하지 않지만 headline 없을 경우엔 에러가 발생한다.<br/>
+		이유는? 해당하는 영역이 어떤 주제를 가지고 있는지 작성하지 않으면 에러가 발생함!
+	</p>
+
+	<h2>문제5) ul li에 padding-right:20px을 적용하였다. ul li ul li에서 상속받은 값을 해제하려면?</h2>
+	<p>
+		ul li ul li{padding-right:0;}<br/>
+		0이라는 값은 단위가 없어도 적용이 가능함!
+	</p>
+
+	<h2>문제6) overflow:hidden의 사용용도 아는데로 작성하기</h2>
+	<p>
+		1) 내용이 넘치거나, 공간이 넘치거나 이미지가 엄쳤을때 숨겨줄 수 있음
+		2) 자녀요소에서 margin-top으로 문제가 생겼을때 부모요소에 overflow:hidden으로 숨길 수 있음<br/>
+			(1번에 공간의 넘치는 문제)
+	</p>
+	<p>
+		3) 자녀요소의 높이를 정확하게 알 수 없고, float 끊어야 할때 부모요소에서 overflow:hidden으로 작업한다.
+	</p>
+
+	<h2>문제7) 공통과 개별 영역중 가장 먼저 작성되어야 하는 영역은? 이유는?</h2>
+	<p>
+		공통을 우선 작업하고, 달라지는 것만 개별로 작업한다.<br/>
+		:: 같은 작업이 반복되면 공통에서 해결이 가능한지 다시한번 확인하기!
+	</p>
+
+	<h2>문제8) float를 상위 객체와 하위객체에 적용하였지만 나열되지 않았다. 원인은?</h2>
+	<p>
+		1)공간을 차지하는 값들이 상속될 수 있음<br/>
+		2) 상위 객체 옆으로 올라 올 수 있는 공간이 없을 수 있음!(1px이라도 부족하면 올라오지 못함)
+	</p>
+	<h2>문제9) float를 끊어주지 않았을때 생길수 있는 문제들 나열하기</h2>
+	<p>
+		1) 부모요소가 나타나지 않음(배경색상, 이미지, border 나타나지 않음)
+		2) 하단의 객체가 따라올라감
+	</p>
+	<p>
+		:: header 옆에 footer가 있는 사고가 발생할 수 있음!
+	</p>
+
+	<h2>문제10) section, container, 처럼 값이 얼마나 늘어날지 모르는 영역에 float를 사용하였다.
+	float를 끊어주기위한 효과적인 방법은?</h2>
+	<p>
+		1) 부모요소 찾아서 overflow:hidden으로 해결!
+		2) 가상 객체 이용하기
+	</p>
+
+	<h2>문제11) 아래 순서에 따라 문제 풀기</h2>
+	<ul>
+		<li>01) 여백초기화 , 블릿기호 초기화 하기</li>
+		<li>02) 현재 ul이 끝난 부분 아래에 전체 다 사용하는 영역 만들기</li>
+		<li>03) h3태그 작성하고, floatTest 라는 내용 기입하기, 가운데 배치하기</li>
+		<li>04) 해당 영역안에 실제 사용할 div태그 만들고 안에 ul li li li 작성하기</li>
+		<li>05) li의 너비는 200px * 100px , 배경색상은 blue, 글자는 노랑색 (16진법 작성)</li>
+		<li>06) li들 마다 margin-right:1px 적용하기, float로 옆으로 나열되도록 만들기</li>
+		<li>07) 나열된 li들 확인하고, 부모요소 크기 설정하기</li>
+		<li>08) 중요) 부모의 높이를 지정할 수 있다면 최대한 overflow:hidden 사용하지 않도록 함!</li>
+		<li>09) 부모요소와 실제 사용 div 화면 가운데 있도록 만들기</li>
+		<li>10) li태그의 내용은 li0 태그, li1 태그, li2 태그... 작성하기, x, y축 가운데 두기</li>
+	</ul>
+	<div id="floatArea">
+		<h3>floatTest</h3>
+		<div>
+			<ul>
+				<li>li0 태그</li>
+				<li>li1 태그</li>
+				<li>li2 태그</li>
+			</ul>
+		</div>
+	</div>
+
+	<h2>문제12) 전역이란?</h2>
+	<p>
+		모든 공통 지역을 표현함! (전역)<br/>
+		: 태블릿 pc, 스마트폰 가로, 스마트폰 세로에 해당하는 것이 지역에 해당함!
+	</p>
+
+	<h2>문제13) li{list-style:none} 이 위험한 이유에 대하여 작성하기</h2>
+	<p>
+		list-style-image, list-style-position, list-style-type, 모두 사용하지 않는 것과 같음
+	</p>
+	<p>
+		ul li, ol li 모두 제외 시킴!
+	</p>
+
+	<h2>문제14) font 축약형 사용시, 적용되는 순서 나열하기</h2>
+	<p>
+		font:italic bold 14px/1.5em arial, batang, sans-setif
+	</p>
+	<p>
+		font-style<br/>
+		font-weight<br/>
+		font-size / line-height<br/>
+		font-family
+	</p>
+	<p>
+		top) font-weight 축약형 위치 변경이 되는 경우가 많아서 따로 사용하는 경우가 많음!
+	</p>
+
+	<h2>문제15) meta 태그란?</h2>
+	<p>
+		문서의 사용용도를 표기하는 태그<br/>
+		html5에서 반응형 페이지를 선언해야 할때 사용<br/>
+		: 모바일 기기에서 적용이 되지 않음
+	</p>
+	<p>
+		php에서 페이지에서 페이지 연결할 때 사용
+	</p>
+
+	<h2>문제16) overflow를 해제할때 사용하는 속성은?</h2>
+	<p>
+		overflow:hidden, overflow:scroll, overflow:auto<br/>
+		해제 하는 기능은? overflow:visible
+	</p>
+	
+	<h2>문제17) 아래 순서에 따라 문제 풀기</h2>
+	<ul>
+		<li>01) 현재 ul이 끝난 부분 아래에 전체 다 사용하는 영역 만들기</li>
+		<li>02) 실제로 사용하는 div 만들고 너비 : 800 , 높이 :300px 적용하기</li>
+		<li>03) 실제 사용하는 div안에 ul li li 만들기 , 400px * 300px 로 양옆에 배치하기</li>
+		<li>
+			04) 배경색상은 알아서 적용하고, 왼쪽 li에는 border:5px solid red<br/> 
+			오른쪽 li에는 border:10px solid #ff0 적용하기
+		</li>
+		<li>
+			05) 부모요소 확인하고 실제 사용하는 div도 문제 없이 사이즈 잡히는지 확인하기
+		</li>
+		<li>06) li 태그의 내용은 li0 태그, li1 태그 작성하기, 글자 x,y축 가운데 배치되도록 만들기</li>
+	</ul>
+	<div id="borderArea">
+		<div>
+			<ul>
+				<li class="li0">li0 태그</li>
+				<li class="li1">li1 태그</li>
+			</ul>
+		</div>
+	</div>
+
+	<h2>문제18) a==200 || a>=500 의 뜻은?</h2>
+	<p>
+		|| 또는, 나열된 조건들 중에서 하나라도 맞으면 "참"
+	</p>
+	<p>
+		a 가 200과 같거나 a가 500보다 크거나 같을때 하나라도 맞으면 참!
+	</p>
+	<h2>문제19) 아래 순서에 따라 문제 풀기 (floatTEST4의 3번째 영역 참고하기)</h2>
+	<ul>
+		<li>01) 현재 ul이 끝난 부분 아래에 전체 사용하는 영역 만들기</li>
+		<li>02) 실제 사용하는 div 만들기 : 1000  적용하기, 높이 지정 없음!</li>
+		<li>03) 실제 사용하는 div에 h3태그로 "div영역" 글 작성하기</li>
+		<li>04) h3의 너비는 200px 작성하기</li>
+		<li>05) 실제 사용하는 div에 h4태그로 "h4태그 사용" 글 작성하기</li>
+		<li>06) 실제 사용하는 div에 p태그로 "아래 p태그" 글 작성하기</li>
+		<li>07) h4태그의 너비는 :100px 작성하기</li>
+		<li>08) 아래 p태그의 너비는 100% 사용하기</li>
+		<li>09) 배경색상은 각각 전부 다르게 적용하기</li>
+		<li>10) h3는 왼쪽 배치, h4는 오른쪽 배치, p태그는 아래 있을 수 있도록 배치하기</li>
+		<li>11) 중요) 부모요소 높이 나올 수 있도록 float 확인하기</li>
+	</ul>
+
+	<h2>문제20) 부모요소에서 float가 끊어졌는지 확인하는 방법은?</h2>
+	<h2>문제21) 자녀요소에서 float를 끊으려면? (문제19번과 연관있음)</h2>
+
+	<h2>문제22) 영역에 제목을 작성할때 사용하는 태그는?</h2>
+	<h2>문제23) background-image의 사이즈를 조절할때 사용하는 효과는?</h2>
+	<h2>문제24) 문제23번에 적용한 효과는 css 몇부터 사용되는지 작성하기</h2>
+	<h2>문제25) 문제24번을 지원하는 브라우저들 나열하기</h2>
+	<h2>문제26) 문제25번에 나열된 브라우저들은 표준과 구형 어디에 속하는지 작성하기</h2>
+
+	<h2>문제27) 태블릿 pc 해상도의 범위 작성하기</h2>
+	<h2>문제28) 아래 나열된 길이 값 작성하기</h2>
+	<p>abc : </p>
+	<p>a b c :</p>
+	<p>ab c : </p>
+	
+	<h2>문제29) 현재 영역 아래에 전체 다 사용하는 영역 만들고 select 태그 작성하기 (자동차 종류 3개 정도 나열하기)</h2>
+	<h2>문제30) font-family를 여러개 작성하는 이유와 폰트를 지원하지 않을 경우 어떻게 되는지 작성하기</h2>
+ </body>
+</html>

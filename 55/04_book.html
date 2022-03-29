@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>book</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%;}
+
+      #bookArea{width:400px; margin:100px auto 0;}
+      #bookArea h2{text-align:center; font-size:18px; color:#555;}
+      #bookArea .book{width:100%; position:relative;}
+
+      #bookArea .img2{width:200px; height:200px; background-image:url(img/02.jpg); position:absolute; right:0; top:100px; background-size:110%;}
+      #bookArea .img3{width:200px; height:200px; background-image:url(img/03.jpg); position:absolute; left:0; top:100px; background-size:100%;}
+      #bookArea .hover{width:400px; height:200px; perspective:500px;}
+      #bookArea .img1{width:400px; height:100%; background-image:url(img/01.jpg); position:absolute; left:0; top:100px; background-size:50%; background-repeat:no-repeat; transition:all 0.5s linear 0.2s; }
+      #bookArea .img1:hover{background-image:url(img/04.jpg); transform:rotatey(180deg);}
+      
+      
+      /*#bookArea .img4{background-image:url(img/04.jpg);}*/
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="bookArea">
+            <h2>PERSPECTIVE를 이용한 BOOK 만들기</h2>
+            <div class="book">
+               
+               <p class="img3">
+               </p>
+               
+               <p class="img2">
+               </p>
+               <div class="hover">
+                  <p class="img1">
+                  </p>
+               <div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width: 700px;
+        height: 700px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    tr, th, td{
+        border: 1px solid black;
+    }
+    .col:nth-child(1){
+        background-color: lightgreen;
+    }
+    col:nth-child(2){
+    }
+    th{
+        background-color: lightpink;
+    }
+    /* td{
+        background-color: lightblue;
+    }
+    .time{
+        background-color: lightsalmon;
+    } */
+</style>
+<body>
+    <table>
+        <colgroup>
+            <col class="col1">
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tr>
+            <th colspan="2">미체</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+        <tr>
+            <th rowspan="3">오전</th>
+            <th class="time">09:30~10:30</th>
+            <td>테라피<br>(김태율)</td>
+            <td>골반테라피<br>(문가영)</td>
+            <td>필라테스<br>{폼롤러}<br>(김태율)</td>
+            <td>비트<br>(문가영)</td>
+            <td>발란스<br>(김태율)</td>
+            <td>10:00반야사<br>(이시안)</td>
+        </tr>
+        <tr>
+            <th class="time">10:50~11:50</th>
+            <td></td>
+            <td>반야사<br>(문가영)</td>
+            <td></td>
+            <td>아쉬탕가<br>(문가영)</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th class="time">1:00~4:50</th>
+            <td>개인 P.T</td>
+            <td>개인 P.T</td>
+            <td>개인 P.T</td>
+            <td>개인 P.T</td>
+            <td>개인 P.T</td>
+            <td>개인 P.T<br>데스크<br>문의</td>
+        </tr>
+        <tr>
+            <th rowspan="5">오후</th>
+            <th class="time">5:00~5:50</th>
+            <td>키즈 플라잉<br>(이승현)</td>
+            <td>키즈 플라잉<br>(이승현)</td>
+            <td>키즈 플라잉<br>(이승현)</td>
+            <td>키즈 플라잉<br>(이승현)</td>
+            <td>키즈 플라잉<br>(이승현)</td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th class="time">6:00~6:45</th>
+            <td></td>
+            <td>키즈 플라잉<br>(김태윤)</td>
+            <td></td>
+            <td>키즈 플라잉<br>(김태윤)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th class="time">7:00~7:50</th>
+            <td>힐링<br>(황선애)</td>
+            <td>필라테스<br>(김효진)</td>
+            <td>아쉬탕가<br>(황성혜)</td>
+            <td>플라잉<br>(김효진)</td>
+            <td>하타<br>(황선혜)</td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr>
+            <th class="time">8:00~8:50</th>
+            <td>반야사<br>(황선애)</td>
+            <td>플라잉베이직<br>(김효진)</td>
+            <td>볼테라피<br>(황성혜)</td>
+            <td>반야사<br>(김효진)</td>
+            <td>필라테스<br>(황선혜)</td>
+        </tr>
+        <tr>
+            <th class="time">9:00~9:50</th>
+            <td>테라피<br>(황선애)</td>
+            <td>힐링<br>(김효진)</td>
+            <td>로우플라잉<br>(황성혜)</td>
+            <td>핫요가<br>(김효진)</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>scale</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+
+      #wrap{min-width:1025px; width:100%; background-color:#333; overflow:hidden;}
+      #container{width:100%; height:100%;}
+      section{width:900px; height:1000px; margin:0 auto;}
+      h2,h3{line-height:50px; color:#efefef; font-size:25px; text-transform:uppercase; text-align:center;}
+
+      article .text_area{text-align:center; color:#efefef;}
+      article ul{padding-top:50px;}
+      article li{width:250px; margin-left:35px; background-color:pink; text-align:center; float:left;}
+      article li .text{line-height:50px; font-size:18px; font-weight:700;}
+      article li .img{width:218px; padding-left:16px;}
+      article li .img img{width:100%;}
+
+      article .sc1{transform:scale(0.5,0.5);}
+      article .sc2{transform:scale(1.2,1.2);}
+      article .sc3{transform:scale(0.25,0.25); background-color:aqua;}
+      article .sc3:hover{transform:scale(0.75,0.75); background-color:#ff0;}
+      article .sc4{transform:scale(0.5,1);}
+      article .sc5{transform:scale(1,0.5);}
+
+      
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <section>
+            <h2>all content</h2>
+            <article>
+               <h3>transform:scale</h3>
+               <p class="text_area">
+                  header : nav영역을 담을수 있음<br/>
+                  section : 비슷한 정보의 값들을 모아주는 영역, (필수: 헤드라인 태그)<br/>
+                  article : 배포가능한 정보들을 모아주는 영역"재배포가 가능한 영역"<br/>
+                  footer : address를 담을수 있음
+               </p>
+               <ul>
+                  <li class="sc0">
+                     <p class="text">BASIC:TEST</p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+                  <li class="sc1">
+                     <p class="text">SCALE50%:TEST</p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+                  <li class="sc2">
+                     <p class="text">SCALE120%:TEST </p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+                  <li class="sc3">
+                     <p class="text">4) SCALE25%:TEST</p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+                  <li class="sc4">
+                     <p class="text">SCALE_X50%:TEST</p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+                  <li class="sc5">
+                     <p class="text">SCALE_Y50%:TEST</p>
+                     <p class="img">
+                        <img src="img/score.png" alt="score"/>
+                     </p>
+                  </li>
+               </ul>
+            </article>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>
+<!--
+   1) 
+2) SCALE50%:TEST
+3) SCALE120%:TEST
+4) SCALE25%:TEST 
+	+ 마우스 올리면 75% 커짐
+
+
+5) SCALE_X50%:TEST
+6) SCALE_Y50%:TEST
+
+7) section과 article 사용해보기
+
+
+
+header : nav영역을 담을수 있음
+section : 비슷한 정보의 값들을 모아주는 영역, (필수: 헤드라인 태그)
+article : 배포가능한 정보들을 모아주는 영역"재배포가 가능한 영역" 
+footer : address를 담을수 있음
+-->

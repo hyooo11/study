@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+	<title>test</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+	*{margin:0; padding:0;}
+
+		#ts0{width:400px; height:400px; margin:0 auto; background-color:#00f; color:#fff; text-align:center; line-height:400px;}
+
+		#ts1{width:220px; padding:40px; height:220px; background-color:#900; color:#efefef;}
+
+		#ts2{width:200px; height:80px; background-color:lightblue; overflow:scroll;}
+
+		#ts3{list-style-type:lower-roman; list-style-position:inside;}
+
+		#ts4{width:300px; height:300px; background-color:pink; margin:0 auto; text-align:center; overflow:hidden;}
+
+		#ts4 .text{margin-top:108px;}
+		
+	</style>
+ </head>
+
+ <body>
+	<h3>01) 문서의 종류중 엄격에 해당하는 문서는?</h3>
+	<p>strict.dtd</p>
+
+	<h3>02) 위 01번에서 사용되는 언어는?</h3>
+	<p>영문 소문자 입니다.</p>
+
+	<h3>03) title과 headline 태그의 사용용도 구분하기</h3>
+	<p>title은 문서의 제목에 해당하고 headline태그는 영역의 제목에 해당합니다.</p>
+
+	<h3>04) 매우중요) body영역에 하기 어려운 작업과 이유 설명하기</h3>
+	<p>
+		body영역에는 사이즈 작업을 하기 어렵습니다.<br/>
+		이유는 body는 브라우저의 전체를 담당하는 영역이기 때문에 사이즈 작업을 하게 되면<br/>
+		브라우저를 잘라서 쓰는거와 같기 때문에 사이즈 작업은 하지 않습니다.<br/>
+		사이즈 작업을 제외한 background-color나 font작업은 가능하나 왠만하면 body를 대신하는<br/>
+		wrap영역에 하는 것이 안전합니다.
+	</p>
+
+	<h3>05) 블록요소를 화면 가운데 두는 방법은?</h3>
+	<p>
+		(해상도너비-블록요소너비)/2를 계산하여 나온 값만큼 padding이나 margin으로 옮겨 주거나,<br/>
+		블록요소의 양옆에 아무 객체도 없다는 전제하에 margin: 0 auto를 사용해줍니다.
+	</p>
+		
+	<h3>06) background-image를 화면 가운데 두는 방법은?</h3>
+	<p>
+		background-position:center center;
+	</p>
+
+	<h3>07) 아래 순서대로 문제 풀기</h3>
+	<p>
+		1) 현재 p태그가 끝난 부분 아래에 div태그 만들기<br/>
+		2) 400*400 박스 만들기, 16진법으로 배경색상 파란색 만들기<br/>
+		3) 글자색상 16진법으로 하얀색 만들기<br/>
+		4) divTest라고 div태그 안에 내용 작성하기<br/>
+		5) x , y 축 글자 가운데 정렬하기<br/>
+		6) 만들어진 div 태그 화면 가운데 이동하기
+	</p>
+	<div id="ts0">
+		divTest
+	</div>
+
+	<h3>08) 표준 브라우저와 구형 브라우저 구분하기</h3>
+	<p>
+		표준브라우저 : 익스플로러 9, 10, 11, 크롬, 파이어폭스, 엣지, 사파리, 오페라<br/>
+		구형 브라우저: 익스플로서 8, 7, 6, 5
+	</p>
+
+	<h3>09) 매우중요) 크로스 브라우징이란 무엇인지 작성하기</h3>
+	<p>
+		사이트 화면전체에 X를 그려놓고 브라우저 밖으로 빠져나가는 객체가 없는지 확인하는 작업입니다.	
+	</p>
+
+	<h3>10) min-width를 작성하는 이유는?</h3>
+	<p>
+		min-width로 최소한의 너비를 지정해줘서 지정해준 최소 너비만큼은<br/>
+		y축 하단 스크롤을 생성하지 않고 보여주기 위해서 작성합니다.
+	</p>
+
+	<h3>11) 매우중요) 본인 스마트폰 기종과 해상도 작성하기</h3>
+	<p>
+		기종 : 아이폰11<br/>
+		해상도 : 828*1792
+	</p>
+
+	<h3>12)아래 순서에 따라서 문제 풀기</h3>
+	<p>
+		1) 현재 p태그가 끝난 부분 아래에 div태그 만들기<br/>
+		2) 배경색상은 밝기가 중간 정도 되는 빨간색 적용하기 (16진법 사용)<br/>
+		3) 글자색상은 밝은 느낌의 회색 적용하기 (16진법 사용)<br/>
+		4) 안쪽 여백 40px(4방향) 모두 적용하기<br/>
+		5) 전체 크기는 300*300 유지되도록 만들기<br/>
+		6) 만들어진 div태그의 내용은 paddingTest 작성하기<br/><br/>
+
+		중요) 검사를 띄웠을떄 4방향 모두 40px이 적용되어 있어야 하고 크기는 300*300<br/>
+		을 유지하고 있어야 함, (제품 페이지 제작시 매우중요)
+	</p>
+	<div id="ts1">
+		paddingTest
+	</div>
+
+	<h3>13) 매우중요) background-image가 원래의 크기로 돌아갔다. 원인이 될 수 있는 것은?</h3>
+	<p>
+		background-image의 사이즈작업(background-size)을 css에서 했을경우 원인이 될 수 있습니다.<br/>
+		왜냐하면 background-size효과는 구형 브라우저에서는 지원이 되지 않기 때문에<br/>
+		css에서 background-size로 지정하지 않고 이미지 자체의 사이즈를 편집해서 배경이미지를 입혀주는 것이 안전합니다.
+	</p>
+
+	<h3>14) 인라인요소를 블록요소에 담아주는 이유는?</h3>
+	<p>
+		인라인요소는 자신의 크기 만큼만 영역을 차지하기 때문에 크기에 따라 마음데로 변형이 될 수 있어서<br/>
+		블록요소에 담아서 영역을 만들어줘야 하기 때문입니다.
+	</p>
+
+	<h3>15) 배운 내용들 안에서 overflow:hidden으로 할 수 있는 것들 작성하기</h3>
+	<p>
+		첫번째로는 블록요소안에 글자가 넘치는것을 숨겨줄 수 있고<br/>
+		두번째로는 자녀의 margin값을 줬을때 margin 영역이 빠져나가는 문제를<br/>
+		부모요소에 overflow:hidden줘서 해결할 수 있습니다. 
+	</p>
+
+	<h3>16) 아래 순서에 따라서 문제풀기</h3>
+	<p>
+		1) 현재 p태그가 끝난 부분 아래에 div태그 만들기<br/>
+		2) 배경색상은 lightblue 작성하기<br/>
+		3) 200*80 크기 상자 만들기, 내용은 overflow 작업 작성하기<br/>
+		4) 무조건 scroll이 나오도록 만들기
+	</p>
+	<div id="ts2">
+		overflow<br/>
+		overflow<br/>
+		overflow<br/>
+		overflow<br/>
+		overflow<br/>
+		overflow<br/>
+		overflow<br/>
+		overflow
+	</div>
+
+	<h3>17) 15~16번을 해제하는 속성은?</h3>
+	<p>
+		overflow:visible;
+	</p>
+
+	<h3>18) list-style의 3가지 옵션 작성하고 각각 내용 작성하기</h3>
+	<p>
+		list-style-type : 블릿기호를 없에거나 모양을 바꿀 수 있습니다.<br/>
+		list-style-position : 블릿기호를 영역안에 넣거나 뺄수 있습니다.<br/>
+		list-style-image : 블릿기호의 모양을 내가 원하는 이미지로 바꿀 수 있습니다.
+	</p>
+
+	<h3>19) list-style:none을 작성할 경우, 문제점 작성하기 (18번과 연관성이 높음)</h3>
+	<p>
+		list-style:none을 작성할 경우 리스트의 블릿기호를 아예 사용하지 않는다는 의미가 되기 때문에<br/>
+		list-style-position이나 list-style-image작업을 할 경우 적용되지 않는 문제가 발생 될 수 있습니다.
+	</p>
+
+	<h3>20) dl리스트 사용시 인라인에 해당하는 태그는?</h3>
+	<p>
+		dl(블록) dt(인라인) dd(블록)<br/>
+		dt 입니다.
+	</p>
+
+	<h3>21) 아래 순서대로 문제 풀기</h3>
+	<p>
+		1) 현재 p태그 아래에 ol태그 만들기<br/>
+		2) li 태그들 각각 만들고 , 각각 test1, test2, test3, test4, test5 작성하기<br/>
+		3) 블릿기호중 로마 숫자 소문자로 나타나도록 만들기
+	</p>
+	<ol id="ts3">
+		<li>text1</li>
+		<li>text2</li>
+		<li>text3</li>
+		<li>text4</li>
+		<li>text5</li>
+	</ol>
+
+	<h3>22) 자녀요소로 인해 margin-top 영향을 받았다. 해결할 수 있는 방법은?</h3>
+	<p>
+		해당 자녀요소의 부모요소에 overflow:hidden을 작성해줍니다.
+	</p>
+
+	<h3>23) 아래 순서에 따라 문제 풀기</h3>
+	<ol>
+		<li>현재 ol태그가 끝난 부분 아래에 div태그 만들기</li>
+		<li>div태그에 아래와 같은 내용 작성하기</li>
+		<li>background-image가 반복되면, 제어하는 속성으로 background-repeat를 사용하고, 움직이는 속성으로 background-position을 사용한다.</li>
+		<li>300*300박스 만들고 배경색상 pink 적용하기</li>
+		<li>현재 만들어진 div태그 화면 가운데 오도록 만들기</li>
+		<li>작성된 글자 x, y 축 가운데 있도록 만들기</li>
+		<li>중요! line-height는 글자가 한줄 일때 사용하는 속성! (계산하여 배치해야 함)</li>
+	</ol>
+	<div id="ts4">
+		<p class="text">
+			background-image가 반복되면, 제어하는 속성으로 background-repeat를 사용하고, 움직이는 속성으로 background-position을 사용한다.
+		</p>
+	</div>
+
+	<h3>24) 비슷한 정보의 값들을 모아주는 영역명으로 html5에서는 태그로 존재하는 명칭은?</h3>
+	<p>
+		content
+	</p>
+
+	<h3>25) 24번의 영역이 만들어지면 반드시 작성해야 하는 태그는? 이유는?</h3>
+	<p>
+		headline태그(h2~h6) 입니다.<br/>
+		왜냐하면 content영역은 한개가 아닌 영역별로 여러가지의 담을 수 있는 정보가 존재하기 때문에<br/>
+		headline태그로 영역의 제목을 지정해 줘야 합니다.
+	</p>
+
+	<h3>26) script 문제) a>=8 의 뜻은? (전에 test문제에 있음)</h3>
+	<p>
+		8은 a와 같거나 작다
+	</p>
+
+	<h3>27) script 문제) a>10 || b==5 || c>=20 의 뜻은? </h3>
+	<p>
+		10은 a을 포함되어있다 또는 b와5는 같다 또는 20은 c와 같거나 작다
+	</p>
+
+	<h3>28) script 문제) 5~15까지 포함하는 범위 표현하기 (주석글에 표현하기 특수기호로 에러남)</h3>
+	<!--5&&15-->
+
+	<h3>29) script 문제) 아래의 답은? 이유는?</h3>
+	<p>
+		a="ab"<br/>
+		a="밀크"<br/>
+		a=는?
+	</p>
+	<p>
+		a는 "밀크" 입니다.<br/>
+		이유는 문서는 위에서 아래로 읽기 때문에 가장 아래에 있는 값이 최신이기 때문입니다.
+	</p>
+
+	<h3>30) script 문제) 아래의 답은? 순서대로 어떻게 읽어서 해당하는 값이 나왔는지 작성하기</h3>
+	<p>
+		c=5;<br/>
+		b=10;<br/>
+		c=c*b<br/>
+		b는?
+	</p>
+	<p>
+		c는 5 / b는 10 / c*b는 50, c는 50<br/>
+		b는 1
+	</p>
+
+ </body>
+</html>

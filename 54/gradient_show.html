@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>gradient show</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{min-width:1025px; width:100%; background-image:linear-gradient(rgba(0,0,255,0.8), rgba(0,0,0,0.5));}
+      #container{width:100%;}
+
+      #movieArea{width:600px; height:1000px; margin:0 auto; position:relative;}
+
+      .title{width:300px; height:80px; line-height:80px; font-size:20px; font-weight:700; text-indent:10px; transform:skewy(20deg); background-color:#333; color:#ccc; position:absolute; left:100px; top:100px;}
+      .video{transform:skewy(20deg); position:absolute; left:100px; top:64px;}
+
+      .desc{width:150px; height:170px; transform:skewy(-20deg); background-image:linear-gradient(100deg,#ccc, #555); position:absolute; left:400px; top:206px;}
+
+      .desc strong{font-size:18px; font-weight:700; color:#ff0;}
+      .desc span{font-size:15px;}
+      
+      .shadow .front{width:300px; height:170px; transform:skewy(20deg);  position:absolute; left:100px; top:350px; background-image:linear-gradient(180deg,rgba(255, 255, 255, 0.1), rgba(0,0,0,0));}
+
+      .shadow .side{width:150px; height:170px; transform:skewy(-20deg);  position:absolute; left:400px; top:377px; background-image:linear-gradient(180deg,rgba(88, 155, 255, 0.2), rgba(0,0,0,0));}
+
+      .shadow p{text-indent:-9999px;}
+      
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="movieArea">
+            <p class="title">APPLE_MOVIE</p>
+            <div class="video">
+               <video width="300" height="400" autoplay muted>
+                  <source src="video/apple.mp4" type="video/mp4"/>
+               </video>
+            </div>
+            <div class="desc">
+               <strong>APPLE CF</strong><br/>
+               <span>transform:Skew, 2021</span>
+            </div>
+            <div class="shadow">
+               <p class="front">front</p>
+               <p class="side">side</p>
+            </div>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

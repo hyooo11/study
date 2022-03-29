@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>float_3_1</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+
+      /*############### wrap ###############*/
+      #wrap{min-width:1025px; width:100%}
+      h2{text-align:center; padding:20px 0; text-transform:uppercase;}
+
+      /*############ sect_cont0 ###########*/
+      /*전체 사용 영역*/
+      #sect_cont0{width:100%; height:700px;}
+
+      /*############# floatArea (800px) ############*/
+      /*실제 사용 영역*/
+      #floatArea{width:800px; height:400px; background-color:#333; margin:50px auto 0;}
+      #floatArea li{width:200px; height:100%; line-height:400px; text-align:center; background-color:#0f0; float:left;}
+
+      /*############### 두번째 li태그는 배경색상 변경 (개별) ##########*/
+      #floatArea .li1{background-color:pink;}
+      
+      /*########  세번째 li태그 (개별작업) ##########*/
+      #floatArea .li2{width:400px;}
+
+      /*검사를 통해서 높이 생성에 문제가 있는 것을 알 수 있음!*/
+      #floatArea .li2 .ul0{width:100%; height:100%;}
+
+      /*########### 세번째 li안의 li들 배치하기 #########*/
+      /*
+         1) 세번째 li의 크기는 400*400
+         2) 안에 담기는 li는 위에 2개 아래 2개 배치
+
+            너비 높이 50%씩 활용하여 배치하기
+
+         [중요]
+            1) 태그가 같다면 공통으로 사용가능한지 확인하기!
+            2) 높이를 50%로 변경해도 바뀌지 않음!
+
+         [매우중요]
+            : 검사창을 활용하여 확인해 보면 line-height:400px이 상속되는 것을 알 수 있음!
+            : 체크를 해제해 보면 영향을 주는 것을 알 수 있음!
+            : 체크와 체크 해제를 통해 상속 받는 값을 더 정확하게 알 수 있음!
+            : 해당하는 부분에서 숫자 적용해보고 미리 보기 처럼 사용 가능함!
+      */
+      #floatArea .li2 li{width:50%; height:50%; line-height:200px; background-color:#ccc;}
+
+      /*######### 세번째 li안에 있는 두번째 와 세번째 li (개별 작업) ######*/
+      /*
+         1) 세부 li는 50% * 50%
+         2) 단위를 px로 확인하면 200px * 200px로 사용하고 있음!
+      */
+      #floatArea .li2 .li1{ width:190px; height:190px; border:5px solid red; background-color:aqua;}
+      #floatArea .li2 .li2{width:190px; height:190px; border:5px solid blue; background-color:crimson;}
+
+      /*############ sect_cont0 ###########*/
+      /*전체 사용 영역*/
+      #sect_cont1{width:100%; height:600px;}
+
+      /*############# marginArea (1410px) ############*/
+      /*실제 사용 영역*/
+      
+      #marginArea{width:1410px; height:300px; margin:50px auto 0;}
+
+      /*
+         1) 실제 사용 크기 1410px
+         2) li의 갯수 4개
+
+         1410 / 4
+
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+         [골드와 노랑색 영역 부터 생각하고 나머지 영역 배분함]
+
+            너비 : 골드 색상 한칸의 너비 200px+ margin-right:1px , 갯수는 3개
+               : 600px + margin-right:3px;
+               : 603px
+
+            너비 : 노랑 색상 한칸의 너비 100px + margin-right:1px; , 갯수는 2개
+               : 200px + margin: right 2px
+               : 202px
+
+            1) li , 3번쨰 영역 800px 사용가능
+            2) margin-right 떄문에 805px 사용가능!
+
+            [계산하기]
+
+            1410 - 805px == 605px
+
+         3) 공통으로 사용하는 공간 (밝은 회색 , 3개) 200px로 설계함!
+      */
+
+      #marginArea li{width:200px; margin-right:1px; height:100%; line-height:300px; margin-bottom:1px; background-color:#ccc; text-align:center; float:left;}
+
+      /*############ 세번째 li (개별작업) ############*/
+      #marginArea .li2{width:805px;}
+
+      /*############ 세번째 li안에 있는 ul 공통으로 사용하기*/
+      /*
+         [명칭으로 호출했을 경우]
+
+            #marginArea .li2 .ul0{float:left} , 공통 태그를 호출한 것이 아니라 하나의 "개인 class" 를 호출함!
+            #marginArea .li2 .ul1{float:left} , 공통 태그를 호출한 것이 아니라 하나의 "개인 class" 를 호출함!
+
+            : 각각 개인 작업이기 때문에 따로 지시를 주어야 함!
+            (같은 작업이 개인에게 여러번 반복 됨!)
+
+         [공통으로 호출했을 경우]
+
+            #marginArea .li2 ul{float:left;} , .li2안에 있는 모든 ul에 공통 값을 적용함!
+            (상속 받은 값이 많아질 수 있으므로 주의)
+
+      */
+      /*
+         세번째 li의 크기는 805px
+            ul은 2개가 있으므로 805으로 두고 400px씩 배분함!
+
+         + ul 붙이고, 부모인 .li2의 너비와 높이 생성 되는지 확인하기! (검사창 활용하기)
+      */
+
+      #marginArea .li2 ul{width:400px; height:100%; background-color:#fff; float:left;}
+
+      /*########### ul0 영역 개별 작업 ###########*/
+      #marginArea .li2 .ul0{width:603px;}
+
+      /*##########   li2 영역 안의 ul0 영역안의 li 공통 만들기 ###########*/
+      /*검사창을 확인 해보면 너비 200px 을 공통에서 사용하는 것을 알 수 있음!*/
+
+      #marginArea .li2 .ul0 li{/*width:200px; */height:50%; line-height:150px; background-color:gold;}
+
+      /*########### ul1 영역 개별 작업 ###########*/
+      #marginArea .li2 .ul1{width:202px;}
+
+      /*########### ul1 영역 안의 ul1 영역안의 li 공통 만들기 ###########*/
+      #marginArea .li2 .ul1 li{width:100px; height:50%; line-height:150px; background-color:#ff0;}
+
+      /*############ sect_cont2 ###########*/
+      /*전체 사용 영역*/
+      #sect_cont2{width:100%; height:500px;}
+
+      /*############# liArea (1300px) ############*/
+      /*실제 사용 영역*/
+      #liArea{width:1300px; height:300px; margin:50px auto 0;}
+
+      /*############## liArea의 li 공통 만들기 ############*/
+      #liArea li{width:200px; margin-right:1px; height:100%; line-height:300px; text-align:center; background-color:#ff0; float:left;}
+
+      #liArea .li .ul0{widht:100%; height:100%;}
+
+      /*######### 첫번째 li안의 ul0 안의 li 공통 작업 ##########*/
+      /*
+         [매우중요]
+            자녀요소들도 li이기 때문에 해제 하지 않으면 margin-right의 영향을 받아서
+            큰틀에 해당하는 li까지 영향을 주게 됨!
+      */
+      #liArea .li0 .ul0 li{width:100px; margin-right:0; background-color:#ccc;}
+
+      /*###### ul0안의 li 개별 작업 #####*/
+      #liArea .li0 .ul0 .li1{background-color:#333; color:#fff;}
+
+      /*####### "두번째"와 "네번째" (노랑색 단순 공간) 너비 재설정 #######*/
+      #liArea .lis{width:197px;}
+
+      /*############ 세번째 li 영역 설계 하기 ##########*/
+      /*
+         1)
+            첫번째 ul0 : li 너비 100씩 , 200px 사용
+            두번째 ul1 : li 너비 100씩 , 200px 사용
+            세번째 ul2 : li 너비 100씩, 300px 사용
+
+         2) 세번째 li는 총 700px 사용
+      */
+
+      #liArea .li2{width:700px; background-color:red;}
+
+      /*########### 세번째 li 영역 안의 ul공통 만들기 ########*/
+      /*
+         첫번째 ul0과 두번째 ul1의 너비가 같기 때문에 공통으로 사용함!
+      */
+
+      #liArea .li2 ul{width:200px; height:100%; float:left;}
+      #liArea .li2 li{width:100px;  height:50%; line-height:150px; margin-right:0; color:#fff;}
+
+      /*######### 첫번째 ul0의 영역 작업하기 , li들 각각 배경 색상 변경하기 ########*/
+
+      #liArea .li2 .ul0 .li0{background-color:#00f;}
+      #liArea .li2 .ul0 .li1{background-color:#00c;}
+      #liArea .li2 .ul0 .li2{width:100%; background-color:#00a;}
+
+      /*####### 두번째 ul1 영역 작업하기 #########*/
+
+      #liArea .li2 .ul1 li{height:100%; line-height:300px; background-color:#009;}
+      #liArea .li2 .ul1 .li0{background-color:#007;}
+
+      /*####### 세번째 ul2 영역 작업하기 #######*/
+
+      #liArea .li2 .ul2{width:300px;}
+
+      /*######## ul2의 li 작업하기 ########*/
+
+      #liArea .li2 .ul2 .li0{background-color:#005;}
+      #liArea .li2 .ul2 .li1{background-color:#003;}
+      #liArea .li2 .ul2 .li2{background-color:#00f;}
+
+      #liArea .li2 .ul2 .li3{width:100%; background-color:#000;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="sect_cont0">
+         <h2>ul li ul li 작업하기, 너비: 800px</h2>
+         <ul id="floatArea">
+            <li class="li0">float0</li>
+            <li class="li1">float1</li>
+            <li class="li2">
+               <ul class="ul0">
+                  <li class="li0">ul0_li0</li>
+                  <li class="li1">ul0_li1</li>
+                  <li class="li2">ul0_li2</li>
+                  <li class="li3">ul0_li3</li>
+               </ul>           
+            </li>
+         </ul>
+      </div>
+
+      <div id="sect_cont1">
+         <h2>ul li ul li 작업하기, 너비: 1410px</h2>
+         <ul id="marginArea">
+            <li>float0</li>
+            <li>float1</li>
+            <li class="li2">
+               <ul class="ul0">
+                  <li>ul0_li0</li>
+                  <li>ul0_li1</li>
+                  <li>ul0_li2</li>
+                  <li>ul0_li3</li>
+                  <li>ul0_li4</li>
+                  <li>ul0_li5</li>
+               </ul>
+               <ul class="ul1">
+                  <li>ul1_li0</li>
+                  <li>ul1_li1</li>
+                  <li>ul1_li2</li>
+                  <li>ul1_li3</li>
+               </ul>
+            </li>
+            <li>float3</li>
+         </ul>
+      </div>
+
+      <div id="sect_cont2">
+         <h2>ul li ul li 작업하기, 너비: 1300px</h2>
+         <ul id="liArea">
+            <li class="li0">
+               <ul class="ul0">
+                  <li class="li0">ul_li0</li>
+                  <li class="li1">ul_li1</li>
+               </ul>
+            </li>
+            <li class="lis">float1</li>
+            <li class="li2">
+               <ul class="ul0">
+                  <li class="li0">ul0_li0</li>
+                  <li class="li1">ul0_li1</li>
+                  <li class="li2">ul0_li2</li>
+               </ul>
+               <ul class="ul1">
+                  <li class="li0">ul1_li0</li>
+                  <li class="il1">ul1_li1</li>
+               </ul>
+               <ul class="ul2">
+                  <li class="li0">ul2_li0</li>
+                  <li class="li1">ul2_li1</li>
+                  <li class="li2">ul2_li2</li>
+                  <li class="li3">ul2_li3</li>
+               </ul>
+            </li>
+            <li class="lis">float3</li>
+         </ul>
+      </div>
+   </div>
+ </body>
+</html>

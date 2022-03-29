@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <title>book</title>
+   <style>
+      *{margin:0; padding:0;}
+      img{border:none; width:100%; height:100%;}
+
+      #wrap{min-width:460px; width:100%;}
+      #container{width:100%;}
+
+      #content{width:100%;}
+      #content h2{text-align:center; padding:80px 0 120px; color:#ccc;}
+
+      #book{width:600px; height:300px; margin:0 auto; position: relative;}
+      #book .page1{width:100%; height:300px; position:absolute; left: 0;top: 0;}
+      #book .page1:after{content:''; display:block; clear:both;}
+      #book .page1 div{width:50%; height:100%; float:left; overflow:hidden; opacity: 1; }
+      #book .page2{width:100%; height:300px; position:absolute; left: 0;top: 0;}
+      #book .page2:after{content:''; display:block; clear:both;}
+      #book .page2 .right{width:50%; height:100%; float:right; overflow:hidden; opacity:1; transition:1s linear .2s;}
+      #book .page2 .right:before{content:''; display:block; width:50%; height:100%; position:absolute; left:0px; background-image:url('img/03.jpg'); background-size:100% 100%; transition:1s linear all;}
+      #book .page2:hover .right:before{left:300px; transform:rotatey(180deg); opacity:0; }
+      /* #book .page2 div{width:50%; height:100%; float:left; overflow:hidden; opacity: 1; transition:1s linear .2s; }
+      #book .page2:hover .left{transform:rotatey(180deg) translatex(-300px);  opacity:0; perspective:center;} */
+   </style>
+</head>
+<body>
+   <div id="wrap">
+      <div id="container">
+         <div id="content">
+            <h2>PERSPECTIVE를 이용한 BOOK 만들기</h2>
+
+            <div id="book">
+               <div class="page1">
+                  <div class="left">
+                     <img src="img/01.jpg" alt="book0">
+                  </div>
+                  <div class="right">
+                     <img src="img/02.jpg" alt="book1">
+                  </div>
+               </div>
+               <div class="page2">
+                  <!-- <div class="left">
+                     <img src="img/03.jpg" alt="book2">
+                  </div> -->
+                  <div class="right">
+                     <img src="img/04.jpg" alt="book3">
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</body>
+</html>

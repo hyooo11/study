@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>notebook_comp</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      a:link,a:visited{text-decoration:none; color:#333;}
+      a:hover,a:focus{text-decoration:underline;}
+
+      body{background-color:#003388;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%;}
+
+      #content{width:660px; margin:0 auto;}
+      #content h2{border-left:4px solid #ff0; margin:50px 0 10px; text-indent:20px; color:#fff; font-size:20px;}
+      #content h2 .colorY{color:#ff0;}
+
+      #content ul{width:100%;}
+      #content li{width:140px; padding:10px; margin-right:5px; height:140px; margin-bottom:5px; background-color:#fff; float:left;}
+      #content .asus{width:130px; height:130px; border:3px solid aqua; background-image:url("img/main.jpg"); background-size:100%; transition:border 0.5s linear;}
+      #content .asus:hover{border:3px solid #007;}
+      #content .asus p{text-align:center; line-height:140px; font-size:17px; font-weight:700; text-transform:uppercase; color:#fff; font-style:italic; transition:color 0.5s linear, transform 0.5s linear;}
+      #content .asus:hover p{color:#ff0; transform:scale(0.8);}
+
+      #content .gram{width:470px; background-color:#2f3035;
+         background-image:url("img/gram.jpg");
+         background-size:59%;
+         background-position:right;
+         background-repeat:no-repeat;}
+
+      #content .gram p{line-height:140px; text-indent:10px; font-size:17px; text-decoration:underline; font-weight:700; color:#ccc;}
+      #content .gram .colorW{display:inline-block; color:#ccc; transition:color 0.5s linear, transform 0.5s ease-in;}
+      #content .gram:hover .colorW{color:#fff; transform:scale(1.1);}
+      #content .gram .colorR{color:#ddd; transition:color 0.5s linear;}
+      #content .gram:hover .colorR{color:#a00;}
+
+
+      #content .title{text-align:center; font-size:12px; font-weight:700; transition:transform 0.2s linear;}
+      #content li:hover .title{transform:scale(1.1);}
+      #content a{display:block;}
+      
+      #content a .img{display:block; width:100%}
+      #content a .img img{width:100%;}
+      #content a .desc{display:block; font-size:11px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+      #content a:hover .desc{color:#f00;}
+
+      #content:after{content:""; display:block; clear:both;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <section id="content">
+            <h2>노트북<span class="colorY">/컴퓨터</span></h2>
+            <ul>
+               <li>
+                  <p class="title">한성컴퓨터 올데이롱</p>
+                  <a href="#" title="올데이롱">
+                     <span class="img">
+                        <img src="img/comp0.jpg" alt="올데이롱"/>
+                     </span>
+                     <span class="desc">
+                        한성컴퓨터, 발걸음도 노트북도 가볍게! 새내기 대학생을 위한 추천 노트북
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">삼성전자 갤럭시북 플렉스</p>
+                  <a href="#" title="갤럭시북 플렉스">
+                     <span class="img">
+                        <img src="img/comp1.jpg" alt="갤럭시북 플렉스"/>
+                     </span>
+                     <span class="desc">
+                        입문용노트북 추천, 삼성 갤럭시북 플렉스 NT930QCT-A38A 사용해보니
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">LG전자 그램17</p>
+                  <a href="#" title="LG전자 그램17">
+                     <span class="img">
+                        <img src="img/comp2.jpg" alt="LG전자 그램17"/>
+                     </span>
+                     <span class="desc">
+                        [리뷰] 17인치 대화면 노트북도 ‘그램’하다
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">APPLE 맥북프로</p>
+                  <a href="#" title="APPLE 맥북프로">
+                     <span class="img">
+                        <img src="img/comp3.jpg" alt="APPLE 맥북프로"/>
+                     </span>
+                     <span class="desc">
+                        맥북 프로 리뷰는 왜 안하는거죠? 애플의 미친 마진 정책이 싫어서?
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">LG전자 그램14</p>
+                  <a href="#" title="LG전자 그램14">
+                     <span class="img">
+                        <img src="img/comp4.jpg" alt="LG전자 그램14"/>
+                     </span>
+                     <span class="desc">
+                        주성씨엔디, 'LG그램14 14ZD90N-VX50K' 출시 이벤트 진행
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">삼성전자 갤럭시북 이온</p>
+                  <a href="#" title="삼성전자 갤럭시북 이온">
+                     <span class="img">
+                        <img src="img/comp5.jpg" alt="삼성전자 갤럭시북 이온"/>
+                     </span>
+                     <span class="desc">
+                        단 3일간 파격혜택! 삼성 갤럭시북 브랜드위크 이벤트 진행
+                     </span>
+                  </a>
+               </li>
+               <li>
+                  <p class="title">한성컴퓨터 언더케이지</p>
+                  <a href="#" title="한성컴퓨터 언더케이지">
+                     <span class="img">
+                        <img src="img/comp6.jpg" alt="한성컴퓨터 언더케이지"/>
+                     </span>
+                     <span class="desc">
+                        한성컴퓨터, 대학생과 입문자들을 위한 추천 노트북
+                     </span>
+                  </a>
+               </li>
+               <li class="asus">
+                  <p>
+                     asus zen book
+                  </p>
+               </li>
+               <li class="gram">
+                  <p>
+                     <span class="colorW">No.1의 혁신</span> <span class="colorR">LG GRAM 17</span>
+                  </p>
+               </li>
+            </ul>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>
+<!--
+노트북 / 컴퓨터 , 참고사항
+
+1) 한성컴퓨터 올데이롱, 삼성전자 갤럭시북 플렉스... 제품의 제목들 부분에는 링크없음!
+
+2) 노트북 이미지에 마우스 올리면 설명글에 글자색상 빨간색, 
+밑줄 만들어지도록 표현함(장면전환없음)
+
+참고) li a로 각각 만들고, 제목만 링크없음!
+
+3) 제품 영역에 마우스 올리면 제품 제목들의 글자가 조금 커지도록 장면전환 적용되어 있음!
+
+4) asus zen book 영역에 마우스 올리면 글자는 작아지면서 노란색 변경(장면전환)
+	동시에 border 색상 변경됨
+
+5) 가장 하단의 영역에 마우스 올리면 No.1 혁신 글자색상 하얀색
+LG GRAM 17은 빨간색으로 변경됨! (장면전환)
+
++ No.1 혁신 부분의 글자가 조금 커지고, 반박자 정도 늦게 반응함!
+-->

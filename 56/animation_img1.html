@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>animation_img1</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #imgs{width:500px; height:250px; padding:50px; border:3px dotted pink; margin:100px auto;}
+      #imgs ul{width:100%; position:relative;}
+      #imgs li{width:100%; height:250px; overflow:hidden; position:absolute; left:0; top:0; opacity:1;}
+      #imgs li img{width:100%;}
+
+      #imgs .img01{
+         animation:img01 3s infinite alternate;
+         -webkit-animation:img01 3s infinite alternate;
+         -moz-animation:img01 3s infinite alternate;
+         -ms-animation:img01 3s infinite alternate;
+         -o-animation:img01 3s infinite alternate;
+      }
+      @keyframes img01{
+         10%{opacity:0;}
+      }
+
+      #imgs .img02{
+         animation:img02 3s infinite alternate;
+         -webkit-animation:img02 3s infinite alternate;
+         -moz-animation:img02 3s infinite alternate;
+         -ms-animation:img02 3s infinite alternate;
+         -o-animation:img02 3s infinite alternate;
+      }
+      @keyframes img02{
+         50%{opacity:0;}
+      }
+
+      #imgs .img03{
+         animation:img03 3s infinite alternate;
+         -webkit-animation:img03 3s infinite alternate;
+         -moz-animation:img03 3s infinite alternate;
+         -ms-animation:img03 3s infinite alternate;
+         -o-animation:img03 3s infinite alternate;
+      }
+      @keyframes img03{
+         100%{opacity:0;}
+      }
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="imgs">
+            <ul>
+               <li class="img01">
+                  <img src="img/01.jpg" alt="이미지01"/>
+               </li>
+               <li class="img02">
+                  <img src="img/02.jpg" alt="이미지02"/>
+               </li>
+               <li class="img03">
+                  <img src="img/03.jpg" alt="이미지03"/>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

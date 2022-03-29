@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>layout</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		/*########### 초기화 ##########*/
+			*{margin:0; padding:0;}
+			li{list-style-type:none;}
+
+		/*########## wrap ###########*/
+			#wrap{min-width:1030px; width:100%; text-align:center;}
+			h2{padding:50px 0 30px;}
+
+		/*########### border ##########*/
+			#border{width:1014px; height:384px; padding:6px; border:2px dashed #aaa; margin:0 auto;}
+
+		/*########## section0 ###########*/
+			#section0{width:600px; height:100%; float:left;}
+			#section0 ul{width:600px; height:100%;}
+			#section0 ul li{width:288px; height:186px; line-height:188px; text-align:center; background-color:#ccc; float:left;}
+			#section0 ul .sec0_top{margin-right:12px;}
+			#section0 ul .sec0_bottom{width:192px; margin-top:6px; margin-right:6px;}
+
+		/*########### section1 ###########*/
+			#section1{width:414px; height:100%; float:right;}
+			#section1 ul{width:100%; height:100%;}
+			#section1 ul li{width:414px; height:186px; line-height:200px; background-color:#aaa;}
+
+			#section1 .sec1_bottom{margin-top:6px;}
+			
+	</style>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<h2>FLOAT 레이아웃</h2>
+		<div id="border">
+			<div id="box">
+				<div id="section0">
+					<ul>
+						<li class="sec0_top">1</li>
+						<li class="sec0_top">2</li>
+						<li class="sec0_bottom">3</li>
+						<li class="sec0_bottom">4</li>
+						<li class="sec0_bottom">5</li>
+					</ul>
+				</div>
+				<div id="section1">
+					<ul>
+						<li>
+							1
+						</li>
+						<li class="sec1_bottom">
+							2
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

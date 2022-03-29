@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>rotate3d_coin</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{width:100%;}
+
+      #coinArea{width:300px; position:relative; margin:200px auto 0; background-color:pink;}
+
+      #coinArea .coin0{position:absolute; left:0; top:0;}
+      #coinArea .coin1{position:absolute; left:0; top:0; transition:transform 0.5s linear, left 0.5s linear;}
+
+      #coinArea:hover .coin1{transform:rotate(90deg); left:400px; top:0;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="coinArea">
+         <p class="coin0">
+            <img src="img/won1.png" alt="동전이미지0"/>
+         </p>
+         <p class="coin1">
+            <img src="img/won2.png" alt="동전이미지1"/>
+         </p>
+      </div>
+   </div>
+ </body>
+</html>

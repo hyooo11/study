@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title> new document </title>
+   <meta charset="utf-8"/>
+   <style>
+      /*####### 초기화 #######*/
+         *{margin:0; padding:0;}
+         section,article{display:block;}
+
+         /*
+            [시멘틱 태그 인식률 높이기]
+
+               1) 구형 모바일 기기에서 인식률이 떨어지는 문제가 발생함!
+               2) 일부 브라우저에서 인식률이 떨어질 수 있음!
+         */
+
+         body{background-color:#333; color:#fff; font-family:arial, sans-serif;}
+         #wrap{min-width:960px; width:100%;}
+         #content{width:100%; }
+
+         #content h2{text-align:center; padding:15px 0; text-transform:uppercase; letter-spacing:-1px;}
+
+         /*
+            [마이너스가 허용되는 속성]
+
+               * letter-spacing 글자가 가지는 간격 자체가 넓은 것들이 있어서
+               촘촘하게 배치할떄 유일하게 마이너스를 허용함!
+
+                  + letter-spacing에 기능 작업이 많지 않기 때문에 마이너스를 허용함!
+
+               * 기능이 적용되는 작업이라면 마이너스 작업시 기존의 마이너스를 0으로
+               돌려 놔야 하기 때문에 작업이 어려움!
+         */
+
+         #content h2:before{content:"------------------["; display:inline-block; color:#aaa; margin-right:10px;}
+         #content h2:after{content:"]------------------"; display:inline-block; color:#aaa; margin-left:10px;}
+
+      /*########### descArea ##############*/
+         #descArea{width:100%; text-align:center;}
+
+      /*######## transformArea #######*/
+         #transformArea{width:100%}
+         article{width:220px; height:240px; margin-left:60px; margin-top:40px; background-color:pink; text-align:center; float:left;}
+         article h4{font-size:18px; width:100%; padding:15px 0; color:#333; text-transform:uppercase;}
+         article h4:after{content:":test"}
+
+         article p{width:180px; height:180px; border:1px solid #fff; margin:0 auto;}
+         article p img{width:100%;}
+
+         /*
+            [가상객체 활용하기]
+               
+               [주의사항]
+
+                  1) 태그가 아니기 떄문에 직접 클릭이나 선택하기 어려움!
+                  2) before는 대상의 왼쪽이나 위쪽에 영역을 연결하는 작업
+                     after는 대상의 오른쪽이나 아래쪽에 영역을 연결하는 작업
+
+                  3) 가상객체에는 직접 기능 부여 어려움!
+                     * div:after:hover (x)
+
+                  4) 기능을 만들때는 태그를 연결하여 float방식으로 작업하는게 좋다!
+                  5) inline-block을 사용한 이유는?
+                     간격이 생겨도 옆으로 빠르게 배치가 가능하기 때문에 사용함!
+
+                  * 가상객체는 부피를 늘리는 작업으로, 직접 태그 사용이나 직접 글자
+                  작성이 가장 안전하다!
+
+            [가상객체에 연결된 글자 확인하기]
+
+               content:":text"; 작성확인!
+               * 가상객체는 연결된 대상의 상속을 받고 시작함!
+         */
+
+         /*########### transform 개별작업 #############*/
+         /*[1].box는 기본상태 유지*/
+
+         /*
+            [2] .box50, x축, y축 모두 50% 적용
+
+               scale
+                  100% == 1
+                  50% == 0.5
+                  33% == 0.33
+
+               [초기값]
+                  scale(1,1) 초기값
+
+               [정리]
+
+                  1) x,y축이 모두 50% 같음
+                  2) x,y축이 모두 50% 같다면..0.5 한번만 작성해도 문제 없음!
+                  3) 일부 브라우저에서는 해당하는 값을 인식하지 못할 수 있기 떄문에
+                     이럴 경우, 2번다 적용하기!
+         */
+         
+         .box50{transform:scale(0.5);}
+         /*
+            [3] .box120은 x축, y축 모두 120% 늘리기
+
+         */
+         .box120{transform:scale(1.2);}
+         /*
+            [4]
+               기본 형태는 : .box25 (x,y 축 모두 25%)
+               기능적용 형태는 : .box75 (마우스 올리면 x,y축 모두 75px;)
+         */
+         .box25{transform:scale(0.25); background-color:gold; transition:transform 1s linear,background-color 1s linear;}
+         .box25:hover{transform:scale(0.75); background-color:aqua;}
+
+         /*
+            [기능적용하기]
+
+               1) transform:scale 이 변화됨
+               2) background-color 변화됨
+
+            [장면전환 효과 적용하기]
+
+               1) hover와 hover전을 먼저 작성함!
+               2) hover가 있어야 무엇이 바뀔지 알 수 있음!
+                  : 결과를 보고 어떤 것이 장면 전환에 적용되어야 할지 적용하기!
+               
+         */
+
+         /*
+            [5].box_x50
+               : x축은 50%, y축은 기본형태 100%
+
+               [기본형태]
+                  .box_x50 transform:scale(0.5,1) , x축 50% , y축 100%
+                  .box_x50 transform:scalex(0.5) , x축만 사용가능!
+
+                  : script에서는 해당하는 축을 사용하지 않으면 인식하지 못하는 문제가
+                  발생할 수 있음!
+
+                  : 위와 같은 문제가 발생할 경우 반드시 "기본이 되는 형태"로 변경해야 함!
+         */
+
+         .box_x50{transform:scalex(0.5);}
+         /*
+            [6] .box_y50
+
+               기본이 되는 형태 : transform:scale(1,0.5);
+               축약형 표현 : transform:scaley(0.5)
+         */
+         .box_y50{transform:scaley(0.5);}
+
+         /*
+            [javascript의 경우]
+
+               1) red에서 부터 purple은 변해가는 과정이 눈에 보이지 않기 때문에 색상 변경이 어려움!
+               2) rgba(255,0,01) ~ rgba(255,255,0,1)
+                  : 숫자로 변해가는과정을 표혈할 수 있기 때문에 색상 변경이 가능함!
+                  : 실습 부분중에 변경되지 않는 작업이 있음!
+
+               * 16진법 사용하기, rgba 사용하기, rgb사용하기
+               * 숫자로 되어 있는 경우, 숫자 사용을 권장함!
+
+               * 축약형으로 사용할 경우, 압축된 좌표를 알지 못할 수 있기 때문에 기본이 되는 형태와
+               초기값 반드시 알고 있어야 함!
+         */
+
+         #transform:after{content:""; display:block; clear:both;}
+
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <section id="descArea">
+         <h2>all content</h2>
+         <section id="transform">
+            <h2>transform:scale</h2>
+            <dl>
+               <dt>시멘틱 태그,</dt>
+               <dd>
+                  : "이유"가 있는 태그 (용도를 아는 태그)
+               </dd>
+               <dd>
+                  : header, section, footer (필수)
+               </dd>
+               <dd>
+                  : nac (div id="gnb") , address (권장)
+               </dd>
+            </dl>
+         </section>
+         <section id="transformArea">
+            <h2>transform:scale</h2>
+            <div id="transform">
+               <article class="box">
+                  <h4>basic</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+               <article class="box50">
+                  <h4>scale 50%</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+               <article class="box120">
+                  <h4>scale 120%</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+               <article class="box25">
+                  <h4>scale 25%</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+               <article class="box_x50">
+                  <h4>scale_x50%</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+               <article class="box_y50">
+                  <h4>scale_y50%</h4>
+                  <p>
+                     <img src="img/score.png" alt="score 관련 이미지"/>
+                  </p>
+               </article>
+            </div>
+         </section>
+      </section>
+   </div>
+ </body>
+</html>

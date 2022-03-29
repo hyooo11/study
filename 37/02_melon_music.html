@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>melon_music</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*###### reset ######*/
+         /*
+            1) 여백초기화
+            2) 블릿기호 초기화
+            3) a태그 초기화 (밑줄 초기화, 글자색상 검정색)
+         */
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link, a:visited{text-decoration:none; color:#000;}
+         body{background-color:#f2f2f2;}
+
+         #wrap{min-width:1025px; width:100%;}
+         #container{width:100%;}
+
+      /**##### musicArea #####*/
+         #musicArea{width:100%;}
+      
+      /*##### music (1200px) #####*/
+         #music{width:1200px; margin:0 auto;}
+
+      /*##### music / title #####*/
+         #title{width:100%;}
+         #title h2{text-indent:20px; padding:30px 0 10px;}
+
+         /*
+            인라인 요소는 위아래로는 padding이나 margin 적용이 어렵지만
+            좌우로는 padding이나 margin 적용이 가능하다!
+         */
+         #title h2 i{color:#bcbcbc; font-style:normal; padding:0 10px; font-weight:400;}
+
+      /*####### 공통 (color) #######*/
+         .color{color:#00cd3c;}
+
+      /*###### title / menu ######*/
+         #title .menu{width:100%; height:30px; border-top:2px solid #333; border-bottom:1px solid #bababa;}
+
+      /*###### title / ul / li ######*/
+         #title ul{width:1090px; height:100%;}
+
+         /*
+            1) li태그들 배치하기
+            2) 공간이 남기 때문에 120px을 border-right : 1px 때문에
+            디테일하게 작업하지는 않음!
+
+            3) 공간을 타이트하게 전부 사용할떄는 1px 간격까지 모두 조절해야 함!
+
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            [ul 공간은 해상도나 영역에 맞추지 않는다!]
+
+               : li들을 담을 수 있는 유일한 부모요소!
+               : li들을 전체 움직이기 위해선 ul 태그가 매우 중요함!
+               : li들을 담기 위한 너비로 설정하기!
+
+               li가 1000px * 5개 라면..ul은? 5000px
+         
+         */
+         #title li{width:120px; height:100%; line-height:30px; border-right:1px solid #bfbfbf;  text-align:center; float:left;}
+
+         /*
+            [기능만들기]
+            #title li a 에 마우스 올리면 배경색상 변겨 글자색상 하얀색으로 표현되도록 만들기
+
+            1) a가 인라인요소 이기 때문에 글자크기 만큼만 영역이 잡힘
+            2) display:block 설정하여 너비와 높이가 채워져 있도록 만들기
+         */
+
+         #title li a:hover, #title li a:focus{width:100%; height:100%; background-color:#00cd3c; color:#fff; display:block;}
+
+      /*####### album ######*/
+
+         /*
+            ul은 li를 담기 위해 넘치고, album은 해당하는 영역 만큼만 보여주기 위하여
+            overflow:hidden 사용
+         */
+         /*
+            1) ul은 해상도를 따라가지 않고 li를 담기 위해 작성
+            2) ul을 대신하는 영역 크기를 따라가거나 해상도를 대비하는 div 만들기!
+         */
+         #album{width:100%; overflow:hidden;}
+         #album h3{text-indent:20px; padding:20px 0;}
+
+      /*##### album / ul / li #####*/
+         #album ul{width:1290px; height:305px; /*overflow:hidden;*/}
+
+         /*
+            li의 한칸 크기 : 205px + margin-right:10px
+               : 기능으로 해당하는 영역만틈만 표현해야 하기 때문에 margin 사용
+
+            215px * 6(li 갯수) ==  1290px
+
+               매우중요) ul은 너비가 넘치더라도 li모두 담아주기!
+         */
+         #album li{width:205px; margin-right:10px; float:left;}
+
+         /*li에 마우스 올리면 배경색상 변경하기*/
+         #album li:hover{background-color:#fff;}
+
+
+         #album .img{width:100%;}
+         #album .img img{width:100%;}
+
+      /*##### album / text #####*/
+         #album .text{width:100%;}
+
+         /*
+            [a태그가 display:block이 적용된 이유]
+               검사를 통해서 확인해 본 결과 : 자녀들이 block으로 변견되었기
+               때문에 검사를 통해서 확인해본 값이"파란색 영역"이 잡히지 않음!
+
+               파란색 영역이 잡히지 않는 것은 부모가 자녀를 담지 못함,
+               display:block 설정하기!
+
+               * 자녀들이 float로 붙어있지 않는다면 높이를 작성하지 않아도!
+               높이값이 나오는 것을 알 수 있음!
+         */
+         #album .text a{width:100%; display:block;}
+
+         /*###### strong 에서 넘치면 숨기기 만들기 ######*/
+         /*
+            중요)
+               #album .text stong 의 경우, 대상이 잡히지 않을 수 있음!
+               속성을 가지는 인라인요소는 반드시 선택하기
+
+               #album .text a strong  , a가 속성이 있고 부모요소로 존재
+               하기 떄문에 대상선택시 필수!
+
+            [한 줄 표현하기]
+               : 영역에서 넘쳤을때 ...으로 만들기 때문에 한줄 표현이 될 수 있는
+               "공간" 만들기
+
+            [매우중요]
+               : 인라인을 block으로 변경했을 경우, br태그에 의하여 2번 높이
+               간격이 떨어질 수 있음 br태그는 block 구성시 빼주는 것이 좋다!
+         */
+            #album .text a strong{width:100%; height:40px; line-height:40px; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+         /*#### span 태그들 마다 글자가 넘치면 ... 만들기 ####*/
+         /*
+            [공통 span]
+               공통 span으로 만든 이유는? em이나 다른 인라인요소를 사용했다면
+               각각 개별 설정으로 block으로 만들고, ...만들기 효과를 적용해야 함!
+
+               : 같은 작업이 반복되기 때문에 특별한 이유가 없다면 공통태그 span으로 작업함!
+
+               : artist
+               : date
+               : cate
+         */
+
+            #album .text a span{width:100%; height:20px; font-size:14px; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+            /*##### span (artist) 개별작업 #####*/
+            #album .text a .artist{color:#00cd3c;}
+
+
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <div id="container">
+         <div id="musicArea">
+            <div id="music">
+               <div id="title">
+                  <h2>국내음악<i class="icon">|</i><span class="color">최신음악</span></h2>
+                  <div class="menu">
+                     <ul>
+                        <li>
+                           <a href="https://www.melon.com/chart/index.htm" title="멜론차트">
+                              멜론차트
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/new/index.htm" title="최신음악">
+                              최신음악
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100" title="장르음악">
+                              장르음악
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/dj/today/djtoday_list.htm" title="멜론DJ">
+                              멜론DJ
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/tv/index.htm" title="멜론TV">
+                              멜론TV
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/artistplus/todayupdate/index.htm" title="스타포스트">
+                              스타포스트
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/musicstory/today/index.htm" title="매거진">
+                              매거진
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/mma/home.htm" title="뮤직어워드">
+                              뮤직어워드
+                           </a>
+                        </li>
+                        <li>
+                           <a href="https://www.melon.com/edu/index.htm" title="어학">
+                              어학
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div id="album">
+                  <h3><strong class="color">최신앨범</strong></h3>
+                  <div>
+                     <ul>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms0.jpeg" alt="오필리아(Ophelia)"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직0">
+                                 <strong>오필리아(Ophelia)</strong>
+                                 <span class="artist">포르테 디 콰트로</span>
+                                 <span class="date">2022.02.24</span>
+                                 <span class="cate">클래식, 크로스오버</span>
+                              </a>
+                           </div>
+                        </li>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms1.jpeg" alt="보석함"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직1">
+                                 <strong>보석함</strong>
+                                 <span class="artist">Obze (오브제)</span>
+                                 <span class="date">2022.02.24</span>
+                                 <span class="cate">인디음악, R&amp;B/Soul, 재즈, 발라드, 포크/블루스, 애시드/퓨전/팝</span>
+                              </a>
+                           </div>
+                        </li>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms2.jpeg" alt="그대 내게 다시올까요"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직2">
+                                 <strong>그대 내게 다시올까요</strong>
+                                 <span class="artist">이도진</span>
+                                 <span class="date">2022.02.24</span>
+                                 <span class="cate">성인가요/트로트</span>
+                              </a>
+                           </div>
+                        </li>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms3.jpeg" alt="Summer Tales"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직3">
+                                 <strong>Summer Tales</strong>
+                                 <span class="artist">Lacuna (라쿠나)</span>
+                                 <span class="date">2022.02.24</span>
+                                 <span class="cate">인디음악, 록/메탈</span>
+                              </a>
+                           </div>
+                        </li>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms4.jpeg" alt="Yearbook 2021"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직4">
+                                 <strong>Yearbook 2021</strong>
+                                 <span class="artist">015B</span>
+                                 <span class="date">2022.02.24</span>
+                                 <span class="cate">발라드, 일렉트로니카, R&amp;B/Soul, 댄스, 록/메탈</span>
+                              </a>
+                           </div>
+                        </li>
+                        <li>
+                           <p class="img">
+                              <img src="img/ms5.jpeg" alt="the collective soul and unconscious: chapter one"/>
+                           </p>
+                           <div class="text">
+                              <a href="#" title="멜론뮤직5">
+                                 <strong>the collective soul and unconscious: chapter one</strong>
+                                 <span class="artist">Billlie</span>
+                                 <span class="date">2022.02.23</span>
+                                 <span class="cate">댄스, R&amp;B/Soul, 랩/힙합</span>
+                              </a>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

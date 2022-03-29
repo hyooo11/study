@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8"/>
+   <title>Document</title>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style:none;}
+      body{font-size:16px;}
+      a:link,a:visited{text-decoration:none; }
+      .inner{width:1280px; height:100%; margin:0 auto;}
+      h2{position:absolute; left:-9999px; width:1px; height:1px; line-height:0; font-size:1px; overflow:hidden;}
+
+      #wrap{min-width:1025px; width:100%;}
+
+      #headerWrap{width:100%; position:absolute; left:0; top:0;}
+
+      #headerInfo{width:100%; height:30px; background-color:#333;}
+
+      #headerInfo .l_menu{width:50%; height:30px; float:left;}
+      #headerInfo p{display: inline-block; height:100%; line-height:28px;}
+      #headerInfo p a{padding-right:18px; font-size:11px; color:#aaa}
+      #headerInfo .l_menu select{border:none; background-color:rgba(0,0,0,0); color:#aaa;}
+      #headerInfo .r_menu{width:50%; text-align:right; float:left;}
+      
+      #header{width:100%; height:80px; background-color:rgba(0,0,0,0); transition:background-color .3s linear;}
+      #header:hover{background-color:rgba(255,255,255,1);}
+      #header .inner{position:relative;}
+
+      #header h1{width:61px; height:56px; overflow:hidden; position:absolute; left:0; top:12px; z-index:9999;}
+      #header h1 a{display:block; width:100%; height:100%; position:relative; }
+      #header h1 a img{height:100%; position:absolute; left:-51px; top:0; transition:all .3s linear;}
+      #header h1:hover img{left:0;}
+
+      #gnb{width:100%; height:100%; line-height:80px; text-align:right;}
+      #gnb li{display:inline; padding-left:18px; }
+      #gnb li a{font-size:14px; font-weight:700; color:#aaa;}
+
+      
+      #container{width:100%;}
+      
+      #visual{width:100%; height:600px; background-image:url('img/main2.jpg'); background-repeat:no-repeat;}
+      #visual:hover .descArea{left:0;}
+      #visual:hover .title{opacity:1;}
+      #visual .inner{position:relative;}
+
+      #visual .descArea{width:400px; color:#aaa; position:absolute; left:-800px; top:166px; transition:.5s ease all;}
+      #visual h3{font-size:40px; padding-bottom:12px; color:#fff;}
+      #visual .title{font-size:28px; line-height:48px; opacity:0; transition:all 1s ease .5s;}
+      #visual .desc{font-size:14px; padding-bottom:40px;}
+      #visual .btn{width:200px; height:40px; line-height:40px; text-align:center; border:1px solid #aaa;}
+      #visual .btn a{color:#aaa;}
+      
+      #videoArea{width:100%; padding:60px 0;}
+      #videoArea .inner{width:970px;}
+      #videoArea h3{padding-bottom:40px;font-size:32px; color:#aaa; font-weight:400; text-align:center;}
+      #videoArea ul{width:}
+      #videoArea ul:after{content:''; display:block; clear:both; }
+      #videoArea li{width:320px; height:320px; margin-right:5px; overflow:hidden; float:left;}
+      #videoArea li:hover img{transform:scale(1.1);}
+      #videoArea li:last-child{margin:0;}
+      #videoArea li a{display:block; width:100%; height:100%;}
+      #videoArea li a img{width:100%; height:100%; transition:transform .3s ease;}
+
+      #subVisual{width:100%; height:400px; background-image:url('img/subVisual2.jpg'); background-repeat:no-repeat; background-size:100%; background-attachment:fixed; background-position:center;}
+
+      #footerWrap{width:100%; background-color:#333;}
+      #footer{width:100%; padding:40px 0; border-bottom:1px solid #555;}
+      #footer:after{content:''; display:block; clear:both;}
+      #footer div{width:25%; float:left;}
+      #footer h4{font-size:16px; color:#ccc; padding-bottom:20px;}
+      #footer ul{width:100%;}
+      #footer li{padding-bottom:12px;}
+      #footer li a{font-size:12px; color:#aaa;}
+      
+      address{padding:10px 0; color:#aaa; font-size:14px;}
+   </style>
+</head>
+<body>
+   <div id="wrap">
+      <header id="headerWrap">
+         <div id="headerInfo">
+            <div class="inner">
+               <div class="l_menu">
+                  <p><a href="#" title="INTERNATIONAL">INTERNATIONAL</a></p>
+                  <p><a href="#" title="MIUI">MIUI</a></p>
+                  <select id="inter" title="INTERNATIONAL">
+                     <option value="Mainland China 简体中文">Mainland China 简体中文</option>
+                     <option value="Hong Kong 繁體中文">Hong Kong 繁體中文</option>
+                     <option value="Taiwan 繁體中文">Taiwan 繁體中文</option>
+                     <option value="Singapore">Singapore</option>
+                     <option value="Malaysia">Malaysia</option>
+                     <option value="Philippines">Philippines</option>
+                     <option value="Bangladesh">Bangladesh</option>
+                     <option value="India">India</option>
+                     <option value="Indonesia">Indonesia</option>
+                  </select>
+               </div>
+               <div class="r_menu">
+                  <p>
+                     <a href="#" title="SIGN IN">SIGN IN</a>
+                  </p>
+                  <p>
+                     <a href="#" title="SIGN UP">SIGN UP</a>
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div id="header">
+            <div class="inner">
+               <h1>
+                  <a href="#" title="xiaomi">
+                     <img src="img/logo.png" alt="logo"/>
+                  </a>
+               </h1>
+               <ul id="gnb">
+                  <li><a href="#" title="Mi Phones">Mi Phones</a></li>
+                  <li><a href="#" title="POCOPHONE">POCOPHONE</a></li>
+                  <li><a href="#" title="Redmi Phones">Redmi Phones</a></li>
+                  <li><a href="#" title="Mi TV">Mi TV</a></li>
+                  <li><a href="#" title="Smart Devices">Smart Devices</a></li>
+                  <li><a href="#" title="All Products">All Products</a></li>
+                  <li><a href="#" title="Product Authentication">Product Authentication</a></li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <div id="container">
+         <section id="visual">
+            <h2>visual</h2>
+            <div class="inner">
+               <div class="descArea">
+                  <h3>Redmi 7A</h3>
+                  <p class="title">
+                     Bigger Battery, Faster Performance 
+                  </p>
+                  <p class="desc">
+                     Qualcomm® Snapdragon™ 439 processor Large 4000mAh (typ) battery12MP AI rear camera
+                  </p>
+                  <p class="btn">
+                     <a href="#" title="Learn more">Learn more</a>
+                  </p>
+               </div>
+            </div>
+         </section>
+         <!-- visual -->
+         <section id="videoArea">
+            <div class="inner">
+               <h3>video</h3>
+               <ul>
+                  <li>
+                     <a href="#" title="video0">
+                        <img src="img/sub0.jpg" alt="video0"/>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="video1">
+                        <img src="img/sub1.jpg" alt="video1"/>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="video2">
+                        <img src="img/sub2.jpg" alt="video2"/>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <!-- videoArea -->
+         <section id="subVisual">
+
+         </section>
+         <!-- subVisual -->
+      </div>
+      <!-- container -->
+      <footer id="footerWrap">
+         <div class="inner">
+            <div id="footer">
+               <div class="learn">
+                  <h4>LEARN MORE</h4>
+                  <ul>
+                     <li>
+                        <a href="#" title="Mi 10T Pro">Mi 10T Pro</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Redmi Note 9T">Redmi Note 9T</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Mi 10T Lite">Mi 10T Lite</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="sup">
+                  <h4>SUPPORT</h4>
+                  <ul>
+                     <li>
+                        <a href="#" title="Contact Us">Contact Us</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Warranty">Warranty</a>
+                     </li>
+                     <li>
+                        <a href="#" title="User Guide">User Guide</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Scooter Safety Notice">Scooter Safety Notice</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Android Enterprise Redcommended">Android Enterprise Redcommended</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="abo">
+                  <h4>ABOUT US</h4>
+                  <ul>
+                     <li>
+                        <a href="#" title="Xiaomi">Xiaomi</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Press & Media">Press & Media</a>
+                     </li>
+                     <li>
+                        <a href="#" title="User Agreement">User Agreement</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Privacy Policy">Privacy Policy</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Xiaomi Blog">Xiaomi Blog</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Inverstor Relations">Inverstor Relations</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Integrity & Compliance">Integrity & Compliance</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="sns">
+                  <h4>FOLLOW MI</h4>
+                  <ul>
+                     <li>
+                        <a href="#" title="Facebook">Facebook</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Youtube">Youtube</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Instagram">Instagram</a>
+                     </li>
+                     <li>
+                        <a href="#" title="Twitter">Twitter</a>
+                     </li>
+                     <li>
+                        <a href="#" title="More Regions">More Regions</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- footer -->
+            <address>
+               Copyrigh © 2010 - 2021 Xiaomi. All Rights Reserved
+            </address>
+            <!-- address -->
+         </div>
+      </footer>
+      <!-- footerWrap -->
+   </div>
+   <!-- wrap -->
+</body>
+</html>

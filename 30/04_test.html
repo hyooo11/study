@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>test</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*########## 초기화 ##########*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+
+         h2{padding:50px 0 20px;}
+
+      /*########## 문제04 ##########*/
+         #ts0{width:600px; height:300px; margin:0 auto; background-color:#efefef;}
+         #ts0 ul{width:100%; height:100%;}
+         #ts0 ul li{width:200px; height:100%; line-height:300px; text-align:center; float:left;}
+         /*문제04 li 개별작업*/
+         #ts0 ul .li0{width:180px; height:260px; line-height:260px;  border:20px solid #ff0; border-left:0; background-color:#f00;}
+         #ts0 ul .li1{overflow:scroll; background-color:#0f0;}
+         #ts0 ul .li2{width:190px; height:290px; line-height:290px; border-bottom:10px solid #00f; border-right:10px solid #00f;background-color:#0ff;}
+
+      /*########## 문제07 ##########*/
+         #ts1{width:400px; height:400px; margin:0 auto; background-color:#efefef;}
+         #ts1 ul{width:100%; height:100%;}
+         #ts1 ul li{width:200px; height:200px; line-height:200px; text-align:center; float:left;}
+         /*문제 07 li 개별작업*/
+         #ts1 ul .border{width:190px; height:190px; line-height:190px; border:5px solid #ff0; background-color:#ccc; }
+         #ts1 ul .li1{background-color:#f00;}
+         #ts1 ul .li3{background-color:#00f;}
+
+      /*########## 문제25 ##########*/
+         #ts2{width:600px; height:200px; margin:0 auto; border:1px solid #ccc;}
+         #ts2 ul{width:100%; height:100%;}
+         #ts2 ul li{width:180px; height:100%; padding-left:20px; background-color:aqua; float:left;}
+         /*문제 25 li 개별작업*/
+         #ts2 ul .li1{background-color:#0e0}
+         #ts2 ul .li2{background-color:#00e; color:#fff;}
+
+      /*########## 문제31 ##########*/
+         #ts3{width:150px; height:20px; background-color:pink; }
+         #ts3 p{overflow:hidden;  white-space:nowrap; text-overflow:ellipsis;}
+
+</style>
+ </head>
+
+ <body>
+   <h2>문제01) 현재 사용중인 문서의 버전은? (비표준과 표준 구분하여 작성하기)</h2>
+   <p>
+      xthml 1.0 입니다.<br/>
+      xhtml1.0은 xml1과 html1의 합성어이며<br/>
+      xml1은 표준 문서이고 html1은 비표준 문서입니다.<br/>
+      현재 사용하는 문서는 xml이 포함된 문서로 표준문서 입니다.
+   </p>
+
+   <h2>문제02) #content h3 와 h3의 차이점은?</h2>
+   <p>
+      #content h3는 id명이 contrent인 태그에 들어있는 h3(지역)만 호출한것이고<br/>
+      h3는 문서에 있는 모든 h3(전역)를 호출 한 것입니다.
+   </p>
+
+   <h2>문제03) 웹이 읽어주는 순서는? (왼쪽과 오른쪽, 위쪽과 아래쪽 구분하여 작성하기)</h2>
+   <p>웹은 왼쪽에서 오른쪽으로 위에서 아래 순서로 읽어줍니다.</p>
+
+   <h2>문제04) 아래 순서에 따라서 문제 풀기</h2>
+   <ul>
+      <li>01) 현재 ul이 끝난 부분 아래에 전체 사용하는 영역 만들기</li>
+      <li>02) 실제 사용하는 div 만들기 ( 600*300 ) , 배경색상은 알아서 작성하기</li>
+      <li>03) 실제 사용하는 div 태그 안에 ul li li li 만들기, 내용은 li0, li1, li2 작성하기</li>
+      <li>04) li태그들 크기는 200*300 만들기 , 옆으로 배치하기</li>
+      <li>05) 부모요소 크기 나타나는지 확인하기</li>
+      <li>06) 실제 사용하는 div 화면 가운데 이동하기</li>
+      <li>07) 첫번째 li에는 위쪽, 아래쪽, 오른쪽, border:20px solid #ff0 설정하기</li>
+      <li>08) 두번째 li에는 scroll 나타나도록 만들기</li>
+      <li>09) 세번째 li에는 아래쪽과 오른쪽만 border:10px solid #00f; 설정하기</li>
+      <li>10) 글자는 x,y 축 가운데두고, li태그들 마다 배경색상 각각 다르게 설정하기</li>
+   </ul>
+   <div id="ts0">
+      <ul>
+         <li class="li0">li0</li>
+         <li class="li1">li1</li>
+         <li class="li2">li2</li>
+      </ul>
+   </div>
+
+   <h2>문제05) 비슷한 정보의 값들을 모아주는 영역명은?</h2>
+   <p>section입니다.</p>
+
+   <h2>문제06) 문제05번 영역에 필수로 작성하는 태그와 이유는?</h2>
+   <p>
+      headline(h2~h6)입니다.<br/>
+      section영역은 비슷한 정보의 값들을 모아주는 영역이기 때문에 영역의 제목을 작성해 주어야 합니다.
+   </p>
+
+   <h2>문제07) 아래 순서에 따라서 문제 풀기</h2>
+   <ul>
+      <li>01) 현재 ul이 끝난 부분 아래에 전체 사용하는 영역 만들기</li>
+      <li>02) 실제 사용하는 div만들기 (400*400), 배경색상 알아서 작성, 화면 가운데 두기</li>
+      <li>03) 실제 사용하는 div태그 안에 ul li li li li 작성하기, 내용은 li0, li1, li2, li3 작성하기</li>
+      <li>04) 글자 x, y 축 가운데 두기</li>
+      <li>05) li들 위에 두개, 아래 2개 배치되도록 만들기</li>
+      <li>06) 첫번째 li와 세번째 li는 배경색상 같고, border:5px solid #ff0 적용하기!</li>
+      <li>07) 나머지 두번째와 네번째는 각각 색상만 변경하기!</li>
+   </ul>
+   <div id="ts1">
+      <ul>
+         <li class="border">li0</li>
+         <li class="li1">li1</li>
+         <li class="border">li2</li>
+         <li class="li3">li3</li>
+      </ul>
+   </div>
+
+   <h2>문제08) % 작업시 우선되어야 하는 단위와 이유는?</h2>
+   <p>%값의 기준이 되는 px작업이 우선시 되어야 합니다.</p>
+
+   <h2>문제09) header 영역 작성시 필수로 작성되어야 하는 영역명은?</h2>
+   <p>로고 영역(h1)과 nav, gnb 영역 입니다.</p>
+
+   <h2>문제10) container 영역에 필수로 작성되는 영역명은?</h2>
+   <p>visual , section 입니다.</p>
+
+   <h2>문제11) 문제 10번의 영역을 만드는 이유는?</h2>
+   <p>다양한 정보의 값(뉴스, 광고, sns정보 등등)들을 넣기위해 만듬니다.</p>
+
+   <h2>문제12) 카피라이터가 작성되어야 하는 영역명은?</h2>
+   <p>footer 입니다.</p>
+
+   <h2>문제13) font 축약형 표현방법 전체 다 작성하기 (ex)font:italic bold..)</h2>
+   <p>font:italic bold/20px gothic,"고딕"</p>
+
+   <h2>문제14) select 태그에서 미리 선택되도록 만드는 속성은?</h2>
+   <p>selected="selected"</p>
+
+   <h2>문제15) 블록요소중 유일하게 속성을 가지는 블록요소는?</h2>
+   <p>form태그 입니다.</p>
+
+   <h2>문제16) 문제 15번의 태그의 중요속성 2가지 작성하기</h2>
+   <p>action, method</p>
+
+   <h2>문제17) 문제 16번의 속성중 주소역할을 하는 속성은?</h2>
+   <p>action</p>
+
+   <h2>문제18) 로그인과 회원 가입 페이지를 만들었다면 문제 16번의 속성중 무엇을 사용해야 하고, 어떤 값을 기입해야 할까?</h2>
+   <p>method:POST</p>
+
+   <h2>문제19) 입력받을때 사용하는 태그는?</h2>
+   <p>input</p>
+
+   <h2>문제20) 문제 19번과 짝을 맞추는 태그는?</h2>
+   <p>label</p>
+
+   <h2>문제21) 문제 20번에 사용한 태그의 중요 속성은?</h2>
+   <p>id, type, name</p>
+
+   <h2>문제22) 검색을 할 수 있도록 설정하려 한다. 어떤 속성에 무슨 값을 기입해야 할까?</h2>
+   <p>method:GET</p>
+
+   <h2>문제23) background-image와 img 중 "기능" 적용시 적절한 요소는? 이유는?</h2>
+   <p>
+      img태그 입니다.<br/>
+      img는 호출할 수 있는 태그이고 background-image는 css 배경 "효과" 이기 때문에 기능 적용에 적절하지 않습니다.
+   </p>
+
+   <h2>문제24) 너비 100% 영역에 margin;0 auto 사용이 어려운 이유는?</h2>
+   <p>
+      너비를 100%사용하는 것은 양옆을 빈공간 없이 채운다는 뜻이기 때문에<br/>
+      객체가 이동할 수 없습니다.
+   </p>
+
+   <h2>문제25) 아래 순서에 따라 문제 풀기</h2>
+   <ul>
+      <li>01) 현재 ul이 끝난 부분 아래에 전체 사용하는 영역 만들기</li>
+      <li>02) 실제 사용하는 div 태그 만들기 (600*200), 화면 가운데 두고, border:1px solid #ccc 적용하기</li>
+      <li>03) ul li li li 만들고 각각의 내용 li0, li1, li2 작성하기</li>
+      <li>04) li너비 200px로 만들고, padding-left:20opx; 적용되어 있도록 만들기</li>
+      <li>05) li배경 색상은 알아서 작성하고, y축만 글씨 가운데 두기</li>
+      <li>06) 부모영역의 너비, 높이 확인하기</li>
+   </ul>
+   <div id="ts2">
+      <ul>
+         <li>li0</li>
+         <li class="li1">li1</li>
+         <li class="li2">li2</li>
+      </ul>
+   </div>
+
+   <h2>문제26) 미니 서버를 가지고 있는 브라우저는?</h2>
+   <p>파이어폭스 입니다.</p>
+
+   <h2>문제27) 화면을 X자로 그려놓고 브라우저가 빠져나갔는지 확인하는 작업은?</h2>
+   <p>크로스브라우징 작업입니다.</p>
+
+   <h2>문제28) font-weight가 700으로 적용된 값에 normal을 적용하려 한다. 해당하는 값 숫자로 나열하기</h2>
+   <p>400, 500, 600</p>
+
+   <h2>문제29) stong 태그 안에 em 태그 사용이 가능할까? 불가능 하다면 이유는?</h2>
+   <p>
+         strong태그와 em태그 모두 크기를 갖지 못하는 인라인 요소이기 때문에 서로를 담을 수 없습니다.
+   </p>
+
+   <h2>문제30) 수평정렬시 사용하는 효과명은?</h2>
+   <p>display:flex;</p>
+
+   <h2>문제31) 아래 순서에 따라 문제 풀기</h2>
+   <ul>
+      <li>01) 현재 ul이 끝난 부분 아래에 전체 사용하는 영역 만들기</li>
+      <li>02) 안에 p태그 만들고, 너비는 150px, 높이는 20px 설정하기, 배경색상은 pink 적용</li>
+      <li>03) p태그 안에, background-image는 기본적으로 반복이 일어나고, background-repeat로 제어 할 수 있다 라는 내용 붙여 넣기</li>
+      <li>04) 글자가 ...으로 표현될 수 있도록 만들기</li>
+   </ul>
+   <div id="ts3">
+      <p>
+         background-image는 기본적으로 반복이 일어나고, background-repeat로 제어 할 수 있다
+      </p>
+   </div>
+
+   <h2>문제32) 아래 길이값 작성하기</h2>
+   <p>a b c d : 7개</p>
+   <p>빈칸도 객체에 포함된다 : 5개</p> 
+   <p>글자는 띄워쓰기가 중요 하다 : 7개</p>
+
+   <h2>문제33) strict.dtd에서 사용하는 언어는?</h2>
+   <p>영문 소문자</p>
+
+   <h2>문제34) 한국어와 영어로만 글을 작성하려 한다 charset을 무엇으로 변경해야 할까?</h2>
+   <p>euc-kr</p>
+
+   <h2>문제35) 초기화를 작성하는 이유는?</h2>
+   <p>
+      브라우저마다 기본적으로 적용되는 값들이 모두 다르기 때문에<br/>
+      초기화를 해서 동일하게 적용될 수 있도록 합니다.
+   </p>
+
+ </body>
+</html>

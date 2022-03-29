@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>iriver_header</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*##### reset #####*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link,a:visited{text-decoration:none; color:#333;}
+
+         #wrap{min-width:1025px; width:100%;}
+         #headerWrap{width:100%; border-bottom:2px solid orange;}
+
+      /*##### header(실제사용영역) #####*/
+         #header{width:1000px; height:70px; margin:0 auto; position:relative;}
+
+      /*#### topMenu #####*/
+         #topMenu{width:100%; text-align:right;}
+         #topMenu li{padding-left:8px; font-size:12px; display:inline;}
+         #topMenu li a{color:#ccc;}
+         #topMenu li button{width:65px; height:20px; font-size:12px; border:1px solid #555; background-color:#fff;}
+         #topMenu li button:hover,#topMenu li button:focus{color:orange;}
+         #topMenu li button i{color:orange;}
+
+      /*##### logo ######*/
+         #logo{width:86px; height:50px;}
+         #logo p{width:86px; position:absolute; left:0; bottom:20px;}
+         #logo img{width:100%;}
+
+      /*##### menu0 ######*/
+         #menu0{width:350px; margin-left:100px; position:absolute; left:50px; bottom:20px; }
+         #menu0 li{display:inline; padding:0 10px; font-size:15px; font-weight:700;}
+         #menu0 li:hover a,#menu0 li:focus a{color:orange;}
+
+      /*##### menu1 ######*/
+         #menu1{margin-right:212px; text-align:center; position:absolute; left:450px; bottom:20px; }
+         #menu1 li{display:inline; padding:0 10px; font-size:14px; font-weight:700;}
+         #menu1 li a{color:#aaa;}
+
+      /*##### form ######*/
+         form{text-align:right; float:left; position:absolute; right:0; bottom:15px;}
+         form fieldset{border:1px solid #ccc;}
+         form legend{display:none;}
+         form p{float:left;}
+         form .search_box input{width:162px; height:20px; border:none; }
+         form .btn input{width:50px; height:20px; color:#fff; font-weight:700; border:none; background-color:#ccc;}
+
+
+   
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="headerWrap">
+         <div id="header">
+            <ul id="topMenu">
+               <li>
+                  <a href="#" title="로그인">로그인</a>
+               </li>
+               <li>
+                  <a href="#" title="회원가입">회원가입</a>
+               </li>
+               <li>
+                  <a href="#" title="마이페이지">마이페이지</a>
+               </li>
+               <li>
+                  <a href="#" title="공지사항">공지사항</a>
+               </li>
+               <li>
+                  <button><i>+</i>전체보기</button>
+               </li>
+            </ul>
+            <div id="logo">
+               <p>
+                  <a href="#" title="사이트메인">
+                     <img src="img/iriver_logo.gif" alt="로고"/>
+                  </a>
+               <p>
+            </div>
+            <ul id="menu0">
+               <li>
+                  <a href="#" title="제품">제품</a>
+               </li>
+               <li>
+                  <a href="#" title="콘텐츠">콘텐츠</a>
+               </li>
+               <li>
+                  <a href="#" title="커뮤니티">커뮤니티</a>
+               </li>
+               <li>
+                  <a href="#" title="고객지원">고객지원</a>
+               </li>
+            </ul>
+            <ul id="menu1">
+               <li>
+                  <a href="#" title="쇼핑몰">쇼핑몰</a>
+               </li>
+               <li>
+                  <a href="#" title="아이리버블랭크">아이리버블랭크</a>
+               </li>
+               <li>
+                  <a href="#" title="그루버스">그루버스</a>
+               </li>
+               <li>
+                  <a href="#" title="아스텔앤컨">아스텔앤컨</a>
+               </li>
+            </ul>
+            <form action="#" method="post">
+               <fieldset>
+                  <legend>검색</legend>
+                  <p class="search_box">
+                     <input id="search" type="text" name="search"/>
+                  </p>
+                  <p class="btn">
+                     <input id="btn" type="submit" value="검색"/>
+                  </p>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

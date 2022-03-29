@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>ol li</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+ </head>
+
+ <body>
+	<div>
+		<h2>ul (unordered list) : 순서가 없는 리스트</h2>
+		<ul>
+			<li>ul 다음에 사용할 수 있는 태그는 li 밖에 없음</li>
+			<li>li 태그 다음에 사용할 수 있는 태그는 li 밖에 없음</li>
+			<li>ul은 li 태그들의 부모역할만 담당함!</li>
+		</ul>
+	</div>
+	<hr/>
+	<div>
+		<h2>ol (ordered list) : 순서가 있는 리스트</h2>
+		<div>
+			<h3>블릿기호<h3>
+			<p>순서가 없는 리스트의 경우, 앞에 점이 붙어 있음</p>
+			<p>순서가 있는 리스트의 경우, 앞에 숫자가 붙어 있음</p>
+			<p>리스트 앞에 점, 숫자, 사각형, 다른 기호들이 붙어 있을 경우 이를 "블릿기호" 라고 한다.</p>
+		</div>
+	</div>
+	<hr/>
+
+	<div>
+		<h3>ol list 활용하기</h3>
+		<ol>
+			<li>ul처럼 ol리스트를 사용할 때는 반드시 li태그가 우선된다.</li>
+			<li>ul과 마찬가지로 ol은 li 밖에 담을 수 없음!</li>
+			<li>li 다음에 사용할 수 있는 태그는 li로 사용방법이 동일하다.</li>
+		</ol>
+		<ol>
+			<li>ol이 작성되고 li태그 사용하면 무조건 1번 부터 시작</li>
+			<li>list는 하나만 사용하는 것이 아니라 여러장의 페이지를 구성하려고 작성함!</li>
+			<li>list를 다룬다면 2개 이상의 비슷한 영역이 필요함!</li>
+		</ol>
+		<ol>
+			<li>ul li를 사용할 경우, 앞에 점이 붙어있음</li>
+			<li>ol li를 사용할 경우, 앞에 숫자가 붙어있음</li>
+			<li>기호나 숫자는 사용자가 원하는데로 바꿔서 사용이 가능하다!</li>
+			<li>앞에 붙어있는 기호들을 "블릿기호" 라고 한다.</li>
+		</ol>
+
+		<h3>overflow 기능들</h3>
+		<ol>
+			<li>
+				overflow 기능들 중, hidden을 제일 많이 사용함<br/>
+				(넘치는 객체, 넘치는 내용, 넘치는 이미지, 넘치는 영역)
+			</li>
+			<li>
+				overflow 기능들 중, scroll<br/>
+				웹은 정보 전달의 목적도 있기 때문에 읽을 수 있어야 한다!
+			</li>
+			<li>
+				overflow 기능들 중, auto<br/>
+				scroll이 넘치는 방향으로만 보이도록 만들기!
+			</li>
+			<li>
+				실제 면접에 나왔던 문제<br/>
+				:: auto와 scroll중 많이 사용하는 것은? (디자인 부서에서 나온 문제)<br/>
+				:: auto는 어느 방향으로 늘어날지 알 수 없기 때문에 미리 대비하기 어려움<br/>
+				:: scroll은 사용하지 않아도 되는 scroll을 표현하지만 어느정도 공간을 사용할지<br/>
+				알수 있기 때문에 정확한 픽셀을 작성할 수 있음!
+			</li>
+		</ol>
+	</div>
+	<hr/>
+
+	<div>
+		<h3>(웹 분야) 구분하기</h3>
+		<ol>
+			<li>웹 디자인 / 디자인 + 퍼블리셔 (디퍼블리셔)</li>
+			<li>개발자 + 퍼블리셔 (개퍼블리셔)</li>
+			<li>프론트엔드</li>
+			<li>프론트엔드, 프론트엔드 + 디자인</li>
+			<li>프론트엔드, 프론트엔드 + script 개발자</li>
+			<li>서버사이드 (.js(서버에 맞춰서 사용하는 script들), 노드, 앵귤러, 리액트)</li>
+			<li>프론트엔드 + script + database (세미 풀스텍)</li>
+			<li>백엔드 (php, jsp, asp)</li>
+			<li>풀스텍 개발자 : 웹 퍼블리셔 + 백엔드 (php, jsp, asp) + 보안</li>
+		</ol>
+	</div>
+
+	<hr/>
+
+	<div>
+		<h2>웹 순서 나누기</h2>
+		<ol>
+			<li>자료수집(이미지 촬영, 스케치, 비율에 맞는 이미지)</li>
+			<li>관련 사이트 조사(url, 기획, 구성)</li>
+			<li>멘트작성</li>
+			<li>
+				[마크업] wrap, header, container(section 몇개?, side), footer 영역 나누기<br/>
+				해당하는 영역에서 어떤 태그를 사용할 것인지 이미지 비율은 어떻게 될 것인지 구상하는 단계
+			</li>
+			<li>
+				[header] 영역 설계<br/>
+				+ 상징적인 요소들 h1 || div (id="logo", class="logo")<br/>
+				+ 로고를 만들때 : 로고 이미지, 상징적인 폰트, 대표 상품이미지<br/>
+				+ 네비게이션 제작: nav, gnb, ul li , ol li 태그들 구성 확인<br/>
+				+ 기능은? "세로로 한줄씩 떨어지는 기능", "한줄이 가로로 길게 나오는 기능", "전부 보여주는 기능"
+			</li>
+			<li>
+				[container] 영역 설계<br/>
+				+ section 은 몇개로 구분할지 설계<br/>
+				+ side메뉴 설계?? side가 있는 페이지와 없는 페이지가 있음<br/>
+				+ visual 영역은 한장면에 2단? 3단 어떤 구조로 만들지 설계<br/>
+				+ visual 영역의 기능? (동영상, html5를 이용한 애니메이션, script를 이용한 슬라이딩 윈도우 구현)
+			</li>
+			<li>
+				[footer] 영역 설계<br/>
+				카피라이터, 제휴업체(스폰서) 2중 구조, 3중 구조<br/>
+				footer 영역에 로고 제공
+			</li>
+			<li>
+				[wrap] 영역 설계<br/>
+				전체를 사용하는 영역과 실제 사용영역으로 구분하기<br/>
+				2016년 960px, 1025px, wrap에 의존하는 페이지들이 많았음<br/>
+				현재의 페이지들은 각각 영역에 의존하는 페이지가 많음<br/>
+				: 전체 사용하는 영역 width:100%를 구성하여 "와이드" 하게 사용<br/>
+				: 실제 사용하는 영역 px로 구분되는 영역을 구성하여 가운데 배치함!<br/>
+				매우중요) 마우스로만 되는 것이 아니라 키보드로도 조작이 가능해야 함!
+			</li>
+		</ol>
+	</div>
+ </body>
+</html>

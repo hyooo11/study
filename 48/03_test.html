@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>test</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      #wrap{min-width:1025px; width:100%;}
+      
+
+   /*##### header ######*/
+      #header{width:100%;}
+
+      h1{width:200px; background-color:#ff0; color:#000; transition:background-color 1s linear, color 1s linear;}
+      h1:hover{background-color:#00f; color:#fff; cursor:pointer;}
+   
+   /*###### 문제12 ######*/
+      .scale{width:100%}
+      .scale h3{text-align:center;}
+      .scale div{width:300px; height:300px; background-color:#f00; transition:transform 1s linear; margin:0 auto;}
+      .scale div:hover{transform:scale(1.1,1.1);}
+
+   /*### 문제 17 ####*/
+      
+      h2:after{content:"------------"; display:inline-block; clear:both;}
+
+   /*#### 문제 27 #####*/
+      .radius{width:100%}
+      .radius h3{text-align:center;}
+      .radius div{width:290px; height:290px; border:5px solid red; background-color:aqua; margin:0 auto; transition:border 1s ease-in-out, background-color 1s ease-in-out, border-radius 1s ease-in-out;}
+      .radius div:hover{border:5px solid aqua; background-color:red; border-radius:145px;}
+
+   /*#### 문제 39 #####*/
+      .letter{letter-spacing:-1px;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header id="header">
+         <h1>test 문제풀기</h1>
+         <p>
+            현재 h1태그에 마우스 올리면 배경색상 노란색에서 파란색으로,<br/>
+            글자색상은 검정색에서 하얀색으로 변경되도록 만들기<br/>
+            장면전환 사용하기, 속성 필수작성, 일반적인 속도 표현, 1s 적용하기!<br/>
+            : 근처에서 움직이도록 만들기
+         </p>
+      </header>
+      <div id="container">
+         <section>
+            <h2>1) form영역에서 필수로 작성하는 속성 2가지 작성하고, 내용기입하기</h2>
+            <p>
+               action : form 영역에 입력된 정보를 넘기는 주소를 입력하는 곳 입니다.<br/>
+               method : 입력된 정보의 성격(get, post)을 입력하는 곳 입니다.
+            </p>
+
+            <h2>2) form영역에서 그룹화 시킬때 사용하는 태그는?</h2>
+            <p>fleldset</p>
+
+            <h2>3) 그룹화 시킬때 제목을 작성하는 태그는?</h2>
+            <p>legend</p>
+
+            <h2>4) form 바깥쪽에 input 태그가 있다면 제외가능한 속성은? 이유는?</h2>
+            <p>name 입니다. 입력받은 정보를 넘길 주소가 없기 때문입니다.</p>
+
+            <h2>5) 전송할때 사용하는 input 태그의 type은?</h2>
+            <p>submit</p>
+
+            <h2>6) select 태그 사용시 필수 속성은?</h2>
+            <p>option태그의 value 속성입니다.</p>
+
+            <h2>7) position 속성중 absolute 와 fixed의 차이점 작성하기</h2>
+            <p>
+               absolute는 브라우저, 또는 postion:relative를 준 부모와 같은 대상을 기준으로 움직이지만<br/>
+               fixed는 어떤한 대상을 기준으로 두지 않고 적용한 위치에 고정되는 특징이 있습니다.
+            </p>
+
+            <h2>8) position 속성중 해제가 가능한 속성은?</h2>
+            <p>static</p>
+
+            <h2>9) html5에서 style 영역 작성시 type을 제외하는 이유는?</h2>
+            <p>html5는 독타입에 이미 type이 있어서 style에 작성해주면 type을 두번 작성해주는 것과 같기 때문에 재외합니다.</p>
+
+            <h2>10) xhtml에서 사용하는 css 버전은?</h2>
+            <p>css1, css1.0</p>
+
+            <h2>11) html5에서 "크기를 변형 할 때" 사용하는 효과는?</h2>
+            <p>transform:slcae(); 입니다.</p>
+
+            <h2>12) 아래 순서에 따라 문제 풀기</h2>
+            <ul>
+               <li>1) 현재 ul이 끝난 부분 아래에 section 태그 만들기</li>
+               <li>2) h3 태그 작성하고 scale 이라고 제목 작성하기</li>
+               <li>3) div태그 300*300, 배경색상 red 적용하기</li>
+               <li>4) div태그에 마우스 올리면 110% 커지도록 만들기, 장면전환 적용하기</li>
+               <li>5) * 여백초기화, 블릿기호 초기화 작성하기</li>
+               <li>6) div태그 화면 가운데 두기</li>
+            </ul>
+            <section class="scale">
+               <h3>scale</h3>
+               <div></div>
+            </section>
+
+            <h2>13) 재배포가 가능한 영역을 만들떄 사용하는 시멘틱 태그는?</h2>
+            <p>article</p>
+
+            <h2>14) section 태그를 사용했을떄 headline 태그를 필수로 작성하는 이유는?</h2>
+            <p>비슷한 내용의 주제를 묶어놓는 태그이기 때문에 제목의 역할을 하는 headline 태그를 작성해 주어야 합니다.</p>
+
+            <h2>15) 처음이 느린 효과를 만들때 timing-function은 어떤 값을 적용해야 할까?</h2>
+            <p>ease-in</p>
+
+            <h2>16) ~~ 하는 동안의 뜻을 가지는 속성명은?</h2>
+            <p>duration</p>
+            
+            <h2>17) 현재 h2 태그들에 양옆에 가상 객체 사용하여 붙이기</h2>
+
+            <h2>18) 시멘틱 태그란?</h2>
+            <p>
+               html5에서 영역의 명칭을 나타내는 특징이 있는 필수 태그입니다.
+            </p>
+
+            <h2>19) footer 영역 작성시 주소를 담당하는 태그는?</h2>
+            <p>address</p>'
+            
+            <h2>20) overflow 기능중 해제하는 효과는?</h2>
+            <p>visible</p>
+
+            <h2>21) 글자 두께 적용시 normal에 해당하는 숫자 범위는?</h2>
+            <p>400</p>
+
+            <h2>22) 장면 전환 작성시 속성과 ~~ 하는 동안에 해당하는 값을 작성하지 않았을 경우 생길수 있는 위험은?</h2>
+            <p>장면전환이 얼마동안 진행 되어야 하는지 알 수 없습니다.</p>
+
+            <h2>23) 기능을 가지는 블록요소 작성시 중요하게 처리해야 하는 것은?</h2>
+            <p>필수 속성들을 잘 작성해주고 display:inline으로 무리하게 변경하지 않습니다.</p>
+
+            <h2>24) 아래 순서에 따라 문제 풀기</h2>
+
+            <ul>
+               <li>1) 현재 ul이 끝나는 부분 아래에 article 영역 만들기</li>
+               <li>2) box-shadow 라는 h3태그 제목 작성하기</li>
+               <li>3) aritcle 영역안에 p태그 작성하기</li>
+               <li>4) 배경색상은 pink 글자는 가운데 두기 (200*200)</li>
+               <li>5) 마우스 올리면 배경색상 노란색 변경되도록 만들고, box-shadow 나타나도록 만들기</li>
+               <li>6) box-shadow : 5px 5px 10px rgba(0,0,0,0.2) 적용하기</li>
+               <li>7) 중요) 마우스를 올리기전에 box-shadow 초기값 작성하기</li>
+               <li>8) 배경색상과 box-shadow에 대한 장면 전환 적용하기 0.5 , ease-in 적용</li>
+            </ul>
+
+            <h2>25) 외부로 링크 설정을 할때 link 태그에 rel을 작성하였다 rel은 어떤 의미로 작성했을까?</h2>
+            <p>link를 설명하는 속성입니다.</p>
+
+            <h2>26) box-shadow 적용 순서 작성하기</h2>
+            <p>x축에서 오른쪽으로 밀림, y축에서 아래쪽으로 밀림, blur</p>
+
+            <h2>27) 아래 순서에 따라 문제 풀기</h2>
+
+            <ul>
+               <li>1) 현재 ul이 끝난 부분 아래에 section 태그 만들기</li>
+               <li>2) 제목은 border-radius 작성하기</li>
+               <li>3) section 영역안에 div태그 만들기</li>
+               <li>4) 300px * 300px 크기 유지하기 (border:5px solid red 적용하기), 배경색상 aqua 적용</li>
+               <li>5) div 태그 화면 가운데 두기</li>
+               <li>6) 장면전환 적용하기</li>
+               <li>7) 마우스 올리면 border 색상 aqua 로 변경하고, 배경색상 red로 변경하기</li>
+               <li>8) 마우스 올리면 7번이 되면서 동그라미가 되도록 만들기</li>
+            </ul>
+            <section class="radius">
+               <h3>border-radius</h3>
+               <div></div>
+            </section>
+
+            <h2>28)header 영역 작성시 필수로 작성해야 하는 태그 작성하기</h2>
+            <p>nav</p>
+         
+            <h2>29) 사이드 영역을 만들때 사용하는 시멘틱 태그는? headline 필수로 작성하지 않는 이유는?</h2>
+            <p>aside , 어떤 정보가 들어갈지 모르고 목차에 나타낼만큼 중요도가 높지 않은 태그이기 때문입니다.</p>
+
+            <h2>30) label로 짝을 맞춰야 하는 3가지 태그 나열하기</h2>
+            <p>input</p>
+
+            <h2>31) label이 없을 경우, 반드시 작성하는 속성은?</h2>
+            <p>title</p>  
+
+            <h2>32) 검색을 위해서 form을 만들었다면 method에 해당하는 값은? 이유는?</h2>
+            <p>get입니다. get은 post보다 더 많은 갯수의 정보를 보여주기 때문입니다.</p>
+
+            <h2>33) 중요)시멘틱 태그의 인식률이 떨어지지 않도록 하는 방법 2가지 작성하기</h2>
+            <p>id명을 작성해서 id로 호출해 주거나 display:block을 적용해줍니다.</p>
+
+            <h2>34) 중요) 대상:before와 대상:after의 차이는?</h2>
+            <p>대상:before는 대상의 상단을 뜻하고 대상:after은 대산이 끝나는 부분인 하단을 뜻하빈다.</p>
+
+            <h2>35) 브라우저에서 가장 좋아하는 단위는?</h2>
+            <p>숫자..?</p>
+
+            <h2>36) 표준 브라우저들만 나열하기</h2>
+            <p>익스플로러 8을 포함한 이후버전, 크롬, 엣지, 사파리, 파이어폭스, 오페라</p>
+
+            <h2>37) display:none 과 block이 장면전환 되지 않는 이유는?</h2>
+            <p>
+               보이는것과 안보이는것에 중간과정이 명확하지 않아서 장면전환이 되지 않습니다.
+            </p>
+
+            <h2>38) 장면전환이 되기 위하여 숫자의 값을 사용하는 이유는?</h2>
+            <p>장면이 전환되는 과정을 명확하게 하기 위함입니다.</p>
+               
+            <h2 class="letter">39) 현재 h2만 호출하여 자간 -1px 적용하기</h2>
+
+
+            <h2>40) z-index 란?</h2>
+            <p>가장 상위 객체를 뜻합니다.</p>
+
+         </section>
+      </div>
+   </div>
+ </body>
+</html>

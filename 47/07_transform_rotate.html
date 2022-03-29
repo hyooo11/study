@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>transform_rotate</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      a:link,a:visited{text-decoration:none; color:#666;}
+      body{background-color:#333;}
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%; text-align:center;}
+
+      h2{line-height:60px; text-transform:uppercase;}
+      h2 a{color:#666; transition:color 1s linear;}
+      h2 a:hover{color:#fff;}
+      .title{color:#888; text-transform:uppercase; font-size:18px; font-weight:700;}
+      .title a{border-top:1px solid #888; color:#888;}
+
+      #imgArea{width:230px; height:230px; background-color:#ccc; margin:50px auto 0; transition:transform 0.5s linear;}
+      #imgArea:hover{transform:rotate(-45deg);}
+      
+      
+      #imgArea .img{width:200px; padding-top:15px; margin:0 auto; transition:transform 0.5s linear 0.2s;}
+      #imgArea .img:hover{transform:rotate(50deg);}
+      #imgArea .img img{width:100%;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <h2><a href="#" title="큰제목">transform:rotate</a></h2>
+         <p class="title"><a href="#" title="소제목">rotate</a></p>
+         <div id="imgArea">
+            <p class="img">
+               <img src="img/score.png" alt="스코어"/>
+            </p>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

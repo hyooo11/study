@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>balloon</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #bg{width:1280px; height:800px; background-image:url(img/background.jpg); background-repeat:no-repeat;}
+
+      #bg .balloon{width:150px; opacity:0.7; transform:translatey(300px); animation:late 10s infinite alternate; animation:right 10s infinite alternate;}
+      #bg .balloon img{width:100%;}
+
+      @keyframes late{
+         0%{transform:translatey(320px);}
+         10%{transform:translatey(250px);}
+         20%{transform:translatey(310px);}
+         30%{transform:translatey(350px);}
+         40%{transform:translatey(290px);}
+         50%{transform:translatey(290px);}
+         60%{transform:translatey(330px);}
+         70%{transform:translatey(330px);}
+         80%{transform:translatey(320px);}
+         90%{transform:translatey(320px);}
+         100%{transform:translatey(350px);}
+      }
+      @keyframes right{
+         0%{transform:translatex(0);}
+         100%{transform:translatex(1100px);}
+      }
+
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="bg">
+      <p class="balloon">
+         <img src="img/airball.png" alt="풍선"/>
+      </p>
+   </div>
+ </body>
+</html>

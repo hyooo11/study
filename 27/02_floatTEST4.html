@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>floatTEST</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      /*############## wrap ###############*/
+         #wrap{min-height:1025px; width:100%;}
+
+      /*####### top (실제 사용영역 width:800px;) ########*/
+         #top{width:800px; height:180px; background-color:#0f0; margin:30px auto 0;}
+      /*####### top h1 (이미지 크기 , float 작업) ##########*/
+         #top h1{width:200px; height:130px; background-color:#fff; float:left;}
+         #top h1 img{width:100%;}
+      /*###### top p (폰트사이즈 공통작업) ########*/
+         #top p{font-size:25px; }
+      /*###### top p (개별작업) ########*/ 
+         #top .search{width:200px; background-color:#f00; color:#fff; float:right;}
+         #top .nav{width:800px; height:50px; line-height:50px; background-color:#ff0; clear:both;}
+
+      /*######## mid0 영역  (실제 사용영역 width:1000px;)  ##########*/
+         #mid0{width:1000px; height:100px; background-color:#333; margin:30px auto 0;}
+         #mid0 h2{width:200px; height:50px; font-size:35px; background-color:#eee; float:left;}
+      /*##### mid0 p (공통작업) #########*/
+         #mid0 p{width:200px; margin-left:10px; height:40px; font-size:20px;background-color:#ccc;}
+      /*##### mid0 p (개별작업) #########*/
+         #mid0 .p0{float:left;}
+         #mid0 .p1{background-color:#aaa; float:left;}
+         #mid0 .p2{width:100%; margin-left:0; height:50px; font-size:40px; background-color:#f00; color:#fff; clear:both;}
+
+      /*######## mid1 영역  (실제 사용영역 width:1000px;)   ##########*/
+         #mid1{width:1000px; height:300px; background-color:lightskyblue; margin:30px auto 0; overflow:hidden;}
+         #mid1 h3{width:300px; height:70px; line-height:70px; text-align:center; font-size:30px; background-color:#05f; color:#fff; float:left;}
+      /*###### mid1 영역 p 개별작업 ######### */
+         #mid1 .p0{width:280px; height:80px; padding:10px; font-size:30px; background-color:#0a0; color:#fff; float:right;}
+         #mid1 .p1{width:100%; height:50px; line-height:50px; margin-top:250px; font-size:20px; background-color:purple; color:#fff;}
+
+      /*######## mid2 영역  (실제 사용영역 width:1000px;)   ##########*/
+         #mid2{width:1000px; height:200px; background-color:hotpink; margin:30px auto 0;}
+         #mid2 h3{width:130px; height:130px; padding-top:50px; padding-left:50px; font-size:40px; background-color:#aaa; float:left;}
+      /*####### mid2 p 공통작업 ###########*/
+         #mid2 p{font-size:28px; background-color:#ccc; float:left;}
+      /*####### mid2 p 개별작업 #########*/
+         #mid2 .li0{width:500px; margin:0 65px; height:40px;}
+         #mid2 .li1{width:140px; height:140px; padding-top:50px; padding-right:50px;}
+
+      /*####### bottom0 영역 (실제 사용영역 600px;)########### */
+         #bottom0{width:600px; height:600px; margin:30px auto 0;}
+      /*######### bottom0 li 공통작업 ##########*/
+         #bottom0 li{width:200px; height:200px; line-height:200px; text-align:center; float:left;}
+      /*######### bottom0 li 개별작업 ##########*/
+         #bottom0 .li0{background-color:orange;}
+         #bottom0 .li1{background-color:#3ed;}
+         #bottom0 .li2{background-color:pink;}
+         #bottom0 .li3{background-color:green;}
+         #bottom0 .li4{background-color:coral;}
+         #bottom0 .li5{background-color:lightblue;}
+         #bottom0 .li6{background-color:lightgray;}
+         #bottom0 .li7{background-color:rosybrown;}
+         #bottom0 .li8{background-color:#ff0;}
+
+      /*####### bottom0 영역 (실제 사용영역 600px;)########### */
+         #bottom1{width:600px; height:600px; margin:30px auto 0;}
+      /*######### bottom1 li 공통작업 ##########*/
+         #bottom1 li{width:200px; height:200px; line-height:200px; text-align:center; float:left;}
+      /*######### bottom1 li 개별작업 ##########*/
+         #bottom1 .liy{background-color:#ff0;}
+         #bottom1 .lib{background-color:#00f; color:#fff;}
+
+
+
+
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <div id="top">
+         <h1>
+            <img src="img/logo.png" alt="로고이미지"/>
+         </h1>
+         <p class="search">search</p>
+         <p class="nav">네비게이션</p>
+      </div>
+      <div id="mid0">
+         <h2>영역제목</h2>
+         <p class="p0">로그인</p>
+         <p class="p1">갤러리</p>
+         <p class="p2">float</p>
+      </div>
+      <div id="mid1">
+         <h3>레이아웃 연습1</h3>
+         <p class="p0">
+            1.size(width/height) | 2.float(배치)
+         </p>
+         <p class="p1">
+            3.margin(바깥쪽여백) | 4.padding(안쪽여백)
+         </p>
+      </div>
+      <div id="mid2">
+         <h3>레이아웃 연습2</h3>
+         <p class="li0">clear:both 사용하지 않아도 될때</p>
+         <p class="li1">size가 있을때 | overflow:hidden</p>
+      </div>
+
+      <ul id="bottom0">
+            <li class="li0">0</li>
+            <li class="li1">1</li>
+            <li class="li2">2</li>
+            <li class="li3">3</li>
+            <li class="li4">4</li>
+            <li class="li5">5</li>
+            <li class="li6">6</li>
+            <li class="li7">7</li>
+            <li class="li8">8</li>
+         </ul>
+         <ul id="bottom1">
+            <li class="liy">0</li>
+            <li class="lib">1</li>
+            <li class="liy">2</li>
+            <li class="lib">3</li>
+            <li class="liy">4</li>
+            <li class="lib">5</li>
+            <li class="liy">6</li>
+            <li class="lib">7</li>
+            <li class="liy">8</li>
+         </ul>
+   </div>
+ </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>naverHeader</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <style type="text/css">
+    /*###### 초기화 #######*/
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      a:link,a:visited{text-decoration:none; color:#000;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #headerWrap{width:100%;}
+
+      #header{width:960px; padding-top:25px; margin:0 auto; position:relative;}
+      h1{width:210px; position:absolute; left:40px; top:0;}
+      h1 img{width:100%;}
+      form{width:452px; margin:0 auto;}
+      form fieldset{border:none;}
+      form legend{display:none;}
+      form p{height:30px; float:left;}
+      form .search{width:400px; margin-right:2px;}
+      form .search input{width:396px;  height:26px; border:2px solid #19ce60;}
+      form .btn{width:50px; }
+      form .btn input{width:100%; height:100%; border:none; background-color:#19ce60; color:#fff;}
+
+      #topMenu{width:100%; height:30px; padding-top:25px; position:relative;}
+      #topMenu .menu{width:343px; margin:0 auto;}
+      #topMenu .menu li{display:inline; padding-right:15px; font-size:13px;}
+      #topMenu .btn{position:absolute; right:250px; bottom:13px;}
+      #topMenu .btn button{width:20px; border:1px solid #ccc; background-color:#fff;}
+
+      #gnb{width:950px; padding-left:10px; height:30px; padding-top:10px; background-color:#19ce60;}
+      #list ul{float:left; border-right:1px solid #aaa;}
+      #list li{padding:0 5px; display:inline; font-size:13px; color:#fff;}
+      #list .color li{color:#ff0;}
+
+      #rank{padding-right:50px; text-align:right;}
+      #rank select{width:70px; border:none; background-color:#19ce60; color:#fff;}
+  </style>
+ </head>
+
+ <body>
+    <div id="wrap">
+      <div id="headerWrap">
+        <div id="header">
+          <h1>
+            <img src="img/nlogo.gif" alt="네이버"/>
+          </h1>
+          <form action="#" method="get">
+            <fieldset>
+              <legend>검색</legend>
+              <p class="search">
+                <input id="search" type="text" name="search" title="검색창"/>
+              </p>
+              <p class="btn">
+                <input id="btn" type="submit" value="검색"/>
+              </p>
+            </fieldset>
+          </form>
+          <div id="topMenu">
+            <ul class="menu">
+              <li><a href="#" title="알프스산 동영상">알프스산 동영상</a></li>
+              <li><a href="#" title="검색어로 알아보는 대한민국">검색어로 알아보는 대한민국</a></li>
+              <li><a href="#" title="육아출산 Tip">육아출산 Tip</a></li>
+            </ul>
+            <div class="btn">
+              <button>&lt;</button><button>&gt;</button>
+            </div>
+          </div>
+          <div id="gnb">
+            <div id="list">
+              <ul class="color">
+                <li>메일</li>
+                <li>카페</li>
+                <li>블로그</li>
+                <li>지식iN</li>
+                <li>쇼핑</li>
+                <li>TV캐스트</li>
+              </ul>
+              <ul class="li1">
+                <li>사전</li>
+                <li>뉴스</li>
+                <li>증권</li>
+                <li>부동산</li>
+                <li>지도</li>
+                <li>영화</li>
+                <li>뮤직</li>
+                <li>책</li>
+                <li>웹툰</li>
+              </ul>
+              <ul class="li2">
+                <li>pay</li>
+                <li>더보기</li>
+              </ul>
+            </div>
+            <div id="rank">
+              <select>
+                <option value="한국">1 한국</option>
+                <option value="미국">2 미국</option>
+                <option value="중국">3 중국</option>
+                <option value="일본">4 일본</option>
+                <option value="프랑스">5 프랑스</option>
+                <option value="독일">6 독일</option>
+                <option value="러시아">7 러시아</option>
+                <option value="베트남">8 베트남</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </body>
+</html>

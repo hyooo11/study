@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>float_test0</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		/*############### 초기화 ###############*/
+			*{margin:0; padding:0;}
+			li{list-style-type:none;}
+
+		/*############### wrap ###############*/
+
+			h2{text-align:center; background-color:pink;}
+
+		/*############### sec0 ###############*/
+			#sec0{width:1000px; height:100px; margin:30px auto; background-color:#00f; color:#fff;}
+			#sec0 li{width:200px; height:100%; float:left; text-align:center; line-height:100px;}
+
+			/*sec0 (개별)*/
+			#sec0 .li1{background-color:#00d;}
+			#sec0 .li2{background-color:#00a;}
+			#sec0 .li3{background-color:#009;}
+			#sec0 .li4{background-color:#003;}
+
+		/*############### sec1 ###############*/
+			#sec1{width:600px; height:200px; margin:30px auto; background-color:#1ddb16; text-align:center;}
+			#sec1 li{width:200px; height:100%; float:left; line-height:200px;}
+			#sec1 li p{width:100px; height:100px; float:left; line-height:100px;}
+
+
+			/*sec1 (개별)*/			
+			#sec1 li .p1{background-color:#008100;}
+			#sec1 li .p2{background-color:#77ff70;}
+			#sec1 .li1{background-color:#b7f0b1;}
+			#sec1 .li2{background-color:#ffb2f5;}
+
+		/*############### sec2 ###############*/
+			#sec2{width:1280px; height:200px; margin:30px auto; background-color:#fc0; text-align:center; line-height:200px;}
+			#sec2 li{height:100%; float:left;}
+			#sec2 li div{height:100%; float:left;}
+
+			/*sec2 (개별)*/	
+			#sec2 .li0{width:640px;}
+			#sec2 .li0 .div0{width:30%;}
+			#sec2 .li0 .div1{width:70%; background-color:#f90;}
+			#sec2 .li1{width:320px; background-color:aqua;}
+			#sec2 .li2{width:320px; background-color:#ff0;}
+
+		/*############### sec3 ###############*/
+			#sec3{width:1100px; height:200px; margin:30px auto; background-color:pink;}
+			#sec3 li{width:249px; margin-right:1px; float:left; text-align:center; line-height:200px;}
+			
+			/*sec3 (개별)*/	
+			#sec3 .wid{width:349px; background-color:red;}
+
+
+		/*############### sec4 ###############*/
+			#sec4{width:1200px; height:200px; margin:30px auto; background-color:aqua;}
+			#sec4 li{width:290px; height:190px;border:5px solid aqua; float:left; text-align:center; line-height:200px}
+
+			/*sec4 (개별)*/	
+			#sec4 .b_blue{border:5px solid #00f;}
+			#sec4 .b_red{border:5px solid #f00;}
+
+		/*############### sec5 ###############*/
+			#sec5{width:900px; height:400px; margin:30px auto; background-color:#aaa;}
+			#sec5 li{width:300px; float:left; text-align:center; line-height:400px;}
+
+			
+			#sec5 li p{width:150px; height:200px; float:left; background-color:green; line-height:200px;}
+
+			/*sec5 (개별)*/
+			#sec5 .p1{background-color:pink;}
+			#sec5 .p2{width:300px; background-color:#ff0;}
+			
+	</style>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<h2>floatTest1 : 기본이 되는 틀은 ul li로 각각 만들기</h2>
+		<ul id="sec0">
+			<li class="li0">공간0</li>
+			<li class="li1">공간1</li>
+			<li class="li2">공간2</li>
+			<li class="li3">공간3</li>
+			<li class="li4">공간4</li>
+		</ul>
+		<ul id="sec1">
+			<li>
+				<div>
+					<p class="p0">p태그 0</p>
+					<p class="p1">p태그 1</p>
+					<p class="p2">p태그 2</p>
+					<p class="p3">p태그 3</p>
+				</div>
+			</li>
+			<li class="li1">li태그1</li>
+			<li class="li2">li태그2</li>
+		</ul>
+		<ul id="sec2">
+			<li class="li0">
+				<div class="div0">컨텐츠 영역</div>
+				<div class="div1">글씨 영역</div>
+			</li>
+			<li class="li1">li태그1</li>
+			<li class="li2">li태그2</li>
+		</ul>
+		<ul id="sec3">
+			<li>숫자1</li>
+			<li class="wid">숫자2</li>
+			<li>숫자3</li>
+			<li>숫자4</li>
+		</ul>
+		<ul id="sec4">
+			<li>test1</li>
+			<li class="b_blue">test2</li>
+			<li>test3</li>
+			<li class="b_red">test4</li>
+		</ul>
+		<ul id="sec5">
+			<li>test0</li>
+			<li>
+				<div>
+					<p class="p0">p태그0</p>
+					<p class="p1">p태그1</p>
+					<p class="p2">p태그2</p> 
+				</div>
+			</li>
+			<li>test2</li>
+		</ul>
+	</div>
+ </body>
+</html>

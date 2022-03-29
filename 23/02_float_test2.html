@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+	<title>float_test2</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		/*#################### 초기화 ####################*/
+			*{margin:0; padding:0;}
+			li{list-style-type:none;}
+		/*#################### wrap ####################*/
+			#wrap{min-width:1025px; width:100%;}
+		
+		/*#################### h2 공통작업 ####################*/
+			#wrap h2{width:1000px; border-bottom:2px solid #aaa; margin:30px auto 0; text-align:center;}
+
+		/*#################### ts0 ####################*/
+			#ts0{width:1366px; height:200px; margin:20px auto 0; text-align:center; line-height:200px; color:#fff;}
+			#ts0 li{width:300px; height:100%; float:left;}
+
+			/*ts0개별작업*/
+			#ts0 .li0{width:380px; margin-right:3px; background-color:#800;}
+			#ts0 .li1{ background-color:#a00;}
+			#ts0 .li2{ background-color:#e00;}
+			#ts0 .li3{width:380px; margin-left:3px; background-color:#f00;}
+
+		/*#################### ts1 ####################*/
+			#ts1{width:1440px; height:300px; margin:20px auto; text-align:center; line-height:300px;}
+			#ts1 li{width:450px; height:100%; float:left;}
+			
+			/*ts1개별작업*/
+			#ts1 .li0{background-color:#cf0;}
+			/*ts1의 p공통작업*/
+			#ts1 .li1{width:540px;}
+			#ts1 .li1 .div_parent{height:100%}
+			#ts1 .li1 .div_parent p{width:25%; float:left; background-color:#ff0;}
+			/*ts1의 p개별작업*/
+			#ts1 .li1 .div_parent .p1{background-color:#ccc;}
+			#ts1 .li1 .div_parent .p2{background-color:#cc0;}
+			#ts1 .li1 .div_parent .p3{background-color:#fef;}
+			/*ts1개별작업*/
+			#ts1 .li2{background-color:#f30;}
+
+		/*#################### ts2 ####################*/
+			#ts2{width:1280px; height:150px; margin:20px auto; text-align:center; line-height:150px;}
+			#ts2 li{width:149px; height:100%; margin-left:1px; float:left; background-color:purple;}
+			
+			/*ts2공통작업*/
+			#ts2 .li0{width:379px; height:100%;}
+			#ts2 .li0 .div_parent p{float:left;}
+
+			/*ts2개별작업*/
+			#ts2 .li0 .div_parent .p1{width:190px; background-color:aqua;}
+			#ts2 .li0 .div_parent .p2{width:189px; height:100px; line-height:100px; background-color:#00f; color:#fff;}
+			#ts2 .li0 .div_parent .p3{width:189px; height:50px; line-height:50px; background-color:#aaa;}
+	</style>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<!--test1영역-->
+		<h2>test1 width:1366px</h2>
+		<ul id="ts0">
+			<li class="li0">float1</li>
+			<li class="li1">float2</li>
+			<li class="li2">float3</li>
+			<li class="li3">float4</li>
+		</ul>
+		<!--test2영역-->
+		<h2>test2 width:1440px</h2>
+		<ul id="ts1">
+			<li class="li0">float1</li>
+			<li class="li1">
+				<div class="div_parent">
+					<p class="p0">float2의 p1</p>
+					<p class="p1">float2의 p2</p>
+					<p class="p2">float2의 p3</p>
+					<p class="p3">float2의 p4</p>
+				</div>
+			</li>
+			<li class="li2">float3</li>
+		</ul>
+		<!--test3영역-->
+		<h2>test3 width:1280px</h2>
+		<ul id="ts2">
+			<li class="li0">
+				<div class="div_parent">
+					<p class="p1">float1의 p1</p>
+					<p class="p2">float1의 p2</p>
+					<p class="p3">float1의 p3</p>
+				</div>
+			</li>
+			<li class="li1">float1</li>
+			<li class="li2">float2</li>
+			<li class="li2">float3</li>
+			<li class="li2">float4</li>
+			<li class="li2">float5</li>
+			<li class="li2">float6</li>
+			<li class="li2">float7</li>
+		</ul>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>center box</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%;}
+      
+
+      h2{text-align:center; padding:30px 0 10px;}
+      #box1 .gold_bg1{width:150px; height:150px; border:50px solid gold; background-color:gold; margin:0 auto;}
+      #box1 .bk_boxs1{width:10px; height:10px; background-color:#000; transition:width 1s linear, height 1s linear;}
+      #box1 .bk_boxs1:hover{width:100%; height:100%; background-color:#000;}
+
+      #box2 .gold_bg2{width:150px; height:150px; border:50px solid gold; background-color:gold; margin:0 auto;}
+      #box2 .bk_boxs2{width:100%; height:100%; background-color:#000; transform:scale(0.1,0.1); transition:transform 1s linear, height 1s linear;}
+      #box2 .bk_boxs2:hover{transform:scale(1,1);}
+   </style>
+ </head>
+ 
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <section id="box1">
+            <h2>box test1</h2>
+               <div class="gold_bg1">
+                  <p class="bk_boxs1"></p>
+               </div>
+         </section>
+         <hr/>
+         <section id="box2">
+            <h2>box test2</h2>
+               <div class="gold_bg2">
+                  <p class="bk_boxs2"></p>
+               </div>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>

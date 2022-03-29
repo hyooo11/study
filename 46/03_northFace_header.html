@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>northFace header</title>
+   <meta charset="utf-8"/>
+   <style>
+      /*####### reset #######*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link,a:visited{text-decoration:none; color:#000;}
+         a:hover,a:focus{text-decoration:underline;}
+      
+         #wrap{min-width:1025px; width:100%;}
+         #header{border-bottom:1px solid #ccc;}
+         #head_inn{width:960px; height:82px; margin:0 auto; position:relative;}
+
+         #logo{position:absolute; left:0; top:0;}
+
+         #topMenu{width:100%; height:30px; line-height:30px; background-color:#000;}
+         #topMenu ul{text-align:right;}
+         #topMenu li{display:inline; font-size:12px; padding-left:10px;}
+         #topMenu li a{color:#ccc;}
+
+         #gnb{width:810px; height:52px; line-height:52px; background-color:#fff; float:left;}
+         #gnb ul{text-align:right;}
+         #gnb li{display:inline; padding:0 20px; font-size:17px;}
+         #gnb li a{color:#777; font-weight:700;}
+         #gnb li a:hover{color:#f00;}
+
+         #searchBox{width:150px; float:left;}
+         #searchBox form{margin-top:16px;}
+         #searchBox fieldset{border:none;}
+         #searchBox legend{display:none;}
+         #searchBox form #search{width:98px; height:18px; border:1px solid #ccc; color:#cccccc; text-indent:5px;}
+         #searchBox form #btn{width:48px; height:20px; border:1px solid #ccc; vertical-align:middle;}
+      
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header id="header">
+         <div id="head_inn"><!--header_inner-->
+            <div id="logo">
+               <img src="img/nlogo.svg" alt="노스페이스"/>
+            </div>
+            <div id="topMenu">
+               <ul>
+                  <li><a href="#" title="로그인">로그인</a></li>
+                  <li><a href="#" title="회원가입">회원가입</a></li>
+                  <li><a href="#" title="주문_배송조회">주문/배송조회</a></li>
+               </ul>
+            </div>
+            <nav id="gnb">
+               <ul>
+                  <li><a href="#" title="신상품">신상품</a></li>
+                  <li><a href="#" title="베스트">베스트</a></li>
+                  <li><a href="#" title="아울렛">아울렛</a></li>
+                  <li><a href="#" title="기획전_이벤트">기획전/이벤트</a></li>
+               </ul>
+            </nav>
+            <div id="searchBox">
+               <form action="#" method="get">
+                  <fieldset>
+                     <legend>검색</legend>
+                     <input id="search" type="text" name="search" title="검색" value="search"/>
+                     <input id="btn" type="submit" value="검색"/>
+                  </fieldset>
+               </form>
+            </div>
+         </div>
+      </header>
+   </div>
+ </body>
+</html>
+<!--
+
+
+4) 신상품 부분 의 영역엔 마우스 올리면
+글자색상 빨강색 변경
+
+5) topMenu와 gnb 영역의 글자들은 a 태그 있음!
+6) validator 반드시 확인하기
+
+* 포폴 제작하기
+-->

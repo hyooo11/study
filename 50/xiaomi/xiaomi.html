@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>xiaomi</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      a:link,a:visited{text-decoration:none; color:#000;}
+      
+      #wrap{min-width:1025px; width:100%;}
+   /*###### header #######*/
+      #header{width:100%;}
+      /*header/top*/
+      #topBar{width:100%; height:30px; background-color:#333;}
+      #topBar .inner{width:1200px; margin:0 auto;}
+      #topBar .inner ul{line-height:30px; float:left;}
+      #topBar .inner .left{width:1070px;}
+      #topBar .inner .left select{background-color:#333; border:none; color:#aaa;}
+      #topBar .inner .right{width:130px; }
+      #topBar .inner li{font-size:11px; text-transform:uppercase; float:left;}
+      #topBar .inner li a{color:#aaa;}
+      #topBar .inner li i{padding:0 10px; font-style:normal; color:#555;}
+
+      #topBar .inner:after{content:""; display:block; clear:both;}
+
+      /*header/bottom*/
+      #white{width:1900px; height:70px; background-image:url("img/main2.jpg"); margin:0 auto;}
+      #bottom{width:1900px; height:70px; background-color:rgba(255,255,255,0); margin:0 auto; transition:background-color 0.5s linear;}
+      #bottom:hover{background-color:rgba(255,255,255,1); }
+      #bottom .inner{width:1200px; margin:0 auto;}
+      #logo{width:112px; height:56px; padding-top:7px; float:left;}
+      #logo a{display:block;  width:56px; height:100%;  overflow:hidden; position:relative;}
+      
+      #logo a img{height:100%;}
+      #logo a:hover img{position:absolute; right:0; top:0}
+
+      #gnb{width:1078px; text-align:right; float:left;}
+      #gnb li{display:inline; padding-left:20px; line-height:70px;}
+      #gnb li a{font-size:14px; color:#fff; font-weight:700;}
+      #bottom:hover #gnb li a{color:#000;}
+
+      #bottom .inner:after{content:""; display:block; clear:both;}
+
+   /*##### container ######*/
+      #contatiner{width:100%;}
+      /*visual*/
+      #visual{width:1900px; height:700px; background-image:url("img/main2.jpg"); background-position:bottom; position:relative; margin:0 auto;}
+
+      #visual .text_box{width:300px; position:absolute; left:-400px; top:200px; color:#fff; font-weight:400; transition:left 0.5s linear;}
+      #visual:hover .text_box{width:300px; position:absolute; left:500px; top:200px; color:#fff; font-weight:400;}
+      #visual .text_box .title{font-size:35px;}
+      #visual .text_box .subtitle{font-size:25px;}
+      #visual .text_box .desc{padding:15px 0 40px; font-size:12px;}
+      #visual .text_box .btn{font-size:12px;}
+      #visual .text_box .btn em{padding:5px 30px; border:1px solid #fff; font-style:normal;}
+      /*video*/
+      #video{width:100%;}
+      #video h3{padding:80px 0 30px; text-align:center; font-weight:400; color:#555;}
+      #video h3:before{content:"----------------------"; padding-right:20px;}
+      #video h3:after{content:"----------------------"; padding-left:20px;}
+
+      #video ul{width:930px; padding-bottom:100px; margin:0 auto;}
+      #video li{width:300px; height:240px; margin-left:10px; overflow:hidden; float:left;}
+      #video li img{width:100%; transition:transform 0.3s linear;} 
+      #video li:hover img{transform:scale(1.1);}
+
+      #video ul:after{content:""; display:block; clear:both;}
+
+      #bgArea{width:1900px; height:770px; background-image:url(img/subVisual.jpg); margin:0 auto;}
+
+   /*###### footer #######*/
+      #footer{width:100%; background-color:#333;}
+      #foot_inn{width:1200px; color:#aaa; font-size:12px; margin:0 auto;}
+      #foot_inn .top{padding-bottom:20px;}
+      #foot_inn .top li{width:300px; float:left;}
+      #foot_inn .top h4{padding:50px 0 20px; color:#ccc; font-size:15px;}
+      #foot_inn .top p{line-height:25px;}
+      #foot_inn .top p:hover{color:orange;}
+
+      #foot_inn .top ul:after{content:""; display:block; clear:both;}
+
+      #foot_inn .copy{border-top:1px solid #555; line-height:50px;}
+      #foot_inn .copy span:hover{color:orange;}
+      
+
+
+   </style>
+
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header id="header">
+            <div id="topBar">
+               <div class="inner">
+                  <ul class="left">
+                     <li>
+                        <a href="#" title="International">
+                           International
+                        </a>
+                        <i>|</i>
+                     </li>
+                     <li>
+                        <a href="#" title="International">
+                           MIUI
+                        </a>
+                        <i>|</i>
+                     </li>
+                     <li>
+                        <select>
+                           <option value="International">International</option>
+                           <option value="Mainland China">Mainland China 简体中文</option>
+                           <option value="Hong Kong">Hong Kong 繁體中文</option>
+                           <option value="Taiwan">Taiwan 繁體中文</option>
+                           <option value="Singapore">Singapore</option>
+                           <option value="Malaysia">Malaysia</option>
+                           <option value="Philippines">Philippines</option>
+                           <option value="Bangladesh">Bangladesh</option>
+                           <option value="India">India</option>
+                           <option value="Indonesia">Indonesia</option>
+                        </select>
+                     </li>
+                  </ul>
+                  <ul class="right">
+                     <li><a href="#" title="SING IN">SING IN</a><i>|</i></li>
+                     <li><a href="#" title="SING UP">SING UP</a><i>|</i></li>
+                  </ul>
+               </div>
+            </div>
+            <div id="white">
+               <div id="bottom">
+                  <div class="inner">
+                     <div id="logo">
+                        <a href="#" title="xiaomi">
+                           <img src="img/logo.png" alt="xiaomi"/>
+                        </a>
+                     </div>
+                     <nav id="gnb">
+                        <ul>
+                           <li><a href="#" title="Mi Phones">Mi Phones</a></li>
+                           <li><a href="#" title="POCOPHONES">POCOPHONES</a></li>
+                           <li><a href="#" title="Redmi Phones">Redmi Phones</a></li>
+                           <li><a href="#" title="Mi TV">Mi TV</a></li>
+                           <li><a href="#" title="Smart Devices">Smart Devices</a></li>
+                           <li><a href="#" title="ALL Products">ALL Products</a></li>
+                           <li><a href="#" title="Product Authentication">Product Authentication</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+      </header>
+      <div id="container">
+         <div id="visual">
+            <div class="text_box">
+               <p class="title">Redmi 7A</p>
+               <p class="subtitle">
+                  Bigger Battery, Faster Performance
+               </p>
+               <p class="desc">   
+                  Qualcomm® Snapdragon™ 439 processor
+                  Large 4000mAh (typ) battery
+                  12MP AI rear camera
+               </p>
+               <p class="btn">
+                  <em>Learn more</em>
+               <p>
+            </div>
+         </div>
+         <section id="video">
+            <h3>VIDEO</h3>
+            <ul>
+               <li><img src="img/sub0.jpg" alt="비디오0"/></li>
+               <li><img src="img/sub1.jpg" alt="비디오1"/></li>
+               <li><img src="img/sub2.jpg" alt="비디오2"/></li>
+            </ul>
+         </section>
+         <div id="bgArea">
+
+         </div>
+      </div>
+      <footer id="footer">
+         <div id="foot_inn">
+            <div class="top">
+               <ul>
+                  <li>
+                     <h4>LEARN MORE</h4>
+                     <p>Mi 10T Pro</p>
+                     <p>Redmi Note 9T</p>
+                     <p>Mi 10T Lite</p>
+                  </li>
+                  <li>
+                     <h4>SUPPORT</h4>
+                     <p>Contact Us</p>
+                     <p> Warranty</p>
+                     <p>User Guide</p>
+                     <p>Scooter Safety Notice</p>
+                     <p>Android Enterprise Redcommended</p>
+                  </li>
+                  <li>
+                     <h4>ABOUT US</h4>
+                     <p>Xiaomi</p>
+                     <p>Press & Media</p>
+                     <p>User Agreement</p>
+                     <p>Privacy Policy</p>
+                     <p>Xiaomi Blog</p>
+                     <p>Inverstor Relations</p>
+                     <p>Integrity & Compliance</p>
+                  </li>
+                  <li>
+                     <h4>FOLLOW MI</h4>
+                     <p>Facebook</p>
+                     <p>Youtube</p>
+                     <p>Instagram</p>
+                     <p>Twitter</p>
+                     <p>More Regions</p>
+                  </li>
+               </ul>
+            </div>
+            <div class="copy">
+               Copyrigh © 2010 - 2021 <span>Xiaomi.</span> All Rights Reserved
+            </div>
+         </div>
+      </footer>
+   </div>
+ </body>
+</html>

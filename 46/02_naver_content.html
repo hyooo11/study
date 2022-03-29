@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>naver content</title>
+   <meta charset="utf-8"/>
+   <style>
+      /*############ 초기화 ############*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link,a:visited{text-decoration:none; color:#000;}
+         a:hover,a:focus{text-decoration:underline;}
+
+      /*######## wrap #######*/
+         #wrap{min-width:1025px; width:100%;}
+         #container{width:100%;}
+
+      /*######## descArea(전체 사용 영역) #######*/
+      /*시멘틱 태그 : section */
+         #descArea{width:100%;}
+         #descArea h2{text-align:center; text-transform:uppercase; padding:30px 0 10px; text-decoration:underline;}
+
+      /*####### descCont(실제 사용영역) #######*/
+         #descCont{width:720px; margin:50px auto 0;}
+
+      /*
+         [기준이 되는 이미지 찾기]
+
+            1) 제작된 이미지를 기준으로 작업하기!
+            2) color 영역의 이미지가 제작된 이미지
+               : 제작된 이미지는 어떤 요청에 의하여 만들어졌을 확률이 높기
+               때문에 해당하는 이미지를 기준으로 작업해야 한다!
+
+            3) 166px * 185px
+
+         [설계하기]
+
+            width: 166px + margin-left:14px   == 180px
+            height: 185px + margin-top:15px == 200px
+
+      */
+         #descCont li{width:166px; height:185px; margin-left:14px; margin-top:15px; font-size:12px; float:left;}
+
+      /*######## li중 color 가 되는 영역 #########*/
+         #descCont .color{background-image:url("img/color.png"); color:#fff; padding:10px; width:146px; height:165px;}
+
+         #descCont .color h3{font-size:20px;}
+         #descCont .color .hr{line-height:40px;}
+         
+         #descCont .color ul{width:50px; height:100%; float:left;}
+
+         /*매우중요) li 에 상속되는 margin값 해결하기*/
+         #descCont .color li{width:100%; height:20px; line-height:20px; margin-left:0; margin-top:0;}
+         #descCont .color a{color:#fff; font-family:dotum;}
+
+         #descCont .color .cateArea:after{content:""; display:block; clear:both;}
+
+      /*######## li중 main이 되는 영역 #######*/
+      /*
+         [설계하기]
+            1) li 너비 + margin-left + li 너비
+            2) 166px + 14px + 166px ==  346px
+      */
+
+         #descCont .main{width:346px; background-image:url(img/main.jpg); position:relative;}
+         #descCont .main p{width:100%; background-color:rgba(50,50,50,0.6); position:absolute; left:0; bottom:0;}
+         #descCont .main a{color:#fff;}
+         #descCont .main a span{color:#aaa;}
+         #descCont .main a strong{font-size:13px;}
+
+      /*####### newsArea #######*/
+         /*.img, span 태그*/
+         #descCont .newsArea .img{display:block;}
+         #descCont .newsArea .img img{width:100%;}
+
+         #descCont .newsArea a strong{display:block; padding:7px 0;}
+         #descCont .cate{color:#888;}
+
+         #descCont ul:after{content:""; display:block; clear:both;}
+
+         /*
+            [가상객체 작성하기_위치]
+
+               가상객체의 위치는 해당하는 값의 가장 하단 영역에 작업하기
+
+               ex)
+                  1) ul li 가 큰 영역이라면 ul 자체가 li가 끝나는 부분 아래에 있어야 함!
+
+                  2) li안에 ul li 가 또 있다면..
+                     해당하는 자녀 ul li 하단에 ul 가상객체 만들어서 끊어주기
+
+                  * 가상객체를 모아두는 영역을 만들어서 끊는 것 이 아니라 해당하는 영역
+                  하단에서 끊어줘야 다른 객체들의 상속값 등에 방해 받지 않음!
+         */
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <section id="descArea">
+            <h2>naver : 함께N</h2>
+            <div id="descCont">
+               <ul>
+                  <li class="color">
+                     <h3>함께N</h3>
+                     <p class="hr">─</p>
+                     <div class="cateArea">
+                        <ul class="cateLink">
+                           <li><a href="#" title="해피빈_홈">해피빈 홈</a></li>
+                           <li><a href="#" title="기부">기부</a></li>
+                           <li><a href="#" title="캠패인">캠패인</a></li>
+                           <li><a href="#" title="블로그">블로그</a></li>
+                        </ul>
+                        <ul class="cateLink">
+                           <li><a href="#" title="정기저금">정기저금</a></li>
+                           <li><a href="#" title="펀_딩">펀 딩</a></li>
+                           <li><a href="#" title="가볼까">가볼까</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="main">
+                     <p>
+                        <a href="#" title="메인뉴스 링크">
+                           <span>해피빈 펀딩</span>
+                           <strong>소중한 반려동물을 위한 무농약 습식 간식</strong>
+                        </a>
+                     </p>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스1">
+                        <span class="img">
+                           <img src="img/s1.jpg" alt="함께N 관련뉴스1"/>
+                        </span>
+                        <strong>
+                           지속가능한 삶을 공유하는 '서울환경영화제'
+                        </strong>
+                     </a>
+                     <span class="cate">해피빈 펀딩</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스2">
+                        <span class="img">
+                           <img src="img/s2.jpg" alt="함께N 관련뉴스2"/>
+                        </span>
+                        <strong>
+                           위험 무릅쓰고 불편한 집으로 향하는 이웃들
+                        </strong>
+                     </a>
+                     <span class="cate">서울YWCA봉천종합복지관</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스3">
+                        <span class="img">
+                           <img src="img/s3.jpeg" alt="함께N 관련뉴스3"/>
+                        </span>
+                        <strong>
+                           달리는 만큼 기부된다? 착한 마라토너 모집
+                        </strong>
+                     </a>
+                     <span class="cate">가볼까 | 동방사회복지회</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스4">
+                        <span class="img">
+                           <img src="img/s4.jpg" alt="함께N 관련뉴스4"/>
+                        </span>
+                        <strong>
+                           마야의 햇빛을 담은 봄맞이 면스카프
+                        </strong>
+                     </a>
+                     <span class="cate">해피빈 펀딩</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스5">
+                        <span class="img">
+                           <img src="img/s5.png" alt="함께N 관련뉴스5"/>
+                        </span>
+                        <strong>
+                           마아픈 몸 기댈 컨테이너도 잃게 된 노부부
+                        </strong>
+                     </a>
+                     <span class="cate">사회복지공동모금회</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스6">
+                        <span class="img">
+                           <img src="img/s6.jpeg" alt="함께N 관련뉴스6"/>
+                        </span>
+                        <strong>
+                           가장 안전해야 할 집이 가장 무서운 아이들
+                        </strong>
+                     </a>
+                     <span class="cate">세이브더칠드런</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스7">
+                        <span class="img">
+                           <img src="img/s7.jpg" alt="함께N 관련뉴스7"/>
+                        </span>
+                        <strong>
+                           '또 만나요!' 미얀마와 함께 했던 특별한 추억
+                        </strong>
+                     </a>
+                     <span class="cate">세상을 밝히는 사람들</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스8">
+                        <span class="img">
+                           <img src="img/s8.jpg" alt="함께N 관련뉴스8"/>
+                        </span>
+                        <strong>
+                           도배 초보도 환영해요! 봄을 부르는 '도배 봉사'
+                        </strong>
+                     </a>
+                     <span class="cate">가볼까 | 열매나눔재단</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스9">
+                        <span class="img">
+                           <img src="img/s9.jpg" alt="함께N 관련뉴스9"/>
+                        </span>
+                        <strong>
+                           아무도 찾지 않는 어르신께 추억 한 조각 선물해요
+                        </strong>
+                     </a>
+                     <span class="cate">사단법인 따뜻한하루</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스10">
+                        <span class="img">
+                           <img src="img/s10.jpg" alt="함께N 관련뉴스10"/>
+                        </span>
+                        <strong>
+                           나누는 사랑, Again 강원! 당신의 사랑을 보여주세요
+                        </strong>
+                     </a>
+                     <span class="cate">굿액션 by CJ헬로</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스11">
+                        <span class="img">
+                           <img src="img/s11.jpg" alt="함께N 관련뉴스11"/>
+                        </span>
+                        <strong>
+                           미세먼지 없는 우리집 만드는 '반려나무'
+                        </strong>
+                     </a>
+                     <span class="cate">해피빈 펀딩</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스12">
+                        <span class="img">
+                           <img src="img/s12.jpg" alt="함께N 관련뉴스12"/>
+                        </span>
+                        <strong>
+                           협동하는 기부방송! 돌아온 '마리텔 V2'
+                        </strong>
+                     </a>
+                     <span class="cate">굿액션 by MBC</span>
+                  </li>
+                  <li class="newsArea">
+                     <a href="#" title="함께N 관련뉴스13">
+                        <span class="img">
+                           <img src="img/s13.jpg" alt="함께N 관련뉴스13"/>
+                        </span>
+                        <strong>
+                           해녀가 보내는 제주의 선물, '고등어와 갈치'
+                        </strong>
+                     </a>
+                     <span class="cate">해피빈 펀딩</span>
+                  </li>
+               </ul>
+            </div>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>
+

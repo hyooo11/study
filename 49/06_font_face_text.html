@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>font_face_test</title>
+   <meta charset="utf-8"/>
+   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hurricane&display=swap" rel="stylesheet">
+   <style>
+      @font-face{font-family:"Nanum"; src:url("font/NanumGothic.woff");}
+      @font-face{font-family:"exbold"; src:url("font/NanumGothicExtraBold.woff");}
+
+      .ts0{font-family:"Nanum";}
+      .ts1{font-family:"exbold"}
+      .ts2{font-family: 'Hurricane', cursive;}
+      .ts3{font-family: 'Black Han Sans', sans-serif;} 
+   </style>
+
+ </head>
+
+ <body>
+   <h3 class="ts0">test:basic</h3>
+   <h3 class="ts1">test:system</h3>
+   <h3 class="ts2">test:GOOGLE</h3>
+   <h3 class="ts3">테스트 : 한글</h3>
+ </body>
+</html>

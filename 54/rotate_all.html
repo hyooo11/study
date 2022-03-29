@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>rotate_all</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+      a:link,a:visited{text-decoration:none; color:#fff}
+
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%;}
+
+      #rotate{width:600px; margin:50px auto 0;}
+
+      #rotate li{width:150px; margin-right:50px; height:150px; line-height:150px; text-align:center; border-radius:75px; box-shadow:5px 5px 10px#ccc; float:left;}
+      
+      #rotate .rotate1{transform:scale(1) rotatex(0) translate(0,0); transition:transform 1s linear 0.2;}
+      #rotate .rotate1:hover{transform:scale(1.5) rotatex(200deg) translate(200px, 150px);
+         background-image:url(img/image01.jpg);
+         background-repeat:no-repeat;
+         background-position:center;
+      }
+      #rotate .rotate2{transform:scale(1) translatey(0); transition:scale 1s linear 0.2, re 1s linear 0.2;}
+      #rotate .rotate2:hover{transform:scale(1.5) translatey(150px);}
+
+      #rotate .rotate3:hover{transform:scale(1.5);}
+
+      #rotate li a{text-shadow:3px 3px 10px#333;}
+
+      #rotate ul:after{content:""; display:block; clear:both;}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="rotate">
+            <ul>
+               <li class="rotate1"><a href="#" title="ro1">rotate1</a></li>
+               <li class="rotate2"><a href="#" title="ro2">rotate2</a></li>
+               <li class="rotate3"><a href="#" title="ro3">rotate3</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

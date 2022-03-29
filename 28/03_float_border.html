@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+   <head>
+	<title> new document </title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*###### 초기화 #######*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+      /*###### wrap ######*/
+         #wrap{min-width:1025px; width:100%;}
+         h2{width:100%; height: 45px; line-height:45px; text-align:center; font-size:30px; font-weight:400; background-color:#ccc;}
+      /*soldOut(전체 사용 영역)*/
+         #soldOut{width:100%; height:350px; padding-top:80px;}
+         
+
+      /*event(실제 사용 영역)*/
+         #event{width:760px; height:182px; margin:0 auto;}
+      /*event li (공통작업)*/
+         #event li{width:150px; height:180px; border:1px solid #aaa; text-align:center; float:left;}
+         #event li h3{width:100%; height:30px; line-height:30px; font-size:17px; font-weight:600; background-color:#ccc;}
+      /*h3배경 /폰트 색상 개별*/
+         #event li .red{background-color:#c00; color:#fff;}
+
+         #event li p{height:110px;}
+         #event li p img{height:100%;}
+
+         #event li span{font-size:18px; font-weight:100;}
+
+      /*event(백그라운드 이미지 개별 작업)*/
+         #event .li0 p{background-image:url("img/s0.jpg"); background-position:center center; background-repeat:no-repeat; background-size:95%}
+         #event .li1 p{background-image:url("img/s1.jpg"); background-position:center center; background-repeat:no-repeat; background-size:95%}
+         #event .li2 p{background-image:url("img/s2.jpg"); background-position:center center; background-repeat:no-repeat; background-size:95%}
+         #event .li3 p{background-image:url("img/s3.jpg"); background-position:center center; background-repeat:no-repeat; background-size:95%}
+         #event .li4 p{background-image:url("img/s4.jpg"); background-position:center center; background-repeat:no-repeat; background-size:95%}
+
+      /*###### border (전체그리드배경영역)######*/
+         #border{width:100%; padding-top:100px; height:250px; background-image:url("img/bg_grid.gif");}
+         #border div{width:700px; height:100%; margin:0 auto;}
+         #border div p{width:99px; height:99px; float:left;}
+
+         #border div .p0{height:198px; border-right:1px solid #000; border-bottom:1px solid #000;}
+         #border div .pt{border-top:1px solid #000; border-right:1px solid #000; border-left:1px solid #000;}
+         #border div .pb{border-right:1px solid #000; border-bottom:1px solid #000;}
+         #border div .p1{height:198px; border-top:1px solid #000; border-right:1px solid #000;}
+
+
+         
+
+
+
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <h2>soldOut 만들기</h2>
+      <!--전체 사용영역 (padding-top으로 실제사용영역 밀어주기)-->
+      <div id="soldOut">         
+         <!--실제 사용영역 width: 760px-->
+         <ul id="event">
+            <li class="li0">
+               <h3>2월 7일(월)</h3>
+               <p>
+                  <img src="img/soldout.png" alt="soldout"/>
+               </p>
+               <span>KFC 핫윙</span>
+            </li>
+            <li class="li1">
+               <h3 class="red">2월 8일(화)</h3>    
+               <p>
+                  <!--<img src="img/soldout.png" alt="soldout"/>-->
+               </p>               
+               <span>버거 세트</span>
+            </li>
+            <li class="li2">
+               <h3>2월 9일(수)</h3>
+               <p>
+                  <!--<img src="img/soldout.png" alt="soldout"/>-->
+               </p>
+               <span>우유 식빵</span>
+            </li>
+            <li class="li3">
+               <h3>2월 9일(목)</h3>
+               <p>
+                  <!--<img src="img/soldout.png" alt="soldout"/>-->
+               </p>
+               <span>영화예매권</span>
+            </li>
+            <li class="li4">
+               <h3>2월 10일(금)</h3>
+               <p>
+                  <!--<img src="img/soldout.png" alt="soldout"/>-->
+               </p>
+               <span>버거 세트</span>
+            </li>
+         </ul>
+      </div>
+      <h2>border와 float</h2>
+      <div id="border">
+         <!--실제 사용영역 width:600px-->
+         <div>
+            <p class="p0"></p>
+            <p class="pt"></p>
+            <p class="pb"></p>
+            <p class="pt"></p>
+            <p class="pb"></p>
+            <p class="p1"></p>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

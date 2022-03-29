@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>animation</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:500px;}
+
+      #container p{width:200px; height:200px; line-height:200px; background-color:#ff0; text-align:center; }
+
+      #container .ani1{animation:ani1 3s infinite alternate;}
+
+      @keyframes ani1{
+         25%{border-radius:100px; line-height:300px; color:#fff; background-color:#00f;}
+         75%{border:5px solid #f00;}
+         100%{width:300px; height:300px; line-height:300px; border:5px solid #f00; border-radius:150px; background-color:#ff0;}
+      }
+
+      #container .ani2{animation:ani2 3s infinite alternate;}
+
+      @keyframes ani2{
+         25%{width:200px; height:100px; line-height:100px; transform:translatex(300px); border-radius:10px;  color:#fff; background-color:aqua;}
+         75%{transform:translatex(350px); background-color:#00a;}
+         100%{transform:translatex(350px); border-radius:150px;background-color:pink;}
+      }
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <h2>animation_test</h2>
+         <p class="ani1">ani1</p>
+         <p class="ani2">ani2</p>
+      </div>
+   </div>
+ </body>
+</html>

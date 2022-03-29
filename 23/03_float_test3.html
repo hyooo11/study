@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+	<title>flatTest3</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		/*########### 초기화 ###########*/
+			*{margin:0; padding:0;}
+			li{list-style-type:none;}
+		/*########### h2 ###########*/
+			h2{width:1000px; height:47px; line-height:47px; border-bottom:3px solid purple; margin:0 auto; text-align:center;}
+
+		/*########### h3 공통 작업 ###########*/
+			h3{margin:30px auto 20px; background-color:#ff0; text-align:center;}
+
+		/*########### ts0 ###########*/
+			#ts0{width:800px; height:300px; margin:0 auto;}
+			#ts0 li{width:199px; height:100%; margin-right:1px; background-color:navy; float:left; text-align:center; line-height:300px; color:#fff;}
+			/*ts0 개별작업*/
+			#ts0 .li1 .div_parent .imgs{height:200px; background-color:#00f; line-height:200px;}
+			#ts0 .li1 .div_parent .desc{height:100px; background-color:#0cf; line-height:100px;}
+
+		/*########### ts1 ###########*/
+			#ts1{width:900px; height:300px; background-color:gold; margin:0 auto; color:#fff;}
+			#ts1 li{width:300px; height:100%; float:left; text-align:center; line-height:300px;}
+
+			/*ts1개별작업*/
+			#ts1 .imgArea .div_parent .img{width:200px; height:200px; background-color:#333; margin:50px; line-height:200px;}
+
+	</style>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<h2>flatTest1_1 : float 1번 파일 처럼 작업하기, ul li 각각 작업하기</h2>
+		<h3>전체너비 : 800px 적용</h3>
+		<ul id="ts0">
+			<li class="li0">
+				test1
+			</li>
+			<li class="li1">
+				<div class="div_parent">
+					<p class="imgs">image1</p>
+					<p class="desc">desc1</p>
+				</div>
+			</li>
+			<li class="li1">
+				<div class="div_parent">
+					<p class="imgs">image2</p>
+					<p class="desc">desc2</p>
+				</div>
+			</li>
+			<li class="li1">
+				<div class="div_parent">
+					<p class="imgs">image3</p>
+					<p class="desc">desc3</p>
+				</div>
+			</li>
+		</ul>
+		<h3>전체너비 : 900px 적용</h3>
+		<ul id="ts1">
+			<li class="imgArea">
+				<div class="div_parent">
+					<p class="img">
+						image
+					</p>
+				</div>
+			</li>
+			<li>
+				<p>
+					desc
+				</p>
+			</li>
+			<li class="imgArea">
+				<div class="div_parent">
+					<p class="img">
+						image
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+ </body>
+</html>

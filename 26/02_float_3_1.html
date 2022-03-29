@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>float_3_1</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*########### 초기화 ###########*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+      /*########## 해상도 ###########*/
+         #wrap{min-width:1025px; width:100%;}
+         h2{line-height:60px; text-align:center; text-transform:uppercase;}
+
+      /*######### section0 ########*/
+         #section0{width:100%; height:500px;}
+
+      /*######### section0 / ts0 (width:800px) ########*/
+         #ts0{width:800px; height:400px; margin:0 auto; background-color:#ccc;}
+         #ts0 li{width:200px; height:100%; line-height:400px; text-align:center; background-color:pink; float:left;}
+
+      /*####### ts0 li0 (배경색상 개별작업) #######*/
+         #ts0 .ts0_li0{background-color:#af0;}
+
+      /*########### ts0 의 세번째 li ##############*/
+         #ts0 .ts0_li2{width:400px; height:100%;}
+         #ts0 .ts0_li2 .ul0{width:100%; height:100%;}
+
+      /*########### ts0 의 세번째 li의 작은 정사각형 ##############*/
+         #ts0 .ts0_li2 .ul0 li{width:200px; height:200px; line-height:200px; background-color:#ccc;}
+
+      /*########### ts0 의 세번째 li의 작은 정사각형 border/배경색상 개별작업 ##############*/
+         #ts0 .ts0_li2 .ul0 .li1{width:190px; height:190px; border:5px solid #f00; background-color:aqua;}
+         #ts0 .ts0_li2 .ul0 .li2{width:190px; height:190px; border:5px solid #00f; background-color:#f00;}
+      
+      /*######### section1 ########*/
+         #section1{width:100%; height:500px;}
+
+      /*######### section0 / ts0 (width:1410px) ########*/
+         #ts1{width:1410px; height:300px; margin:0 auto;}
+
+         #ts1 li{width:200px; margin-right:1px; margin-bottom:1px; height:100%; line-height:300px; text-align:center;background-color:#ccc; float:left;}
+
+      /*########## ts1에 세번째  li 인 li2###########*/
+         #ts1 .ts1_li2{width:805px;height:100%; background-color:#fff;}
+
+      /*############ ts1 / ul0 ##########*/
+         #ts1 .ul0{width:603px; height:100%; float:left;}
+         #ts1 .ul0 li{width:200px; height:150px; line-height:150px; background-color:gold;}
+
+      /*############ ts1 / ul1 ##########*/
+         #ts1 .ul1{width:202px; height:100%; float:left;}
+         #ts1 .ul1 li{width:100px; height:150px; line-height:150px; background-color:#ff0;}
+
+      /*######### section2 ########*/
+         #section2{width:100%; height:500px;}
+
+      /*########### section2  / ts2 (width:1300px) ##########*/
+         #ts2{width:1300px; height:300px; margin:0 auto;}
+
+      /*########### ts2 li ############*/
+         #ts2 li{width:198px; margin-right:1px; height:100%; line-height:300px; text-align:center; background-color:#ff0; float:left;}
+
+         #ts2 .li2{width:700px; height:100%;}
+         #ts2 .li2 li{width:100px; height:100%; color:#fff;}
+
+         /*ts2 첫번째 박스*/
+         #ts2 .li0 .ul0{width:200px; height:100%;}
+         #ts2 .li0 .ul0 li{width:100px; margin-right:0; height:100%;}
+
+         /*ts2 첫번째 박스 개별 작업*/
+         #ts2 .li0 .ul0 .ul0_li0{background-color:#ccc;}
+         #ts2 .li0 .ul0 .ul0_li1{background-color:#333; color:#fff;}
+
+         /*ts2 세번째 박스ul0*/
+         #ts2 .li2 .ul0{width:200px; height:300px; float:left;}
+         #ts2 .li2 .ul0 li{width:100px; height:150px; line-height:150px; margin-right:0; }
+
+         /*ts2 세번째 박스 ul0 li 개별작업*/
+         #ts2 .li2 .ul0 .ul0_li0{background-color:#00f;}
+         #ts2 .li2 .ul0 .ul0_li1{background-color:#00c;}
+         #ts2 .li2 .ul0 .ul0_li2{width:100%; background-color:#00a;}
+
+         /*ts2 세번째 박스ul1*/
+         #ts2 .li2 .ul1{width:200px; height:300px; float:left;}
+         #ts2 .li2 .ul1 li{width:100px; height:100%; line-height:300px; margin-right:0;}
+
+         /*ts2 세번째 박스 ul1 li 개별작업*/
+         #ts2 .li2 .ul1 .ul1_li0{background-color:#00e;}
+         #ts2 .li2 .ul1 .ul1_li1{background-color:#005;}
+
+         /*ts2 세번째 박스ul2*/
+         #ts2 .li2 .ul2{width:300px; height:300px; float:left;}
+         #ts2 .li2 .ul2 li{width:100px; height:150px; line-height:150px; margin-right:0;}
+
+         /*ts2 세번째 박스 ul2 li 개별작업*/
+         #ts2 .li2 .ul2 .ul2_li0{background-color:#001;}
+         #ts2 .li2 .ul2 .ul2_li1{background-color:#003;}
+         #ts2 .li2 .ul2 .ul2_li2{background-color:#00a;}
+         #ts2 .li2 .ul2 .ul2_li3{width:100%; background-color:#00e;}
+
+         
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <div id="section0">
+         <h2>ul li ul li 작업하기, 너비: 800px</h2>
+         <ul id="ts0">
+            <li class="ts0_li0">float0</li>
+            <li>float1</li>
+            <li class="ts0_li2">
+               <ul class="ul0">
+                  <li class="li0">ul0_li0</li>
+                  <li class="li1">ul0_li1</li>
+                  <li class="li2">ul0_li2</li>
+                  <li class="li3">ul0_li3</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div id="section1">
+         <h2>ul li ul li 작업하기, 너비: 1410px</h2>
+         <ul id="ts1">
+            <li>float0</li>
+            <li>float1</li>
+            <li class="ts1_li2">
+               <ul class="ul0">
+                  <li class="li0">ul0_li0</li>
+                  <li class="li0">ul0_li1</li>
+                  <li class="li0">ul0_li2</li>
+                  <li class="li0">ul0_li3</li>
+                  <li class="li0">ul0_li4</li>
+                  <li class="li0">ul0_li5</li>
+               </ul>
+               <ul class="ul1">
+                  <li class="li0">ul1_li0</li>
+                  <li class="li0">ul1_li1</li>
+                  <li class="li0">ul1_li2</li>
+                  <li class="li0">ul1_li3</li>
+               </ul>
+            </li>
+            <li>float3</li>
+         </ul>
+      </div>
+
+      <div id="section2">
+         <h2>ul li ul li 작업하기, 너비: 1300px</h2>
+         <ul id="ts2">
+            <li class="li0">
+               <ul class="ul0">
+                  <li class="ul0_li0">li0_li0</li>
+                  <li class="ul0_li1">li0_li1</li>
+               </ul>
+            </li>
+            <li class="li1">float1</li>
+            <li class="li2">
+               <ul class="ul0">
+                  <li class="ul0_li0">ul0_li0</li>
+                  <li class="ul0_li1">ul0_li1</li>
+                  <li class="ul0_li2">ul0_li2</li>
+               </ul>
+               <ul class="ul1">
+                  <li class="ul1_li0">ul1_li0</li>
+                  <li class="ul1_li1">ul1_li1</li>
+               </ul>
+               <ul class="ul2">
+                  <li class="ul2_li0">ul2_li0</li>
+                  <li class="ul2_li1">ul2_li1</li>
+                  <li class="ul2_li2">ul2_li2</li>
+                  <li class="ul2_li3">ul2_li3</li>
+               </ul>
+            </li>
+            <li class="li3">float3</li>
+         </ul>
+      </div>
+   </div>
+ </body>
+</html>

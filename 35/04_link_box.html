@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+	<title>link_box</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <style type="text/css">
+      /*###### 초기화 #####*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+
+         a:link, a:visited{text-decoration:none; color:#fff;}
+         a:hover, a:focus{text-decoration:underline; color:#f00; background-color:#a0c;}
+         
+         
+
+         #wrap{min-width:1025px; width:100%;}
+         #container{width:100%;}
+      /*##### 실제 사용 영역 ######*/
+         #content{width:1000px; margin:0 auto;}
+         #content h2{height:100px; line-height:100px; text-align:center; text-transform:uppercase;}
+
+         
+         #linkBox{width:100%; height:200px;}
+         #linkBox ul{width:100%; height:100%;}
+         #linkBox li{width:190px; margin-right:10px; height:100%; background-color:#00f; float:left;}
+         #linkBox li a{width:100%; height:100%; display:block;}
+         #linkBox li a .text{width:100%; height:39px; line-height:40px; border-bottom:1px solid #fff; text-align:center; display:block;}
+         #linkBox li a .img{width:100%; height:160px; display:block;}
+
+         
+
+         
+         
+   </style>
+ </head>
+
+ <body>
+	<div id="wrap">
+      <div id="container">
+         <div id="content">
+            <h2>link_box</h2>
+            <div id="linkBox">
+               <ul>
+                  <li>
+                     <a href="http://www.naver.com" title="네이버">
+                        <span class="text">
+                           네이버
+                        </span>
+                        <span class="img"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="http://www.daum.net" title="다음">
+                        <span class="text">
+                           다음
+                        </span>
+                        <span class="img"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="http://www.google.com" title="구글">
+                        <span class="text">
+                           구글
+                        </span>
+                        <span class="img"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="http://www.samsung.com" title="삼성">
+                        <span class="text">
+                           삼성
+                        </span>
+                        <span class="img"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="http://www.apple.com" title="애플">
+                        <span class="text">
+                           애플
+                        </span>
+                        <span class="img"></span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

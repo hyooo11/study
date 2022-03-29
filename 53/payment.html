@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>payment form</title>
+   <meta charset="utf-8"/>
+   <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   <style>
+      *{margin:0; padding:0;}
+      li{list-style-type:none;}
+
+      #wrap{min-width:1025px; width:100%;}
+
+      #container{width:100%}
+
+      #payment{width:500px; margin:0 auto;}
+      #payment h2{padding:50px 0 20px; font-family: 'Tinos', serif; font-weight:700; font-size:30px;}
+      form{padding:20px; border-radius:10px; background-color:#8a0; font-family: 'Tinos', serif; font-weight:400;}
+      form fieldset{border:none;}
+      form legend{padding-top:10px; text-indent:5px; font-size:18px;}
+      form ul{width:100%;}
+      form li{padding:10px; border:1px solid #fff; border-radius:10px; margin-bottom:5px; background-color:rgba(255,255,255,0.3);}
+      
+      form .chk i{vertical-align:middle;}
+      
+      form li label{display:inline-block; width:100px; font-size:15px;}
+      form .chk label{padding:0 5px; display:inline;}
+      
+      form li input{width:250px; border:1px solid #555; border-radius:5px; text-indent:5px;}
+      form .chk input{margin-right:25px; width:13px; vertical-align:middle;}
+      
+      form li #address{height:80px;}
+
+      
+      form #btnArea{width:100%; text-align:center;}
+      form #btn{border:none; border-radius:15px; padding:5px 30px; background-color:#351; color:#fff;}
+
+
+   </style>
+
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="payment">
+            <h2>Payment form</h2>
+            <form action="#" method="post">
+               <fieldset>
+                  <legend>Step: Your details</legend>
+                  <ul>
+                     <li><label>name: </label><input id="name" type="text" name="name" placeholder="First and last name" required="required"/></li>
+                     <li><label>emali: </label><input id="email" type="email" name="email" placeholder="example@domain.com" required="required" autocomplete="off"/></li>
+                     <li><label>phone: </label><input id="phone" type="tel" name="phone" placeholder="010-123-4567" autocomplete="off" required="required"/></li>
+                     <li><label>datalist: </label><input id="datalist" type="text" name="datalist" list="hobby"/></li>
+                  </ul>
+               </fieldset>
+               <fieldset>
+                  <legend>Step: Delivery Address</legend>
+                  <ul>
+                     <li><label>address: </label><input id="address" type="text" name="address" required="required" autocomplete="off"/></li>
+                     <li><label>postcode: </label><input id="postcode" type="text" name="postcode" placeholder="숫자만 입력" required="required"/></li>
+                     <li><label>country: </label><input id="country" type="text" name="country"/></li>
+                  </ul>
+               </fieldset>
+               <fieldset>
+                  <legend>Step: card datails</legend>
+                  <ul>
+                     <li class="chk">
+                        <i><img src="img/visa.gif" alt="visa아이콘"/></i>
+                        <label>visa</label><input id="visa" type="checkbox" name="visa"/>
+                        <i><img src="img/amex.gif" alt="amex아이콘"/></i>
+                        <label>amex</label><input id="amex" type="checkbox" name="amex"/>
+                        <i><img src="img/mastercard.gif" alt="mastercard아이콘"/></i>
+                        <label>marstercard</label><input id="marstercard" type="checkbox" name="marstercard"/>
+                     </li>
+                     <li>
+                        <label>cardnumber:</label><input id="cardnumber" type="text" name="cardnumber" placeholder="-을 넣고 입력" pattern="\d{4}-\d{4}-\d{4}-d\{4}" autocomplete="off" required="required"/>
+                     </li>
+                     <li><label>company: </label><input id="company" type="text" name="company" value="apple" readonly="readonly"/></li>
+                     <li><label>security code: </label><input id="security_code" type="password" name="security_code" pattern="\d{3}" required="required"/></li>
+                     <li>
+                        <label>namecard: </label><input id="namecard" type="text" name="namecard" placeholder="Exact name as on the card"/>
+                     </li>
+                  </ul>
+                  <div id="datalistArea">
+                     <datalist id="hobby">
+                        <option value="book">book</option>
+                        <option value="game">game</option>
+                        <option value="music">music</option>
+                     </datalist>
+                  </div>
+               </fieldset>
+               <p id="btnArea">
+                  <input id="btn" type="submit" value="Buy it!" title="btn"/>
+               </p>
+            </form>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

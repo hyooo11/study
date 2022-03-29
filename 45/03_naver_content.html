@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>naver_content</title>
+   <meta charset="utf-8"/>
+   <style>
+      /*##### 초기화 #####*/
+         *{margin:0; padding:0;}
+         li{list-style-type:none;}
+         a:link,a:visited{text-decoration:none; color:#000;}
+         a:hover,a:focus{text-decoration:underline;}
+
+         #wrap{min-width:1025px; width:100%;}
+         #container{width:100%;}
+
+      /*#### section ####*/
+         section{width:708px;padding:10px 0 0 10px; margin:0 auto; position:relative;}
+         section h2{position:absolute; left:-9999px;}
+
+      /*#### menu ####*/
+         #menu{width:156px; padding-left:10px; margin-right:10px; height:170px; margin-bottom:10px; padding-top:10px; background-image:url("img/color.png"); color:#fff; float:left;}
+         #menu h3{font-size:20px;}
+         #menu p{height:50px; line-height:50px; }
+         #menu ul{width:100%;}
+         #menu li{width:78px; height:20px; font-size:14px; float:left;}
+         #menu li a{color:#fff;}
+
+      /*#### mainArea #####*/
+         #mainArea{width:342px; margin-right:10px; height:180px; margin-bottom:10px; position:relative; float:left;}
+         #mainArea .img{width:100%; height:100%;}
+         #mainArea .img img{width:100%; height:100%;}
+         #mainArea .text{width:332px; padding-left:10px; height:45px; padding-top:10px; background-color:rgba(0,0,0,0.5); position:absolute; left:0; bottom:0;}
+         #mainArea .cate{line-height:20px; color:#aaa; font-size:13px;}
+         #mainArea .title{font-size:14px; font-weight:700;}
+         #mainArea .title a{color:#fff;}
+
+         #top{width:166px; height:180px; float:left;}
+         #top a .title{width:100%; font-size:14px; font-weight:700;}
+         #top .cate{color:#aaa; font-size:13px;}
+      /*##### list ######*/
+         #list{float:left;}
+         #list ul{}
+         #list li{width:166px; margin-right:10px; margin-bottom:10px; height:180px; float:left;}
+         #list .top{}
+         #list li a .img{display:block; width:100%;}
+         #list li a .img img{width:100%;}
+         #list li a .title{width:100%; font-size:14px; font-weight:700;}
+         #list li .cate{color:#aaa; font-size:13px;}
+         
+
+
+         section:after{content:""; display:block; clear:both;}
+
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <section>
+            <h2>함께N</h2>
+            <div id="menu">
+               <h3>함께N</h3>
+               <p>─</p>
+               <ul>
+                  <li><a href="#" title="해피빈_홈">해피빈 홈</a></li>
+                  <li><a href="#" title="정기저금">정기저금</a></li>
+                  <li><a href="#" title="기부">기부</a></li>
+                  <li><a href="#" title="펀딩">펀 딩</a></li>
+                  <li><a href="#" title="캠페인">캠페인</a></li>
+                  <li><a href="#" title="가볼까">가볼까</a></li>
+                  <li><a href="#" title="블로그"> 블로그</a></li>
+               </ul>
+            </div>
+            <div id="mainArea">
+               <p class="img">
+                  <img src="img/main.jpg" alt="메인이미지"/>
+               </p>
+               <div class="text">
+                  <p class="cate">해피빈 펀딩</p>
+                  <p class="title"><a href="#" title="무농약_습식_간식">소중한 반려동물을 위한 무농약 습식 간식</a><p>
+               </div>
+            </div>
+            <div id="top">
+               <a href="#" title="서울환경영화제">
+                  <span class="img">
+                     <img src="img/s1.jpg" alt="썸네일1"/>
+                  </span>
+                  <span class="title">
+                     지속가능한 삶을 공유하는 '서울환경영화제'
+                  </span>
+               </a>
+               <p class="cate">
+                  해피빈 펀딩
+               </p>
+            </div>
+            <div id="list">
+               <ul>  
+                  <li>
+                     <a href="#" title="불편한 집으로 향하는 이웃들">
+                        <span class="img">
+                           <img src="img/s2.jpg" alt="썸네일2"/>
+                        </span>
+                        <span class="title">
+                           위험 무릅쓰고 불편한 집으로 향하는 이웃들
+                        </span>
+                     </a>
+                     <p class="cate">
+                        서울YWCA봉천종합복지관
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="착한 마라토너 모집">
+                        <span class="img">
+                           <img src="img/s3.jpeg" alt="썸네일3"/>
+                        </span>
+                        <span class="title">
+                           달리는 만큼 기부된다? 착한 마라토너 모집
+                        </span>
+                     </a>
+                     <p class="cate">
+                        가볼까 | 동방사회복지회
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="면스카프">
+                        <span class="img">
+                           <img src="img/s4.jpg" alt="썸네일4"/>
+                        </span>
+                        <span class="title">
+                           마야의 햇빛을 담은 봄맞이 면스카프
+                        </span>
+                     </a>
+                     <p class="cate">
+                        해피빈 펀딩
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="컨테이너도_잃게_된_노부부">
+                        <span class="img">
+                           <img src="img/s5.png" alt="썸네일5"/>
+                        </span>
+                        <span class="title">
+                           아픈 몸 기댈 컨테이너도 잃게 된 노부부
+                        </span>
+                     </a>
+                     <p class="cate">
+                        사회복지공동모금회
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="집이_가장_무서운_아이들">
+                        <span class="img">
+                           <img src="img/s6.jpeg" alt="썸네일6"/>
+                        </span>
+                        <span class="title">
+                           가장 안전해야 할 집이 가장 무서운 아이들
+                        </span>
+                     </a>
+                     <p class="cate">
+                        세이브더칠드런
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="미얀마와_함께_했던_특별한_추억">
+                        <span class="img">
+                           <img src="img/s7.jpg" alt="썸네일7"/>
+                        </span>
+                        <span class="title">
+                           '또 만나요!' 미얀마와 함께 했던 특별한 추억
+                        </span>
+                     </a>
+                     <p class="cate">
+                        세상을 밝히는 사람들
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="도배_봉사">
+                        <span class="img">
+                           <img src="img/s8.jpg" alt="썸네일8"/>
+                        </span>
+                        <span class="title">
+                           도배 초보도 환영해요! 봄을 부르는 '도배 봉사'
+                        </span>
+                     </a>
+                     <p class="cate">
+                        가볼까 | 열매나눔재단
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="어르신께_추억_한_조각_선물">
+                        <span class="img">
+                           <img src="img/s9.jpg" alt="썸네일9"/>
+                        </span>
+                        <span class="title">
+                           아무도 찾지 않는 어르신께 추억 한 조각 선물해요
+                        </span>
+                     </a>
+                     <p class="cate">
+                        사단법인 따뜻한하루
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="Again_강원">
+                        <span class="img">
+                           <img src="img/s10.jpg" alt="썸네일10"/>
+                        </span>
+                        <span class="title">
+                           나누는 사랑, Again 강원! 당신의 사랑을 보여주세요
+                        </span>
+                     </a>
+                     <p class="cate">
+                        굿액션 by CJ헬로
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="반려나무">
+                        <span class="img">
+                           <img src="img/s11.jpg" alt="썸네일11"/>
+                        </span>
+                        <span class="title">
+                           미세먼지 없는 우리집 만드는 '반려나무'
+                        </span>
+                     </a>
+                     <p class="cate">
+                        해피빈 펀딩
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="마리텔 V2">
+                        <span class="img">
+                           <img src="img/s12.jpg" alt="썸네일12"/>
+                        </span>
+                        <span class="title">
+                           협동하는 기부방송! 돌아온 '마리텔 V2'
+                        </span>
+                     </a>
+                     <p class="cate">
+                        굿액션 by MBC
+                     </p>
+                  </li>
+                  <li>
+                     <a href="#" title="고등어와 갈치">
+                        <span class="img">
+                           <img src="img/s13.jpg" alt="썸네일13"/>
+                        </span>
+                        <span class="title">
+                           해녀가 보내는 제주의 선물, '고등어와 갈치'
+                        </span>
+                     </a>
+                     <p class="cate">
+                        해피빈 펀딩
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>
+<!--
+
+
+
+
+
+-->

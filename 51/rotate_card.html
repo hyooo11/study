@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>rotate_card</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{width:100%}
+
+      #card{width:400px; height:200px; line-height:200px; background-color:#00a; color:#fff; text-transform:uppercase; text-align:center; margin:100px auto 0; transform:rotate3d(0,0,0,0); transition:transform 0.5s linear;}
+      #card:hover{transform:rotate3d(1,1,1,220deg);}
+   </style>
+
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="card">
+         samsung card
+      </div>
+   </div>
+ </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>skew_cube</title>
+   <meta charset="utf-8"/>
+   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee&display=swap" rel="stylesheet">
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{width:100%;}
+
+      #title{text-align:center;}
+      #title h2{padding:50px 0 10px; font-family: 'Bungee', cursive;}
+      #title p{font-size:20px; font-family: 'Black Han Sans', sans-serif;}
+
+      #cube{width:500px; height:400px; position:relative; margin:0 auto;}
+      #cube p{width:200px; height:100px;}
+      #cube .top{width:200px; height:100px; transform:skew(50deg,-10deg); background-color:#f00; position:absolute; left:200px; top:50px;}
+      #cube .right{width:120px; height:200px; transform:skewy(40deg); background-color:#00f; position:absolute; left:140px; top:118px;}
+      #cube .left{width:200px; height:200px; transform:skewy(-10deg); background-color:pink; position:absolute; left:260px; top:150px;}
+      #cube .shadow{width:100px; height:100px; transform:skew(50deg,-10deg); background-color:#aaa; position:absolute; left:100px; top:277px;}
+   </style>
+
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="title">
+         <h2>transform &amp; skew</h2>
+         <p >한글 폰트 서버에서 연결하기</p>
+      </div>
+      <div id="cube">
+         <p class="top"></p>
+         <p class="left"></p>
+         <p class="right"></p>
+         <p class="shadow"></p>
+      </div>
+      
+   </div>
+ </body>
+</html>
