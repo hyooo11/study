@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>mediaQuery_test</title>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+   <style>
+      /* #### 초기화 ####*/
+         *{margin:0; padding:0;}
+         body{margin:0; padding:0;}
+
+         ul, ol, li, dl, div, section, article, nav, h1, h2, h3, h4, strong, em, a, i, span{list-style-type:none;}
+         a:link, a:visited{text-decoration:none; color:#000;}
+
+         /*###### 기본 해상도 (pc 해상도) ######*/
+         /*header*/
+         #headerWrap{background-color:#ff0;}
+         #header{text-align:center; }
+         #header h1{padding:50px 0 20px; font-size:25px;}
+         #gnb{font-size:14px; line-height:25px;}
+
+         /*container*/
+         #container{width:100%;}
+         #banner{width:900px; margin:0 auto;}
+         #banner h2{padding:50px 0 20px; font-size:20px; text-align:center;}
+         #banner ul{width:100%;}
+         #banner li{width:293px; border:1px solid #ccc; margin-left:5px; float:left;}
+         #banner a{display:block; width:100%;}
+         #banner a img{width:100%;}
+         #banner ul:after{content:""; display:block; clear:both;}
+
+         /*####### pc 해상도 ######*/
+         @media all and (min-width:1025px){
+
+         }
+
+         /*###### 태블릿 해상도 ######*/
+         @media all and (min-width:768px) and (max-width:1024px){
+            #headerWrap{background-color:#f00;}
+            #banner{width:600px; margin:0 auto;}
+            #banner li{width:293px; border:1px solid #ccc; margin-left:5px; float:left;}
+            #banner .li03{margin:5px 150px 0;}
+         }
+
+         /*###### 스마트폰 해상도 ######*/
+         @media all and (min-width:320px) and (max-width:767px){
+            #headerWrap{background-color:#ff0;}
+            #banner{width:300px; margin:0 auto;}
+            #banner li{width:293px; border:1px solid #ccc; margin-left:5px; float:none;}
+         }
+
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="headerWrap">
+         <header id="header">
+            <h1>로고, 기업의 대표이미지</h1>
+            <nav id="gnb">
+               <ul>
+                  <li><a href="#" title="로그인">로그인</a></li>
+                  <li><a href="#" title="회원가입">회원가입</a></li>
+                  <li><a href="#" title="sns">sns</a></li>
+               </ul>
+            </nav>
+         </header>
+      </div>
+      <div id="container">
+         <section id="banner">
+            <h2>banner영역_풀이</h2>
+            <ul>
+               <li>
+                  <a href="#" title="배너01">
+                     <img src="img/banner01.jpg" alt="banner01"/>
+                  </a>
+               </li>
+               <li>
+                  <a href="#" title="배너02">
+                     <img src="img/banner02.jpg" alt="banner02"/>
+                  </a>
+               </li>
+               <li class="li03">
+                  <a href="#" title="배너03">
+                     <img src="img/banner03.jpg" alt="banner03"/>
+                  </a>
+               </li>
+            </ul>
+         </section>
+      </div>
+   </div>
+ </body>
+</html>
+<!--
+   banner 영역 만들어서 문제 풀기!
+   div, ul, li, a, img 태그 사용하기
+   -->

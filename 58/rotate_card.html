@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>rotate_card</title>
+   <meta charset="utf-8"/>
+   <style>
+      *{margin:0; padding:0;}
+
+      #wrap{min-width:1025px; width:100%;}
+      #container{width:100%;}
+      #content{width:200px; margin:100px auto 0; position:relative;}
+
+      #content p{position:absolute; left:0; top:0; }
+
+      #content .front{opacity:1; transform:rotatex(0deg); transition:all 0.3s linear 0.2s; background-color:#fff;}
+      #content:hover .front{opacity:0; transform:rotatex(180deg);}
+
+      #content .back{transform:rotatex(180deg); transition:transform 0.3s linear 0.2s; background-color:#fff;}
+      #content:hover .back{transform:rotatex(0deg);}
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <div id="container">
+         <div id="content">
+            <p class="back">
+               <img src="img/back.png" alt="back"/>
+            </p>
+            <p class="front">
+               <img src="img/front.png" alt="front"/>
+            </p>
+         </div>
+      </div>
+   </div>
+ </body>
+</html>

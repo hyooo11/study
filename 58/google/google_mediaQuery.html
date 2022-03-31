@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>google_mediaQuery</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+  <style>
+    /*### 초기화 ###*/
+      *{margin:0; padding:0;}
+      body{margin:0; padding:0;}
+
+      ul, ol, li, dl, div, section, article, nav, h1, h2, h3, h4, strong, em, a, i, span{margin:0; padding:0;}
+      li{list-style-type:none;}
+
+      a:link, a:visited{text-decoration:none; color:#000;}
+
+      #wrap{width:100%;}
+
+      #headerWrap{width:100%;}
+      #header{width:900px; margin:50px auto 0;}
+      
+      h1{width:200px; margin:0 auto;}
+      h1 img{width:100%;}
+
+      #container{width:100%;}
+      
+      #video{width:1000px; margin:20px auto 0;}
+      #video video{width:100%;}
+      #video video source{width:100%;}
+
+
+      #searchArea{width:100%;}
+      #searchArea form{width:1000px; margin:30px auto 0;}
+      #searchArea fieldset{border:none;}
+      #searchArea legend{display:none;}
+      #searchArea input{width:100%; height:38px; border:1px solid #ccc; font-size:20px; text-indent:10px;}
+
+      #site{width:100%}
+      h2{position:absolute; left:-9999px; width:1px; height:1px; line-height:0; font-size:1px; overflow:hidden;}
+      #site ul{width:1000px; margin:50px auto 0;}
+      #site li{width:240px; margin-left:10px; margin-bottom:10px; float:left;}
+      #site li a{display:block; width:100%;}
+      #site li a img{width:100%}
+
+      #site ul:after{content:""; display:block; clear:both;}
+
+      #footerWrap{width:100%}
+      #footer{text-align:center;}
+      #footer p{color:#ccc; font-weight:700; font-size:25px; line-height:50px;}
+
+      /*## 태블랫 해상도 ##*/
+      @media all and (min-width:768px) and (max-width:1024px){
+        #header{width:748px;}
+
+        #video{width:748px;}
+
+        #searchArea form{width:748px; margin:30px auto 0;}
+
+        #site ul{width:600px; margin:40px auto 0;}
+        #site li{width:190px;}
+        #site .hidden{display:none;}
+        #footer p{font-size:20px;}
+      }
+
+
+
+      /*## 모바일 가로 해상도 ##*/
+      @media all and (min-width:481px) and (max-width:767px){
+        #header{width:450px;}
+
+        #video{width:450px;}
+
+        #searchArea form{width:450px; margin:30px auto 0;}
+
+        #site ul{width:400px; margin:40px auto 0;}
+        #site li{width:190px;}
+        #footer p{font-size:20px;}
+      }
+
+
+      /*#### 모바일 세로 해상도 #####*/
+      @media all and (min-width:320px) and (max-width:480px){
+        #header{width:300px;}
+
+        #video{width:300px;}
+
+        #searchArea form{width:300px; margin:30px auto 0;}
+
+        #site ul{width:250px; margin:40px auto 0;}
+        #site li{width:100%; margin-left:0; margin-bottom:10px; float:none;}
+        #footer p{font-size:20px;}
+      }
+
+
+
+  </style>
+ </head>
+ 
+
+ <body>
+  <div id="wrap">
+    <div id="headerWrap">
+      <header id="header">
+        <h1>
+          <img src="img/logo.png" alt="구글"/>
+        </h1>
+      </header>
+    </div>
+    <div id="container">
+      <div id="video">
+        <video autoplay muted>
+          <source src="video/apple.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div id="searchArea">
+        <form action="#" method="get">
+          <fieldset>
+            <legend>검색창</legend>
+            <input id="search" type="text" name="search" title="search" placeholder="Google 검색 또는 URL 입력"/> 
+          </fieldset>
+        </form>
+      </div>
+      <section id="site">
+        <h2>사이트 목록 영역</h2>
+        <ul>
+          <li>
+            <a href="#" title="naver">
+              <img src="img/naver.jpg" alt="naver"/>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="daum">
+              <img src="img/daum.jpg" alt="daum"/>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="audi">
+              <img src="img/audi.jpg" alt="audi"/>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="nintendo">
+              <img src="img/nintendo.jpg" alt="nintendo"/>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="lg">
+              <img src="img/lg.jpg" alt="lg"/>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="samsung">
+              <img src="img/samsung.jpg" alt="samsung"/>
+            </a>
+          </li>
+          <li class="hidden">
+            <a href="#" title="sony">
+              <img src="img/sony.jpg" alt="sony"/>
+            </a>
+          </li>
+          <li class="hidden">
+            <a href="#" title="w3c">
+              <img src="img/w3c.jpg" alt="w3c"/>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div id="footerWrap">
+      <footer id="footer">
+        <p>
+          GOOGLE:MEDIAQUERY
+        </p>
+      </footer>
+    </div>
+  </div>
+ </body>
+</html>
