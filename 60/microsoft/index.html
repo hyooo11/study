@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>microsoft</title>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+   <style>
+      /*############ 초기화 ############*/
+         *{margin:0; padding:0;}/*pc 초기화*/
+         body,header, section,footer,nav,div,p,ul li{margin:0; padding:0;}
+         header, section, footer, nav{display:block;}
+
+         a:link, a:visited{text-decoration:none;}
+         a:hover, a:focus{text-decoration:underline; color:#f00;}
+
+         li{list-style:none;}
+         img{border:none;}
+
+         /*
+            [인라인 요소_너비와 높이를 가지는 요소]
+
+               1) select, video, img, input....
+               2) 속성을 가지고 있고, 너비와 높이를 가지는 인라인요소들은
+                  보이든 보이지 않든, frame을 가지고 있음!
+
+               3) img태그의 경우, 구형 브라우저에서 테두리가 생기는데..
+                  구형브라우저에서 사라지지 않고 frame이 나타나는 현상!
+                     * (border:none)으로 해결 가능
+         */
+
+         input[type="button"], input[type="submit"], input[type="reset"], button{cursor:pointer;}
+
+      /*#######################################################*/
+
+         #wrap{max-width:1920px; width:100%; margin:0 auto;}
+         /*
+            [해상도 범위 나누기]
+
+               1) 아래와 같이 사용할 경우
+               
+                  #wrap {max-width:1920px} 로 나누고, 1025px 부터 pc 해상도 범위로 사용할 수 있음!
+                  @media all and (min-width:1025px){}
+
+               2) 중요)
+                  max-width 값을 나누면 영역자체가 왼쪽으로 붙는 현상이 발생함!
+                  : 1920px 보다 해상도가 큰 pc 에서는 한쪽으로 붙어 보일 수 있기 때문에 주의해야 함!
+         */
+
+         #head{width:100%; padding:20px 0;}
+
+      /*########### logo, search ##########*/
+
+         #logo, #search{height:50px; float:left;}
+
+         #logo{width:40%;}
+         #logo a{display:block; width:162px; height:34px; margin:8px 20px; background-color:#fff;}
+
+         #search{width:60%;}
+         #search .schArea{width:100%;}
+
+         /*input 태그*/
+         #schText{width:50%; height:30px; text-indent:10px;}
+         #search input[type="image"]{vertical-align:middle;}
+         #search{width:60%;}
+
+         /*
+            [영역을 %로 작업할 경우]
+
+               1) 1%라도 어떤 영역에 사용하느냐에 따라서 크기가 다를 수 있음!
+
+                  * 반드시 담아주는 객체 만들어 주기!
+
+               2) % 작업은 px처럼 예측이 어렵기 때문에 화면을 보는 작업이 필수!
+
+            [매우중요_% 이해하기]
+
+               : 부모의 크기가 20% 일 경우, 자녀는 한명이고, 모든 영역을 사용하려면 몇 %를 사용해야 할까?
+                  : 자녀가 볼때는 부모가 작아도 100%로 작성!
+
+               : 부모가 크기가 120% 일 경우, 자녀는 한명이고, 모든 영역을 사용하려면 몇 %를 사용해야 할까?
+                  : 부모가 커져도 자녀가 볼때는 100%로 작성!
+
+               * 부모영역이 크든작든 100%로 작업해야 함!
+
+            [매우중요_%활용하기]
+
+               : 부모가 400% 이고, 자녀가 4명일 경우, 부모요소를 골고루 차지하려면 몇 %를 사용해야 할까?
+
+               : 부모가 400%여도 자녀가 볼때는 100%로 보게 됨!
+                  : 자녀가 4명 있기 때문에 25%씩 사용가능!
+
+
+            [정리]
+               부모의 너비가 600px일때도 자녀는 100%
+               부모의 너비가 1920px 일때도 자녀는 100%
+                  사용하듯이, %로 바뀌어도 자녀가 볼떄는 100%로 인지함!
+         */
+
+         
+
+         #head:after{content:""; display:block; clear:both;}
+
+      /*########### nav ############*/
+         #header nav{width:100%; line-height:50px;}
+         #header ul{width:100%;}
+         #header li{display:inline;}
+         #header li a{padding:0 20px;}
+
+      /*###### visual #########*/
+         #visual{width:100%; /*height:700px;*/  position:relative;}
+         #visual p{width:100%;}
+         #visual p img{width:100%;}
+
+         /*
+            [높이값 설정하기]
+               : 익스플로러 구형 브라우저의 경우, 너비와 높이 값이 없을 경우, 영역이 쉽게 무너집!
+               : 반응형 작업시 높이값이 제대로 줄어들지 않음!
+
+               * 한쪽 방향만 살려두고, 나머지 값은 자연스럽게 비율에 맞춰서 줄어들거나 늘어날 수 있도록 설계하기
+
+               [정리]
+                  [1] 너비와 높이 둘중에 한 군데만 사용하고, 한쪽 측은 자동으로 비율에 맞춰서 줄거나 늘어날 수 있도록 만들기!
+                     : 너비에 맞춰서 자동으로 줄어들게 하려면 높이값 사용X
+                     : 높이에 맞춰서 자동으로 줄어들게 하려면 너비값 사용 X
+
+                  [2] 아래 내용 매우 중요
+
+                     브라우저는 pc에서만 줄일 수 있기 때문에 , 모바일에서 높이 방향에 문제가 생긴다면
+                     높이값 제작하기!
+
+                        : 줄어들지 않아도 문제 없기 때문에 안전하게 만들기!
+
+                  [3] 공통영역에서 px로 작업했다면, 미디어 쿼리에서 %로 바꿨을때 해당하는 영역에서
+                     줄어드는 작업 가능!
+
+                  [4] script를 이용하는 방법 (반박자 느림)
+
+                     : 자녀 크기에 맞춰서 부모 설정 가능함!
+                     : style에서는 부모에서 자녀만 관리 했지만.. script에서는 자녀에서 부모를 찾아서
+                     해결 할 수 있음!
+
+                     * script가 반박자 느리기 때문에 , 자녀가 줄어들고 부모가 나중에 현태가 바뀌는 것을
+                     볼 수 있음! (실시간으로 빠르게 반영되기 어려움!)
+         */
+
+      /*########## visual 영역안의 파란색 박스 #############*/
+
+         #visual div{width:230px; height:220px; padding:1%; background-color:#1570a6; color:#fff; position:absolute; right:75%; top:15%;}
+
+         #visual h3{font-size:2em; font-weight:400; font-family:corbel;}
+         #visual .text{font-size:1.1em; margin:10px 0; line-height:25px;}
+         #visual .link{width:100%; height:24px; font-size:17px;}
+         #visual .link a{color:#efefef; display:block; width:100%; height:24px;}
+
+      /*
+         [position 사용하기]
+
+            : position:absolute 사용하기
+
+               : 해당하는 좌표를 절대 고정하여 사용함!
+               : left:200px; top:200px; 을 적용하면 해당하는 거리 만큼은 절대 가까워 지지 않음!
+
+            *left나 top방향으로 움직이려면 다른 좌표를 고정시켜두고 사용해야 함
+      */
+
+      /*######### content ##########*/
+         #content{width:100%; overflow:hidden;}
+         #content ul{width:1025px; margin:20px auto;}
+         #content li{width:330px; margin-left:10px; float:left;}
+         #content li img{width:100%;}
+         #content ul:after{content:""; display:block; clear:both;}
+
+      /*######## footer ########*/
+
+         #footer{width:100%; text-align:center; padding:40px 0 10px;}
+         #footer li{display:inline-block;}
+         #footer li a{color:#333; padding:0 5px;}
+
+         /*
+            [footer 영역 확인하기]
+
+               : footer 영역은 중요 정보를 모아두는 영역!
+                  
+                  : 카피라이터
+                  : 법률정보
+                  : 개인정보방침
+                  : 회사소개
+                  : 사업자번호
+
+            [문제점]
+
+               1) 브라우저를 줄이게 되면 글자가 한 글자씩 아래로 떨어지는 문제 발생!
+               2) 글자가 아래로 한자씩 떨어지게 되면 뜻 자체가 이해하기 어려움!
+
+               * 3) 모든 스마트폰 기종이 다르고, 디바이스들이 다르기 때문에 글자들이 전부 다르게 떨어질 수 있음!
+               
+               4) display:inline은 글자 하나씩 인지하지만 inline-block의 경우 묶음으로 처리하기 때문에
+               내용 전달에 문제가 없음!
+
+               * display:inline으로 처리해야 되는데 블록이 섞여 있거나, 현재 footer 영역처럼 묶음으로 처리해야
+               할때는 display:inline-block으로 처리하기!
+         */
+
+      /*######### 임시보관소 만들기 ###########*/
+         h2{position:absolute; left:-9999px; width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden;}
+
+      /*######## 테블릿 pc버전 ###########*/
+         @media  all and (min-width:768px) and (max-width:1024px){
+            #header{background-color:gold;}
+
+         /*###### logo, search ######*/
+            #logo, #search{float:none;}
+
+            #logo{width:100%;}
+            #logo a{margin:0 auto;}
+
+            #search{width:100%;}
+            #search .schArea{width:100%;}
+
+            /*input 태그*/
+            #schText{width:90%;}
+
+         /*########### nav ############*/
+            #header nav{background-color:#1570a6}
+            #header li{display:block; width:100%; text-align:center; border-bottom:1px solid #fff;}
+            #header li a{padding:0; color:#fff;}
+
+         /*###### visual #########*/
+            #visual{width:100%; /*height:700px;*/  position:relative;}
+            #visual p{width:100%;}
+            #visual p img{width:100%;}
+
+         /*########## visual 영역안의 파란색 박스 #############*/
+
+            #visual div{width:98%; height:90px; padding:1%; position:static;}
+
+            #visual h3{font-size:1.4em;}
+            #visual .text{font-size:0.85em; margin:10px 0; line-height:15px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+            #visual .link{width:100%; height:15px; font-size:14px;}
+
+         /*######### content ##########*/
+            /*원본 이미지 크기 420px*/
+            #content ul{width:400px;}
+            #content li{width:100%; margin-left:0; float:none; text-align:center; font-size:15px;}
+
+         /*######## footer ########*/
+            #footer{width:100%; text-align:center; padding:40px 0 10px;}
+            #footer li{display:block; width:100%; line-height:30px; font-size:14px; border-bottom:1px solid #ccc;}
+            #footer li a{padding:0;}
+
+            /*카피라이터 영역*/
+            #footer li:last-child{border:none; line-height:60px; background-color:#000;}
+            #footer li:last-child a{color:#fff;}
+         }
+
+      /*######## 스마트폰 가로버전 ###########*/
+         @media  all and (min-width:481px) and (max-width:767px){
+            #header{}
+
+         /*###### logo, search ######*/
+            #logo, #search{float:none;}
+
+            #logo{width:100%;}
+            #logo a{margin:0 auto;}
+
+            #search{width:100%;}
+            #search .schArea{width:100%;}
+
+            /*input 태그*/
+            #schText{width:90%;}
+
+         /*########### nav ############*/
+            #header nav{background-color:#1570a6}
+            #header li{display:block; width:100%; text-align:center; border-bottom:1px solid #fff;}
+            #header li a{padding:0; color:#fff;}
+
+         /*###### visual #########*/
+            #visual{width:100%; /*height:700px;*/  position:relative;}
+            #visual p{width:100%;}
+            #visual p img{width:100%;}
+
+         /*########## visual 영역안의 파란색 박스 #############*/
+
+            #visual div{width:98%; height:90px; padding:1%; position:static;}
+
+            #visual h3{font-size:1.4em;}
+            #visual .text{font-size:0.85em; margin:10px 0; line-height:15px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+            #visual .link{width:100%; height:15px; font-size:14px;}
+
+         /*######### content ##########*/
+            /*원본 이미지 크기 420px*/
+            #content ul{width:400px;}
+            #content li{width:100%; margin-left:0; float:none; text-align:center; font-size:15px;}
+
+         /*######## footer ########*/
+            #footer{width:100%; text-align:center; padding:40px 0 10px;}
+            #footer li{display:block; width:100%; line-height:30px; font-size:14px; border-bottom:1px solid #ccc;}
+            #footer li a{padding:0;}
+
+            /*카피라이터 영역*/
+            #footer li:last-child{border:none; line-height:60px; background-color:#000;}
+            #footer li:last-child a{color:#fff;}
+         }
+
+      /*######## 스마트폰 세로버전 ###########*/
+         @media  all and (min-width:320px) and (max-width:480px){
+            #header{background-color:gold;}
+
+         /*###### logo, search ######*/
+            #logo, #search{float:none;}
+
+            #logo{width:100%;}
+            #logo a{margin:0 auto;}
+
+            #search{width:100%;}
+            #search .schArea{width:100%;}
+
+            /*input 태그*/
+            #schText{width:90%;}
+
+         /*########### nav ############*/
+            #header nav{background-color:#1570a6}
+            #header li{display:block; width:100%; text-align:center; border-bottom:1px solid #fff;}
+            #header li a{padding:0; color:#fff;}
+
+         /*###### visual #########*/
+            #visual{width:100%; /*height:700px;*/  position:relative;}
+            #visual p{width:100%;}
+            #visual p img{width:100%;}
+
+         /*########## visual 영역안의 파란색 박스 #############*/
+
+            #visual div{width:98%; height:90px; padding:1%; position:static;}
+
+            #visual h3{font-size:1.4em;}
+            #visual .text{font-size:0.85em; margin:10px 0; line-height:15px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+            #visual .link{width:100%; height:15px; font-size:14px;}
+
+         /*######### content ##########*/
+
+            #content ul{width:300px;}
+            #content li{width:100%; margin-left:0; float:none; text-align:center; font-size:15px;}
+
+         /*######## footer ########*/
+            #footer{width:100%; text-align:center; padding:40px 0 10px;}
+            #footer li{display:block; width:100%; line-height:30px; font-size:14px; border-bottom:1px solid #ccc;}
+            #footer li a{padding:0;}
+
+            /*카피라이터 영역*/
+            #footer li:last-child{border:none; line-height:60px; background-color:#000;}
+            #footer li:last-child a{color:#fff;}
+         }
+
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header id="header">
+         <div id="head">
+            <h1 id="logo">
+               <a href="http://www.microsoft.com" title="마이크로소프트">
+                  <img src="img/mslogo.png" alt="마이크로소프트"/>
+               </a>
+            </h1>
+            <div id="search">
+               <form action="https://www.microsoft.com/ko-kr/search/result.aspx" method="GET">
+                  <div class="schArea">
+                     <input id="schText" type="text" name="q" placeholder="Microsoft.com" title="Microsoft 검색" maxlength="20" autocomplete="off"/>
+                     <input id="schBtn" type="image" name="schBtn" src="img/search.ltr.png" alt="돋보기 이미지" title="돋보기 이미지"/>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <nav>
+            <ul>
+               <li><a href="#none" title="구매">구매<span>V</span></a></li>
+               <li><a href="#none" title="제품">제품<span>V</span></a></li>
+               <li><a href="#none" title="다운로드">다운로드<span>V</span></a></li>
+               <li><a href="#none" title="지원">지원<span>V</span></a></li>
+            </ul>
+         </nav>
+      </header>
+      <div id="container">
+         <div id="visual">
+            <h2>비쥬얼 영역</h2>
+            <p>
+               <a href="#none" title="visual 이미지">
+                  <img src="img/main.jpg" alt="메인이미지"/>
+               </a>
+            </p>
+            <div>
+               <h3>Surface</h3>
+               <p class="text">
+                  기존의 노트북을 바꿀만한 가치의 태블릿을 만나보세요. Surface Pro7.
+               </p>
+               <p class="link">
+                  <a href="#" title="자세히보기">자세히보기</a>
+               </p>
+            </div>
+         </div>
+         <section id="content">
+            <h2>컨텐츠 영역</h2>
+            <ul>
+               <li>
+                  <p class="img">
+                     <a href="#none" title="이미지1">
+                        <img src="img/b01.png" alt="이미지1"/>
+                     </a>
+                  </p>
+                  <p class="desc">
+                     xBox One 올해 최고의 게임
+                  </p>
+               </li>
+               <li>
+                  <p class="img">
+                     <a href="#none" title="이미지2">
+                        <img src="img/b02.jpg" alt="이미지2"/>
+                     </a>
+                  </p>
+                  <p class="desc">
+                     이제 Office 문서를 iPad와 iPhone에서 무료로 만들고 편집하세요.
+                  </p>
+               </li>
+               <li>
+                  <p class="img">
+                     <a href="#none" title="이미지3">
+                        <img src="img/b03.jpg" alt="이미지3"/>
+                     </a>
+                  </p>
+                  <p class="desc">
+                     Microsoft Store에서 멋진 선물을 쇼핑하세요.
+                  </p>
+               </li>
+            </ul>
+         </section>
+      </div>
+      <footer id="footer">
+         <div id="footerLink">
+            <ul>
+               <li><a href="#" title="문의처 (고객 지원 센터 : 1577-9700)">문의처 (고객 지원 센터 : 1577-9700)</a></li>
+               <li><a href="#" title="개인정보취급방침 및 청소년보호정책">개인정보취급방침 및 청소년보호정책</a></li>
+               <li><a href="#" title="사용약관">사용약관</a></li>
+               <li><a href="#" title="상표">상표</a></li>
+               <li><a href="#" title="광고정보">광고정보</a></li>
+               <li><a href="#" title="2022 Microsoft">2022 Microsoft</a></li>
+            </ul>
+         </div>
+      </footer>
+   </div>
+ </body>
+</html>
+<!--
+   [#none 활용하기]
+
+      1) jQuery, javascript 에서 tab_basic || tab_menu 기능만들기 가능!
+
+         : a태그 필수 사용
+         : a의 href에 #을 사용하면 왼쪽 상단으로 올라가려고 함!
+         : #은 호출하는 기호로 연결하는 대사잉 없으면 왼쪽상단이 기준점이 됨!
+         
+      정리 )
+         : 왼쪽 상단을 향해 올라가는 강제 작동을 막기 위하여 javascript요소를 사용하여 막았으나..
+         기능 자체가 워낙 강력하기 때문에 재대로 기능되지 않는 문제가 발생함!
+
+         : #none을 사용하면 javascipt의 기능을 사용하지 않아도 강제 기능을 막아줄 수 있음!
+         : 단! #none 을 사용하지 못할 경우, javascipt로 막아야 함!
+
+         : href역할은?
+            주소 연결이 기본, #none이 기본이 아님!
+
+      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      [form 활용하기]
+
+         1) action : 주소줄을 이용할 수 있음!
+         2) method : 주소줄에 넘어가는 정보를 보여줄 것인지 아닌지 결정할 수 있음!
+
+            tip) 다른 기업의 search를 사용하기 위하여 method를 확인 했을때 post로 되어 있다면..
+               사용이 불가능한 form일 수 있으니 주의!
+
+      [input태그 이미지로 활용하기]
+
+         1) input태그는 type에 맞춰서 어떤 대싱으로든 사용할 수 있음!
+         2) type="image" 로 바꾸면 image로 사용할 수 있음!
+
+            장점: input의 id, type, "name" 을 사용할 수 있음!
+                  img 태그로 활용이 가능함!
+
+            단점: input태그의 역할도 담당해야 하고, img태그의 역할도 담당해야 함!
+               * alt와 title 모두 가지고 있어야 "접근성"이나 "표준법"에 문제가 되지 않는다!
+
+      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      [삼성 엔지니어링 미디어 쿼리 분기 방법]
+
+      * 기업이나 사용환경에 따라서 미디어 쿼리 분기 방법이 조금씩 다름!
+      * 매우중요)
+
+         : ratio (비율값 계산하기)
+         : 16 : 9 == 1280 : y (해상도 크기 계산하기)
+
+      ################ pc버전
+
+         @media screen and (min-width:1280px) and (max-width:1600px){}
+         @media screen and (min-width:1140px) and (max-width:1279px){}
+         @media screen and (min-width:1070px) and (max-width:1139px){}
+         @media screen and (min-width:1025px) and (max-width:1069px){}
+
+      ################ 기업형, 관공서에서 많이 사용되는 pc 해상도 (960px)
+
+         정리 ) 관공서 페이지를 반응형 작업을 해야 할 경우
+            : 960px \\ 940px 부터 제작이 가능해야 함!
+
+         + media screen and (min-width:960px) and (max-width:1069px){}
+         + media screen and (min-width:940px) and (max-width:1069px){}
+
+      ################  태블릿pc (스마트폰 가로버전을 포함 )
+
+         @media screen and (min-width:768px) and (max-width:1024px){}
+
+      ################ 스마트폰 제작시 사용하는 버전
+
+         @media screen and (min-width:481px) and (max-width:767px){}
+         @media screen and (min-width:320px) and (max-width:480px){}
+
+      [스마트폰 기준_해상도 확인]
+
+         * 스마트폰 화면 해상도와 브라우저 해상도의 크기 다름!
+         * 스마트폰으로 확인하기! (주의사항)
+
+            1) 검사창을 활성화 하고, 왼쪽 상단의 모바일 아이콘을 눌러서 각각의 기종 해상도 확인가능!
+
+            2) 중요) window, mac 에서 확인한다면 해당하는 디바이스에서 확인하는 작업임!
+               : 모바일용으로 확인하는 작업이 아님!
+               : 기종별 각각의 해상도만 참고하기
+
+            3) 모바일 해상도와 브라우저 해상도는 다르다!
+            4) 가독성에 문제가 있기 때문에 브라우저의 해상도가 작게 잡힘!
+            
+      [매우중요]
+
+         1) pc에서 브라우저를 줄이면서 확인하는 작업이 아니라 반응형 작업은 "모바일"에 맞추기 위한 작업이 대다수!
+         2) pc에서 맞추는 작업은?
+            : 해상도가 커지면서 누락된 정보를 맞추기 위하여, 깨지는 작업물들을 안전하기 처리하기 위하여 맞추는 작업을 진행함!
+
+         3) "각각의 디바이스" 에서 직접 확인하면서 작업해야 제대로 된 결과물을 출력받을 수 있음!
+         4) android, ios, window 모두 운영체제가 다르기 때문에 출력되는 결과물도 다를 수 있음!
+
+         * 320px, 360px, 420px, 450px
+-->

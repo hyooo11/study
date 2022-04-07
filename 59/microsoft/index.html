@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>mirosoft</title>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+   <style>
+      /*초기화*/
+         *{margin:0; padding:0;}
+         body{margin:0; padding:0;}
+         header, div, footer, h1, h2, ul, li, nav{margin:0; padding:0;}
+         header, nav, section, footer{display:block;}
+         li{list-style-type:none;}
+         a:link, a:visited{text-decoration:none; color:#000;}
+         a:hover, a:focus{color:#0a0;}
+
+         #wrap{width:100%;}
+
+      /*###### header ######*/
+         header{width:100%;}
+         
+         header .topArea{width:1000px; padding-top:30px; margin:0 auto;}
+         /*logo*/
+         h1{width:160px; float:left;}
+         h1 img{width:100%;}
+         /*search*/
+         form{width:840px; text-align:right; float:left;}
+         form #search{width:400px; height:28px; border:1px solid #ccc; text-indent:10px;}
+         form #btn{width:30px; height:30px; border:none;
+            background-color:#fff;
+            background-image:url("img/search.ltr.png"); background-repeat:no-repeat; background-position:center center;
+         vertical-align:middle;}
+
+         header .topArea:after{content:""; display:block; clear:both;}
+         /* 네비영역*/
+         #gnb{width:1000px; padding:20px 0 10px; margin:0 auto;}
+         #gnb li{float:left;}
+         #gnb li a{display:block; padding:0 15px; color:#00f; font-size:18px;}
+         #gnb li a:hover, #gnb li a:focus{color:#0a0;}
+
+         #gnb ul:after{content:""; display:block; clear:both;}
+
+      /*###### container ######*/
+         #container{width:100%;}
+         /*visual*/
+         #visual{width:100%;}
+         #visual .main{width:1600px; margin:0 auto; position:relative;}
+         /*이미지 영역*/
+         #visual .img{width:100%;}
+         #visual .img img{width:100%;}
+         /*텍스트 박스*/
+         #visual .text_box{width:220px; height:210px; padding:20px 15px; background-color:#25d; position:fixed; left:10%; top:25%;}
+         #visual .text_box .title{height:50px; color:#fff; font-size:35px; font-weight:400;}
+         #visual .text_box .desc{color:#ccc; font-size:19px;}
+         #visual .text_box .more{padding:10px 0;}
+         #visual .text_box .more a{color:#efefef; font-size:17px;}
+
+         /*프로모션 영역*/
+         #section{width:100%; padding-top:50px;}
+         #section ul{width:910px; margin:0 auto;}
+         #section li{width:290px; margin-left:10px; text-align:center; float:left;}
+         #section .img{width:100%;}
+         #section .img a{display:block; width:100%;}
+         #section .img a img{width:100%;}
+
+         #section .text{font-size:15px;}
+
+         #section ul:after{content:""; display:block; clear:both;}
+
+      /*###### footer ######*/
+         footer{width:100%; padding:50px 0 20px; }
+         footer ul{width:690px; margin:0 auto;}
+         footer li{padding:0 10px; float:left;}
+         footer li a{font-size:13px; color:#555;}
+
+         footer ul:after{content:""; display:block; clear:both;}
+         
+         /*목차 숨긴 부분*/
+         h2{position:absolute; left:-9999px; width:1px; height:1px; font-size:1px; overflow:hidden;}
+      
+
+
+
+
+      /*##### pc 버전 ######*/
+         @media all and (min-width:1025px){
+         
+         }
+
+      /*##### 태블릿 버전 ######*/
+         @media all and (min-width:768px) and (max-width:1024px){
+            header .topArea{width:748px;}
+
+            /*search*/
+            form{width:588px; text-align:center;}
+            form #search{width:300px;}
+            /* 네비영역*/
+            #gnb{width:748px;}
+            #gnb li a{font-size:15px;}
+
+            /*visual*/
+            #visual .main{width:748px;}
+
+            /*텍스트 박스*/
+            #visual .text_box{width:170px; height:160px; position:absolute; left:0; top:10%;}
+            #visual .text_box .title{font-size:30px;}
+            #visual .text_box .desc{font-size:17px;}
+            #visual .text_box .more{padding:10px 0;}
+            #visual .text_box .more a{font-size:15px;}
+
+            /*프로모션 영역*/
+            #section ul{width:600px;}
+            #section li{width:190px;}
+            #section .text{font-size:13px;}
+
+            /*###### footer ######*/
+            footer ul{width:748px;}
+            
+         }
+      /*##### 모바일 가로 버전 ######*/
+         @media all and (min-width:481px) and (max-width:767px){
+
+            header .topArea{width:460px;}
+            /*logo*/
+            h1{width:140px;}
+            /*search*/
+            form{width:310px;}
+            form #search{width:200px;}
+
+            /* 네비영역*/
+            #gnb{width:460px; background-color:#25d; padding:10px 0;}
+            #gnb ul{width:400px; margin:0 auto;}
+            #gnb li{width:100px; text-align:center;}
+            #gnb li a{padding:0; color:#fff; font-size:15px;}
+
+            /*visual*/
+            #visual .main{width:460px; position:static;}
+            /*텍스트 박스*/
+            #visual .text_box{width:440px; height:80px; padding:10px; position:static;}
+            #visual .text_box .title{height:30px; font-size:18px;}
+            #visual .text_box .desc{font-size:15px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+            #visual .text_box .more{padding:10px 0;}
+            #visual .text_box .more a{font-size:13px;}
+         
+            /*프로모션 영역*/
+            #section{padding-top:50px;}
+            #section ul{width:400px;}
+            #section li{width:100%; margin-left:0px; margin-bottom:10px; float:none;}
+            #section .text{font-size:13px;}
+
+            /*###### footer ######*/
+            footer ul{width:460px;}
+
+         }
+
+      /*##### 모바일 세로 버전 ######*/
+         @media all and (min-width:320px) and (max-width:480px){
+
+            header .topArea{width:300px;}
+            /*logo*/
+            h1{width:150px; margin:0 auto; float:none;}
+            /*search*/
+            form{width:300px; padding-top:20px; text-align:center;float:none;}
+            form #search{width:200px; height:23px;}
+            form #btn{width:25px; height:25px;}
+
+            /* 네비영역*/
+            #gnb{width:300px;}
+            #gnb li{width:300px; height:30px; margin-bottom:1px; line-height:30px; background-color:#25d; text-align:center; float:none;}
+            #gnb li a{display:block; padding:0; color:#fff; font-size:15px;}
+
+            /*visual*/
+            #visual .main{width:300px; position:static;}
+            /*텍스트 박스*/
+            #visual .text_box{width:280px; height:80px; padding:10px;position:static;}
+            #visual .text_box .title{height:30px; font-size:18px;}
+            #visual .text_box .desc{font-size:15px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+            #visual .text_box .more{padding:10px 0;}
+            #visual .text_box .more a{font-size:13px;}
+         
+            /*프로모션 영역*/
+            #section{padding-top:30px;}
+            #section ul{width:300px;}
+            #section li{margin-left:0px; margin-bottom:10px; float:none;}
+            #section .text{font-size:13px;}
+
+            /*###### footer ######*/
+            footer ul{width:300px;}
+
+         }
+            
+
+      
+   </style>
+ </head>
+
+ <body>
+   <div id="wrap">
+      <header>
+         <div class="topArea">
+            <h1>
+               <img src="img/mslogo.png" alt="microsoft"/>
+            </h1>
+            <form action="https://www.microsoft.com/ko-kr/search/result.aspx" method="get">
+               <input id="search" type="text" name="search" title="search" placeholder="Microsoft.com 검색"/>
+               <input id="btn" type="submit" name="btn" value=""/>
+            </form>
+         </div>
+         <nav id="gnb">
+            <ul>
+               <li><a href="#" title="구매V">구매V</a></li>
+               <li><a href="#" title="제품V">제품V</a></li>
+               <li><a href="#" title="다운로드V">다운로드V</a></li>
+               <li><a href="#" title="지원V">지원V</a></li>
+            </ul>
+         </nav>
+      </header>
+      <div id="container">
+         <div id="visual">
+            <div class="main">
+               <p class="img">
+                  <img src="img/main.jpg" alt="메인이미지"/>
+               </p>
+               <div class="text_box">
+                  <p class="title">Surface</p>
+                  <p class="desc">
+                     기존의 노트북을 바꿀만한 가치의 태블릿을 만나보세요.
+                     Surface Pro 3.
+                  </p>
+                  <p class="more">
+                     <a href="#" title="자세히_보기">자세히 보기</a>
+                  </p>
+               </div>
+            </div>
+            
+         </div>
+         <section id="section">
+            <h2>프로모션 영역</h2>
+            <ul>
+               <li>
+                  <p class="img">
+                     <a href="#" title="올해 최고의 게임">
+                        <img src="img/b01.png" alt="이미지01"/>
+                     </a>
+                  <p>
+                  <p class="text">
+                     Xbox One 올해 최고의 게임
+                  </p>
+               </li>
+               <li>
+                  <p class="img">
+                     <a href="#" title="Office 문서">
+                        <img src="img/b02.jpg" alt="이미지02"/>
+                     </a>
+                  <p>
+                  <p class="text">
+                     이제 Office 문서를 iPad와 iPhone에서 무료로 만들고 편집하세요.
+                  </p>
+               </li>
+               <li>
+                  <p class="img">
+                     <a href="#" title="선물쇼핑">
+                        <img src="img/b03.jpg" alt="이미지03"/>
+                     </a>
+                  <p>
+                  <p class="text">
+                     Microsoft Store에서 멋진 선물을 쇼핑하세요.
+                  </p>
+               </li>
+            </ul>
+         </section>
+      </div>
+      <footer>
+         <ul>
+            <li>
+               <a href="#" title="문의처">
+                  문의처 (고객 지원 센터 : 1577-9700)
+               </a>
+            </li>
+            <li>
+               <a href="#" title="개인정보취급방침 및 청소년보호정책">
+                  개인정보취급방침 및 청소년보호정책
+               </a>
+            </li>
+            <li>
+               <a href="#" title="사용약관">
+                  사용약관
+               </a>
+            </li>
+            <li>
+               <a href="#" title="상표">
+                  상표
+               </a>
+            </li>
+            <li>
+               <a href="#" title="광고정보">
+                  광고정보
+               </a>
+            </li>
+            <li>
+               <a href="#" title="microsoft">
+                  2021 Microsoft
+               </a>
+            </li>
+         </ul>
+      </footer>
+   </div>
+ </body>
+</html>
